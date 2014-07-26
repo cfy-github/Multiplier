@@ -1,0 +1,17 @@
+{
+  "name": "multiplier",
+  "fullname": "Multiplier",
+  "version": "0.01.00",
+  "author": "DarkSupremo",
+  "authorimage": "",
+  "thumbnail": "",
+  "spreadimage": "",
+  "website": "http://what.com",
+  "subtitle": "A cool multiplier game mode.",
+  "description": "",
+  "features": ["Fun multiplier game mode!"],
+  "playable": true,
+  "isPublic": true,
+  "spreadvideo": "http://google.com/iwishthisexisted.webm",
+  "bundle": "multiplier.zip"
+}
