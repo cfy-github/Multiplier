@@ -167,6 +167,33 @@
 			}
 		}
 	}
+	"axe_counter_helix_x2"
+	{
+		"BaseClass" "axe_counter_helix"
+		"ID" "5009"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType" "DAMAGE_TYPE_PHYSICAL"
+		"AbilityCooldown" "0.45 0.4 0.35 0.3"
+		"AbilityDamage" "200 270 340 410"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"radius" "550"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"trigger_chance" "34"
+			}
+			"03"
+			{
+				"var_type" "FIELD_FLOAT"
+				"cooldown" "0.225 0.2 0.175 0.15"
+			}
+		}
+	}
 	"axe_culling_blade_x2"
 	{
 		"BaseClass" "axe_culling_blade"
@@ -499,6 +526,33 @@
 			{
 				"var_type" "FIELD_FLOAT"
 				"damage_cap_interval" "0.5"
+			}
+		}
+	}
+	"drow_ranger_frost_arrows_x2"
+	{
+		"BaseClass" "drow_ranger_frost_arrows"
+		"ID" "5019"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityCastRange" "1250"
+		"AbilityCastPoint" "0.0 0.0 0.0 0.0"
+		"AbilityCooldown" "0.0 0.0 0.0 0.0"
+		"AbilityDuration" "3 3 3 3"
+		"AbilityDamage" "0 0 0 0"
+		"AbilityManaCost" "12 12 12 12"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_FLOAT"
+				"frost_arrows_creep_duration" "14.0"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"frost_arrows_movement_speed" "-5.5 -12 -18.5 -30"
 			}
 		}
 	}
@@ -2230,6 +2284,33 @@
 			{
 				"var_type" "FIELD_FLOAT"
 				"vision_duration" "8.0 8.0 8.0 8.0"
+			}
+		}
+	}
+	"pudge_rot_x2"
+	{
+		"BaseClass" "pudge_rot"
+		"ID" "5076"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
+		"AbilityCastPoint" "0 0 0 0"
+		"AbilityDamage" "70 120 170 220"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"rot_radius" "500"
+			}
+			"02"
+			{
+				"var_type" "FIELD_FLOAT"
+				"rot_tick" "0.4"
+			}
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"rot_slow" "-40"
 			}
 		}
 	}
@@ -5569,6 +5650,50 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"range" "2600 2600 2600 2600"
+			}
+		}
+	}
+	"beastmaster_call_of_the_wild_x2"
+	{
+		"BaseClass" "beastmaster_call_of_the_wild"
+		"ID" "5169"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastPoint" "0.3"
+		"AbilityCooldown" "40"
+		"AbilityManaCost" "15"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"hawk_duration" "120 120 120 120"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"boar_duration" "0 120 120 120"
+			}
+		}
+	}
+	"beastmaster_call_of_the_wild_boar_x2"
+	{
+		"BaseClass" "beastmaster_call_of_the_wild_boar"
+		"ID" "5580"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityCastPoint" "0.3"
+		"AbilityCooldown" "40.0 40.0 40.0 40.0"
+		"AbilityManaCost" "15"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"hawk_duration" "120 120 120 120"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"boar_duration" "0 120 120 120"
 			}
 		}
 	}
@@ -16184,6 +16309,45 @@
 			}
 		}
 	}
+	"abaddon_frostmourne_x2"
+	{
+		"BaseClass" "abaddon_frostmourne"
+		"ID" "5587"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_FLOAT"
+				"debuff_duration" "5"
+			}
+			"02"
+			{
+				"var_type" "FIELD_FLOAT"
+				"buff_duration" "9"
+			}
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"slow_pct" "10 20 30 40"
+			}
+			"04"
+			{
+				"var_type" "FIELD_INTEGER"
+				"attack_slow_tooltip" "10 20 30 40"
+			}
+			"05"
+			{
+				"var_type" "FIELD_INTEGER"
+				"move_speed_pct" "30"
+			}
+			"06"
+			{
+				"var_type" "FIELD_INTEGER"
+				"attack_speed" "20 40 60 80"
+			}
+		}
+	}
 	"abaddon_borrowed_time_x2"
 	{
 		"BaseClass" "abaddon_borrowed_time"
@@ -21164,6 +21328,33 @@
 			}
 		}
 	}
+	"axe_counter_helix_x3"
+	{
+		"BaseClass" "axe_counter_helix"
+		"ID" "5009"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType" "DAMAGE_TYPE_PHYSICAL"
+		"AbilityCooldown" "0.45 0.4 0.35 0.3"
+		"AbilityDamage" "300 405 510 615"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"radius" "825"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"trigger_chance" "51"
+			}
+			"03"
+			{
+				"var_type" "FIELD_FLOAT"
+				"cooldown" "0.15 0.133333333333 0.116666666667 0.1"
+			}
+		}
+	}
 	"axe_culling_blade_x3"
 	{
 		"BaseClass" "axe_culling_blade"
@@ -21496,6 +21687,33 @@
 			{
 				"var_type" "FIELD_FLOAT"
 				"damage_cap_interval" "0.75"
+			}
+		}
+	}
+	"drow_ranger_frost_arrows_x3"
+	{
+		"BaseClass" "drow_ranger_frost_arrows"
+		"ID" "5019"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_ATTACK"
+		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_MECHANICAL"
+		"AbilityCastRange" "1875"
+		"AbilityCastPoint" "0.0 0.0 0.0 0.0"
+		"AbilityCooldown" "0.0 0.0 0.0 0.0"
+		"AbilityDuration" "4.5 4.5 4.5 4.5"
+		"AbilityDamage" "0 0 0 0"
+		"AbilityManaCost" "12 12 12 12"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_FLOAT"
+				"frost_arrows_creep_duration" "21.0"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"frost_arrows_movement_speed" "-3.66666666667 -8 -12.3333333333 -20"
 			}
 		}
 	}
@@ -23227,6 +23445,33 @@
 			{
 				"var_type" "FIELD_FLOAT"
 				"vision_duration" "12.0 12.0 12.0 12.0"
+			}
+		}
+	}
+	"pudge_rot_x3"
+	{
+		"BaseClass" "pudge_rot"
+		"ID" "5076"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
+		"AbilityCastPoint" "0 0 0 0"
+		"AbilityDamage" "105 180 255 330"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"rot_radius" "750"
+			}
+			"02"
+			{
+				"var_type" "FIELD_FLOAT"
+				"rot_tick" "0.6"
+			}
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"rot_slow" "-60"
 			}
 		}
 	}
@@ -26566,6 +26811,50 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"range" "3900 3900 3900 3900"
+			}
+		}
+	}
+	"beastmaster_call_of_the_wild_x3"
+	{
+		"BaseClass" "beastmaster_call_of_the_wild"
+		"ID" "5169"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityCastPoint" "0.3"
+		"AbilityCooldown" "40"
+		"AbilityManaCost" "15"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"hawk_duration" "180 180 180 180"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"boar_duration" "0 180 180 180"
+			}
+		}
+	}
+	"beastmaster_call_of_the_wild_boar_x3"
+	{
+		"BaseClass" "beastmaster_call_of_the_wild_boar"
+		"ID" "5580"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET| DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityCastPoint" "0.3"
+		"AbilityCooldown" "40.0 40.0 40.0 40.0"
+		"AbilityManaCost" "15"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_INTEGER"
+				"hawk_duration" "180 180 180 180"
+			}
+			"02"
+			{
+				"var_type" "FIELD_INTEGER"
+				"boar_duration" "0 180 180 180"
 			}
 		}
 	}
@@ -37178,6 +37467,45 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"radius" "2025"
+			}
+		}
+	}
+	"abaddon_frostmourne_x3"
+	{
+		"BaseClass" "abaddon_frostmourne"
+		"ID" "5587"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type" "FIELD_FLOAT"
+				"debuff_duration" "7.5"
+			}
+			"02"
+			{
+				"var_type" "FIELD_FLOAT"
+				"buff_duration" "13.5"
+			}
+			"03"
+			{
+				"var_type" "FIELD_INTEGER"
+				"slow_pct" "15 30 45 60"
+			}
+			"04"
+			{
+				"var_type" "FIELD_INTEGER"
+				"attack_slow_tooltip" "15 30 45 60"
+			}
+			"05"
+			{
+				"var_type" "FIELD_INTEGER"
+				"move_speed_pct" "45"
+			}
+			"06"
+			{
+				"var_type" "FIELD_INTEGER"
+				"attack_speed" "30 60 90 120"
 			}
 		}
 	}
