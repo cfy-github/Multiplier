@@ -1,4 +1,5 @@
 from lib.keyvalues import KeyValues
+from lib import clean
 import os
 
 
@@ -20,38 +21,9 @@ dont_parse = ['Version', 'ability_base', 'default_attack',
 factors = [2,3]
 
 
-# remove comments from file (there's bug in _custom that some comments have only an single slash instead of double slash...
-file1 = open('npc_abilities.txt', 'r')
-fcontent = file1.read()
-file1.close()
-fresult = ''
-for line in fcontent.split('\n'):
-    if line.lstrip().startswith('/'):
-        continue
-    if '//' in line:
-        line = line.split('/')[0]
-    fresult += line + '\n'
-file2 = open('npc_abilities_custom.tmp', 'w')
-file2.write(fresult)
-file2.close()
 
-
-kv = KeyValues()
-kv.load('npc_abilities_custom.tmp')
 
 def str_to_type (s):
-    """ Get possible cast type for a string
-
-    Parameters
-    ----------
-    s : string
-
-    Returns
-    -------
-    float,int,str,bool : type
-        Depending on what it can be cast to
-
-    """    
     try:                
         f = float(s)        
         if "." not in s:
@@ -115,61 +87,68 @@ def divide_or_multiply(key, values, by, separator):
         # only single element, then multiply (parse exceptions in dividelist...)
         return multiply(values, by, " ")
     return ' '.join(tmplist)
-        
-print(str(len(kv)))
 
-root = KeyValues('DOTAAbilities')
+    
+if __name__ == "__main__":
 
-for factor in factors:
-    for skill in kv:
-        if skill in dont_parse:
-            continue
-        skillkv = KeyValues(skill)
-        skillkv['BaseClass'] = skill
+    # remove comments from file (there's bug in _custom that some comments have only an single slash instead of double slash...
+    clean.remove_comments('npc_abilities.txt', 'npc_abilities_custom.tmp')
 
-        for base in kv[skill]:
-            base = str(base)
-            if base != 'AbilitySpecial':
-                valueslist = kv[skill][base].strip().split(" ")
-                if base not in ignore_all_normal and str_to_type(valueslist[0]) in (int, long, float, complex):
-                    skillkv[base] = divide_or_multiply(base, kv[skill][base], factor, " ")
-                else:
-                    skillkv[base] = kv[skill][base]
-            #print str(skillkv[base]) + ' = ' + str(kv[skill][base])
-        
-        if 'AbilitySpecial' in kv[skill]:
-            abilityspecial = KeyValues('AbilitySpecial')
-            for element in kv[skill]['AbilitySpecial']:
-                number = KeyValues(element)
-                for varElement in kv[skill]['AbilitySpecial'][element]:
-                    numberValue = False
-                    #print '%s -> %s' % (skill, varElement)
-                   
-                    testvalue = kv[skill]['AbilitySpecial'][element][varElement].split(" ")[0]
-                    testinstance = str_to_type(testvalue)
-                    if (skill in ignore_special and varElement in ignore_special[skill]) or (varElement in ignore_all_special):
-                        print '###ignore: %s / %s [x%d]' % (skill, varElement, factor)
-                    elif varElement != 'var_type' and testinstance in (int, long, float, complex):
-                        varlist = kv[skill]['AbilitySpecial'][element][varElement]
-                        numberValue = divide_or_multiply(varElement, varlist, factor, ' ')
-                        """if '-' in varlist:
-                            print 'negative: %s / %s -> %s' % (varlist, varElement, skill)
-                            print 'negative2: %s / %s -> %s' % (numberValue, varElement, skill)      
-                        """#print '%s old [x%d]: %s' % (varElement, factor, varlist) 
-                        #print '%s new [x%d]: %s' % (varElement, factor, numberValue)
-                    
-                           
-                    #check if variable number was defined
-                    
-                    if numberValue:
-                        number[varElement] = numberValue
+    kv = KeyValues()
+    kv.load('npc_abilities_custom.tmp')
+
+    root = KeyValues('DOTAAbilities')
+
+    for factor in factors:
+        for skill in kv:
+            if skill in dont_parse:
+                continue
+            skillkv = KeyValues(skill)
+            skillkv['BaseClass'] = skill
+
+            for base in kv[skill]:
+                base = str(base)
+                if base != 'AbilitySpecial':
+                    valueslist = kv[skill][base].strip().split(" ")
+                    if base not in ignore_all_normal and str_to_type(valueslist[0]) in (int, long, float, complex):
+                        skillkv[base] = divide_or_multiply(base, kv[skill][base], factor, " ")
                     else:
-                        number[varElement] = kv[skill]['AbilitySpecial'][element][varElement]
-                        #print varElement
-                        #print kv[skill]['AbilitySpecial'][element][varElement]
-                abilityspecial[element] = number
-            #if usespec:
-            skillkv['AbilitySpecial'] = abilityspecial
-        root[skill + '_x'+str(factor)] = skillkv
-root.save('npc_abilities_custom.txt')
-os.remove('npc_abilities_custom.tmp')
+                        skillkv[base] = kv[skill][base]
+                #print str(skillkv[base]) + ' = ' + str(kv[skill][base])
+            
+            if 'AbilitySpecial' in kv[skill]:
+                abilityspecial = KeyValues('AbilitySpecial')
+                for element in kv[skill]['AbilitySpecial']:
+                    number = KeyValues(element)
+                    for varElement in kv[skill]['AbilitySpecial'][element]:
+                        numberValue = False
+                        #print '%s -> %s' % (skill, varElement)
+                       
+                        testvalue = kv[skill]['AbilitySpecial'][element][varElement].split(" ")[0]
+                        testinstance = str_to_type(testvalue)
+                        if (skill in ignore_special and varElement in ignore_special[skill]) or (varElement in ignore_all_special):
+                            print '###ignore: %s / %s [x%d]' % (skill, varElement, factor)
+                        elif varElement != 'var_type' and testinstance in (int, long, float, complex):
+                            varlist = kv[skill]['AbilitySpecial'][element][varElement]
+                            numberValue = divide_or_multiply(varElement, varlist, factor, ' ')
+                            """if '-' in varlist:
+                                print 'negative: %s / %s -> %s' % (varlist, varElement, skill)
+                                print 'negative2: %s / %s -> %s' % (numberValue, varElement, skill)      
+                            """#print '%s old [x%d]: %s' % (varElement, factor, varlist) 
+                            #print '%s new [x%d]: %s' % (varElement, factor, numberValue)
+                        
+                               
+                        #check if variable number was defined
+                        
+                        if numberValue:
+                            number[varElement] = numberValue
+                        else:
+                            number[varElement] = kv[skill]['AbilitySpecial'][element][varElement]
+                            #print varElement
+                            #print kv[skill]['AbilitySpecial'][element][varElement]
+                    abilityspecial[element] = number
+                #if usespec:
+                skillkv['AbilitySpecial'] = abilityspecial
+            root[skill + '_x'+str(factor)] = skillkv
+    root.save('npc_abilities_custom.txt')
+    os.remove('npc_abilities_custom.tmp')
