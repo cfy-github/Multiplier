@@ -6,6 +6,8 @@ import os
 import codecs
 
 tmpfix = ['DOTA_Tooltip_ability_item_boots_of_elves', 'DOTA_Tooltip_ability_item_belt_of_strength']
+notname = ['_Lore', '_Description', '_Note0', '_radius', '_duration', '_bonus_armor'
+                    '_bonus_movement_speed', '_bonus_damage', '_damage_pct', '_Note1']
 
 # remove comments from file (there's bug in _custom that some comments have only an single slash instead of double slash...
 
@@ -38,7 +40,11 @@ if __name__ == "__main__":
                 else:
                     previous = var[1]
                     name = '%s_x%d' % (previous, factor)
-                    ff.write('      "%s"    "%s"\r\n' % (name, var[3]))
+                    chk =  var[1][var[1].rfind('_'):]
+                    if chk not in notname:
+                        ff.write('      "%s"    "%s [ x%d ]"\r\n' % (name, var[3], factor))
+                    else:
+                        ff.write('      "%s"    "%s"\r\n' % (name, var[3]))
                     #strlist.append('%s_x%d' % (previous, factor))
                     
                 #tokens['%s_x%d' % (var[1], factor)] = var[3]
@@ -90,26 +96,4 @@ if __name__ == "__main__":
     print 'ok'
     f.close()
     ff.close()
-
-    
-
-    """
-
-    root = KeyValues('lang')
-    root["Language"] = "English"
-    tokens = KeyValues('Tokens')
-
-    for factor in abilities.factors:
-        for tokenskv in kv['Tokens']:
-            if tokenskv.strip().startswith('DOTA_Tooltip_ability_'):
-                tokens['%s_x%d' % (tokenskv, factor)] = kv['Tokens'][tokenskv]
-
-    root['Tokens'] = tokens
-
-
-    root.save('addon_english.txt')
-
-
-    os.remove(tmp_path)
-    """
 
