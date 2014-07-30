@@ -20,9 +20,15 @@ if __name__ == "__main__":
     ff.write('   {\r\n')
     ff.write('      "game_mode_15"  "Custom Spell Power"\r\n')
     ff.write('      "addon_game_name"   "Custom Spell Power"\r\n')
+
     
     #strlist = []
+    print 'Generating addon_english.txt'
     for factor in abilities.factors:
+        if factor == abilities.override_factor:
+            print 'Ignoring override factor x%d...' % factor
+            continue
+        print 'Factor x%d...' % factor
         f = codecs.open("dota_english.txt", "r", "utf16")
         previous = ''
         lc = 0;
@@ -30,13 +36,21 @@ if __name__ == "__main__":
             lc = lc + 1
             if line.strip().startswith('//'):
                 continue
+            var = line.split('"')
+            if len(var) < 2:
+                continue
+            
+            #change name of overwriten skills (comment, since it apparently still not work even with overwrite)
+            #overwritten = var[1][len('DOTA_Tooltip_ability_'):]
+            #if overwritten in abilities.override_instead and factor == abilities.override_factor:
+                #ff.write('      "%s"    "%s [_x%d_]"\r\n' % (var[1], var[3], factor))
+                #print overwritten
+                    
             if 'DOTA_Tooltip_ability_' in line and '_item_' not in line:
-                var = line.split('"')
                 if previous != '' and previous in var[1]:
                     lg = len(previous)
                     name = '%s_x%d%s' % (previous, factor, var[1][lg:])
                     ff.write('      "%s"    "%s"\r\n' % (name, var[3]))
-                    #strlist.append('%s_x%d%s' % (previous, factor, var[1][lg:]))
                 else:
                     previous = var[1]
                     name = '%s_x%d' % (previous, factor)
@@ -45,50 +59,34 @@ if __name__ == "__main__":
                         ff.write('      "%s"    "%s [ x%d ]"\r\n' % (name, var[3], factor))
                     else:
                         ff.write('      "%s"    "%s"\r\n' % (name, var[3]))
-                    #strlist.append('%s_x%d' % (previous, factor))
-                    
-                #tokens['%s_x%d' % (var[1], factor)] = var[3]
-                #ff.write('      "%s_x%d"    "%s"\r\n' % (var[1], factor, var[3]))
-                
-                #print var[3]
-                #print var[1] + '_x'
+                        
             elif 'DOTA_Tooltip_Ability_item_' in line:
-                var = line.split('"')
                 name = '%s_x%d' % (var[1], factor)
                 ff.write('      "%s"    "%s"\r\n' % (name, var[3]))
             elif 'DOTA_Tooltip_ability_item_' in line:
-                var = line.split('"')
                 for fix in tmpfix:
                     if fix in var[1]:
                         previous = fix
                         if len(var[1]) > len(fix):
-                            #strlist.append('%s_x%d%s' % (fix, factor, var[1][len(fix):]))
                             name = '%s_x%d%s' % (fix, factor, var[1][len(fix):])
                             ff.write('      "%s"    "%s"\r\n' % (name, var[3]))
                             break
                         else:
                             name = '%s_x%d%s' % (fix, factor, var[1])
                             ff.write('      "%s"    "%s"\r\n' % (name, var[3]))
-                            #strlist.append('%s_x%d%s' % (fix, factor, var[1]))
                             break
                 if '_Description' in var[1]:
                     previous = var[1][:-len('_Description')]
-                    #print 'item base: %s' % previous
                     name = '%s_x%d_Description' % (previous, factor)
                     ff.write('      "%s"    "%s"\r\n' % (name, var[3]))
-                    #strlist.append('%s_x%d_Description' % (previous, factor))
                 elif '_Lore' in var[1]:
                     previous = var[1][:-len('_Lore')]
-                    #print 'item base_lore: %s' % previous
                     name = '%s_x%d_Lore' % (previous, factor)
                     ff.write('      "%s"    "%s"\r\n' % (name, var[3]))
-                    #strlist.append('%s_x%d_Lore' % (previous, factor))
                 else:
                     lg = len(previous)
-                    #print 'item var: %s' % var[1][lg:]
                     name = '%s_x%d%s' % (previous, factor, var[1][lg:])
                     ff.write('      "%s"    "%s"\r\n' % (name, var[3]))
-                    #strlist.append('%s_x%d%s' % (previous, factor, var[1][lg:]))
         f.close()
     #print '\n'.join(strlist)
     ff.write('  }\r\n')

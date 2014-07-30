@@ -1,15 +1,50 @@
 USE_LOBBY=false
 THINK_TIME = 0.1
-ADDON_NAME="MULTIPLIER"
+ADDON_NAME="CUSTOM SPELL POWER"
 
-STARTING_GOLD = 1000--650
+--STARTING_GOLD = 650--650
 MAX_LEVEL = 25
 
--- Fill this table up with the required XP per level if you want to change it
-XP_PER_LEVEL_TABLE = {}
-for i=1,MAX_LEVEL do
-  XP_PER_LEVEL_TABLE[i] = i * 100
-end
+local STAGE_VOTING = 0
+local STAGE_VOTED = 1
+
+local currentStage = STAGE_VOTING
+
+-- EXP Needed for each level
+local XP_PER_LEVEL_TABLE = {
+    0,-- 1
+    200,-- 2
+    500,-- 3
+    900,-- 4
+    1400,-- 5
+    2000,-- 6
+    2600,-- 7
+    3200,-- 8
+    4400,-- 9
+    5400,-- 10
+    6000,-- 11
+    8200,-- 12
+    9000,-- 13
+    10400,-- 14
+    11900,-- 15
+    13500,-- 16
+    15200,-- 17
+    17000,-- 18
+    18900,-- 19
+    20900,-- 20
+    23000,-- 21
+    25200,-- 22
+    27500,-- 23
+    29900,-- 24
+    32400 -- 25
+}
+
+local COLOR_BLUE2 = '#4B69FF'
+local COLOR_RED2 = '#EB4B4B'
+local COLOR_GREEN2 = '#ADE55C'
+
+local factor = nil
+local default_factor = 2
 
 GameMode = nil
 
@@ -18,7 +53,7 @@ function Log(msg)
 end
 
 if MultiplierGameMode == nil then
-  Log('creating multiplier game mode' )
+  Log('creating csp game mode' )
   MultiplierGameMode = {}
   MultiplierGameMode.szEntityClassName = "multiplier"
   MultiplierGameMode.szNativeClassName = "dota_base_game_mode"
@@ -33,35 +68,38 @@ function MultiplierGameMode:new( o )
 end
 
 function MultiplierGameMode:InitGameMode()
-  Log('Starting to load Barebones gamemode...')
+  Log('Starting to load CSP gamemode...')
 
   -- Setup rules
   GameRules:SetHeroRespawnEnabled( true )
   GameRules:SetUseUniversalShopMode( false )
   GameRules:SetSameHeroSelectionEnabled( false )
-  GameRules:SetHeroSelectionTime( 30.0 )
+  GameRules:SetHeroSelectionTime( 60.0 )
   GameRules:SetPreGameTime( 30.0)
   GameRules:SetPostGameTime( 60.0 )
   GameRules:SetTreeRegrowTime( 60.0 )
   GameRules:SetUseCustomHeroXPValues ( false )
-  GameRules:SetGoldPerTick(2)
+  GameRules:SetGoldPerTick(1)
   Log('Rules set')
 
-  InitLogFile( "log/multiplier.txt","")
+  InitLogFile( "log/customspellpower.txt","")
 
   -- Hooks
-  ListenToGameEvent('modifier_event', Dynamic_Wrap(MultiplierGameMode, 'OnModifierEvent'), self)
-  ListenToGameEvent('hero_picker_hidden', Dynamic_Wrap(MultiplierGameMode, 'OnHeroPickerHidden'), self)  
-  ListenToGameEvent('entity_killed', Dynamic_Wrap(MultiplierGameMode, 'OnEntityKilled'), self)
+  --ListenToGameEvent('modifier_event', Dynamic_Wrap(MultiplierGameMode, 'OnModifierEvent'), self)
+  --ListenToGameEvent('hero_picker_hidden', Dynamic_Wrap(MultiplierGameMode, 'OnHeroPickerHidden'), self)  
+  --ListenToGameEvent('entity_killed', Dynamic_Wrap(MultiplierGameMode, 'OnEntityKilled'), self)
   ListenToGameEvent('player_connect_full', Dynamic_Wrap(MultiplierGameMode, 'AutoAssignPlayer'), self)
   ListenToGameEvent('player_disconnect', Dynamic_Wrap(MultiplierGameMode, 'CleanupPlayer'), self)
-  ListenToGameEvent('dota_item_purchased', Dynamic_Wrap(MultiplierGameMode, 'ShopReplacement'), self)
+  --ListenToGameEvent('dota_item_purchased', Dynamic_Wrap(MultiplierGameMode, 'ShopReplacement'), self)
   ListenToGameEvent('player_say', Dynamic_Wrap(MultiplierGameMode, 'PlayerSay'), self)
   ListenToGameEvent('player_connect', Dynamic_Wrap(MultiplierGameMode, 'PlayerConnect'), self)
   --ListenToGameEvent('player_info', Dynamic_Wrap(MultiplierGameMode, 'PlayerInfo'), self)
-  ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(MultiplierGameMode, 'AbilityUsed'), self)
+  --ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(MultiplierGameMode, 'AbilityUsed'), self)
+  ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(MultiplierGameMode, 'OnLevelUp'), self)
+  
+  
 
-  Convars:RegisterCommand( "command_example", Dynamic_Wrap(MultiplierGameMode, 'ExampleConsoleCommand'), "A console command example", 0 )
+  --Convars:RegisterCommand( "command_example", Dynamic_Wrap(MultiplierGameMode, 'ExampleConsoleCommand'), "A console command example", 0 )
   
   -- Fill server with fake clients
   Convars:RegisterCommand('fake', function()
@@ -103,18 +141,16 @@ function MultiplierGameMode:InitGameMode()
   self.vSteamIds = {}
   self.vBots = {}
   self.vBroadcasters = {}
+  
+  -- user level map
+  self.vUserLevel = {}
 
   self.vPlayers = {}
   self.vRadiant = {}
   self.vDire = {}
   
-   -- Stores the current skill list for each hero
-  self.currentSkillList = {}
 
-  -- Active Hero Map
-  self.vPlayerHeroData = {}
   
-  self:LoadAbilityList()
   
   Log('values set')
   
@@ -142,7 +178,7 @@ function MultiplierGameMode:CaptureGameMode()
     GameMode:SetCustomBuybackCooldownEnabled( true )
     GameMode:SetBuybackEnabled( false )
     -- Override the top bar values to show your own settings instead of total deaths
-    GameMode:SetTopBarTeamValuesOverride ( true )
+    GameMode:SetTopBarTeamValuesOverride ( false )
     -- Use custom hero level maximum and your own XP per level
     GameMode:SetUseCustomHeroLevels ( true )
     GameMode:SetCustomHeroMaxLevel ( MAX_LEVEL )
@@ -153,17 +189,68 @@ function MultiplierGameMode:CaptureGameMode()
     Log('Beginning Think' ) 
     GameMode:SetContextThink("BarebonesThink", Dynamic_Wrap( MultiplierGameMode, 'Think' ), 0.1 )
 	
+	--PauseGame(true)
+	self:CreateTimer('vote_msg1', {
+		endTime = Time() + 1,
+		callback = function(multiplier, args)
+			--Say(nil, COLOR_RED.. string.format("1 Vote for game mode (-x2 or -x3 or -x5)!"), false)
+			Say(nil, '<font color="'..COLOR_RED2..'">Waiting (30s) for HOST to select the Game Mode </font> <font color="'..COLOR_BLUE2..'">(-x2 or -x3 or -x5)</font> ', false)
+			Say(nil, '<font color="'..COLOR_GREEN2..'">Few skills will stay with x2 even if other mode is selected, and for now all items will stay in x2 also</font> ', false)
+		end
+	})
+	
 	
   end 
 end
 
-function MultiplierGameMode:AbilityUsed(keys)
+function MultiplierGameMode:ShowCenterMessage(msg,dur)
+  local msg = {
+    message = msg,
+    duration = dur
+  }
+  FireGameEvent("show_center_message",msg)
+end
+
+--[[function MultiplierGameMode:AbilityUsed(keys)
   Log('AbilityUsed')
   PrintTable(keys)
+end]]
+
+
+function MultiplierGameMode:ReplaceAllSkills()
+	self:LoopOverPlayers(function(player, plyID)
+      local ply = self.vPlayers[plyID]
+	  local hero = player.hero
+	  SkillManager:ApplyMultiplier(hero, factor)
+      --PlayerResource:SetGold(plyID, 0, true)
+      --PlayerResource:SetGold(plyID, 0, false)
+    end)
 end
+
+function MultiplierGameMode:OnLevelUp( keys )
+	--print( "Somebody leveled up!" )
+	
+	self:LoopOverPlayers(function(player, plyID)
+		if self.vUserLevel[plyID] ~= PlayerResource:GetLevel( plyID ) then
+			self.vUserLevel[plyID] = PlayerResource:GetLevel( plyID )
+			--PlayerResource:SetGold( plyID, PlayerResource:GetGold( plyID ) + 1000, false)
+			local player = self.vPlayers[plyID]
+			local hero = player.hero
+			--Log("hero: ")
+			--PrintTable(getmetatable(hero))
+			--Log("Player: ")
+			--PrintTable(player)
+			hero:SetBaseStrength(hero:GetBaseStrength()+5)
+		end
+      --PlayerResource:SetGold(plyID, 0, true)
+      --PlayerResource:SetGold(plyID, 0, false)
+    end)
+end
+
 
 -- Stick skills into slots
 local handled = {}
+--local playFactor = {}
 ListenToGameEvent('npc_spawned', function(keys)
     -- Grab the unit that spawned
     local spawnedUnit = EntIndexToHScript(keys.entindex)
@@ -187,15 +274,29 @@ ListenToGameEvent('npc_spawned', function(keys)
 		
 		--PrintTable(SkillManager)
 		--PrintTable(getmetatable(SkillManager))
-		SkillManager:ApplyBuildMultiplier(spawnedUnit)
+		if factor == nil then
+			factor = default_factor
+		end
+		--playFactor[playerID] = factor
+		SkillManager:ApplyMultiplier(spawnedUnit, factor)
+		
+		spawnedUnit:SetBaseMoveSpeed(spawnedUnit:GetBaseMoveSpeed()+60)
+		--spawnedUnit:SetBaseIntellect(100)
+		spawnedUnit:ModifyAgility(50)
+		--spawnedUnit:SetMoveCapability(2)
+		--spawnedUnit:SetAttackCapability(DOTA_UNIT_CAP_RANGED_ATTACK)
+
+		--print('intellect: ' .. spawnedUnit:GetIntellect())
+
+		--hero:SwapAbilities("antimage_blink", "antimage_spell_shield", true, false)
+
+		--local blink = spawnedUnit:FindAbilityByName("pudge_hook_x5")
+
+		--blink:OnAbilityPinged()
 		
     end
 end, nil)
 
-function MultiplierGameMode:OnHeroPickerHidden(keys)
-  Log('OnHeroPickerHidden')
-  PrintTable(keys)
-end
 
 -- Cleanup a player when they leave
 function MultiplierGameMode:CleanupPlayer(keys)
@@ -208,8 +309,8 @@ function MultiplierGameMode:CloseServer()
 end
 
 function MultiplierGameMode:PlayerConnect(keys)
-  Log('PlayerConnect')
-  PrintTable(keys)
+  --Log('PlayerConnect')
+  --PrintTable(keys)
   
   -- Fill in the usernames for this userID
   self.vUserNames[keys.userid] = keys.name
@@ -223,10 +324,11 @@ local hook = nil
 local attach = 0
 local controlPoints = {}
 local particleEffect = ""
+local voted = false
 
 function MultiplierGameMode:PlayerSay(keys)
-  Log('PlayerSay')
-  PrintTable(keys)
+  --Log('PlayerSay')
+  --PrintTable(keys)
   
   -- Get the player entity for the user speaking
   local ply = self.vUserIds[keys.userid]
@@ -240,20 +342,44 @@ function MultiplierGameMode:PlayerSay(keys)
     return
   end
   
+   
   -- Should have a valid, in-game player saying something at this point
   -- The text the person said
   local text = keys.text
   
-  -- Match the text against something
-  local matchA, matchB = string.match(text, "^-swap%s+(%d)%s+(%d)")
-  if matchA ~= nil and matchB ~= nil then
-    -- Act on the match
+  if not voted then
+	  if plyID == 0 then
+			local fac = string.match(text, "^-x+(%d)")
+			if fac ~= nil then
+				--Log("Fac ~= nil")
+				if fac == '2' or fac == '3' or fac == '5' then
+					factor = fac
+					--Log("FacX: ")
+					--Log(factor)
+					local txt = '<font color="'..COLOR_RED2..'">Game Mode selected: </font> <font color="'..COLOR_BLUE2..'">x'..factor..'</font> '
+					Say(nil, txt, false)
+					self:ShowCenterMessage('Game Mode: x' .. factor , 10)
+					voted = true
+					MultiplierGameMode:ReplaceAllSkills()
+					--PauseGame(false)
+				end
+			end
+			--Log("Fac: ")
+			--Log(fac)
+	  end  
   end
+  
+  -- Match the text against something
+  --local matchA, matchB = string.match(text, "^-swap%s+(%d)%s+(%d)")
+  --if matchA ~= nil and matchB ~= nil then
+    -- Act on the match
+  --end
+
   
 end
 
 function MultiplierGameMode:AutoAssignPlayer(keys)
-  Log('AutoAssignPlayer')
+  --Log('AutoAssignPlayer')
   PrintTable(keys)
   MultiplierGameMode:CaptureGameMode()
   
@@ -266,6 +392,9 @@ function MultiplierGameMode:AutoAssignPlayer(keys)
   
   -- Update the user ID table with this user
   self.vUserIds[keys.userid] = ply
+  
+  -- set initial lvl 1
+  self.vUserLevel[keys.userid] = 1
   -- Update the Steam ID table
   self.vSteamIds[PlayerResource:GetSteamAccountID(playerID)] = ply
   
@@ -288,6 +417,9 @@ function MultiplierGameMode:AutoAssignPlayer(keys)
     return
   end
   
+  
+  
+  
   -- If we're not on D2MODD.in, assign players round robin to teams
   if not USE_LOBBY and playerID == -1 then
     if #self.vRadiant > #self.vDire then
@@ -301,6 +433,8 @@ function MultiplierGameMode:AutoAssignPlayer(keys)
     end
     playerID = ply:GetPlayerID()
   end
+  
+  
 
   --Autoassign player
   self:CreateTimer('assign_player_'..entIndex, {
@@ -332,88 +466,23 @@ function MultiplierGameMode:AutoAssignPlayer(keys)
         if GameRules:State_Get() > DOTA_GAMERULES_STATE_PRE_GAME then
             -- This section runs if the player picks a hero after the round starts
         end
+		
+		
 
         return
       end
     end
+	
+	
 
     return Time() + 1.0
   end
 })
+
+
+
 end
 
-function MultiplierGameMode:FindHeroOwner(skillName)
-    local heroOwner = ""
-    for heroName, values in pairs(self.heroListKV) do
-        if type(values) == "table" then
-            for i = 1, 16 do
-                if values["Ability"..i] == skillName then
-                    heroOwner = heroName
-                    goto foundHeroName
-                end
-            end
-        end
-    end
-
-    ::foundHeroName::
-    return heroOwner
-end
-
-function MultiplierGameMode:LoadAbilityList()
-    local abs = LoadKeyValues("scripts/kv/abilities.kv")
-    self.heroListKV = LoadKeyValues("scripts/npc/npc_heroes.txt")
-    self.customItemKV = LoadKeyValues("scripts/npc/npc_items_custom.txt")
-    self.subAbilities = LoadKeyValues("scripts/kv/abilityDeps.kv")
-
-    -- Build list of heroes
-    self.heroList = {}
-    self.heroListEnabled = {}
-    for heroName, values in pairs(self.heroListKV) do
-        -- Validate hero name
-        if heroName ~= 'Version' and heroName ~= 'npc_dota_hero_base' and heroName ~= 'npc_dota_hero_abyssal_underlord' then
-            -- Make sure the hero is enabled
-            if values.Enabled == 1 then
-                -- Store this unit
-                table.insert(self.heroList, heroName)
-                self.heroListEnabled[heroName] = 1
-            end
-        end
-    end
-
-    -- Table containing every skill
-    self.vAbList = {}
-    self.vAbListSort = {}
-    self.vAbListLookup = {}
-
-    -- Build skill list
-    for k,v in pairs(abs) do
-        for kk, vv in pairs(v) do
-            -- This comparison is really dodgy for some reason
-            if tonumber(vv) == 1 then
-                -- Attempt to find the owning hero of this ability
-                local heroOwner = self:FindHeroOwner(kk)
-
-                -- Store this skill
-                table.insert(self.vAbList, {
-                    name = kk,
-                    sort = k,
-                    hero = heroOwner
-                })
-
-                -- Store into the sort container
-                if not self.vAbListSort[k] then
-                    self.vAbListSort[k] = {}
-                end
-
-                -- Store the sort reference
-                table.insert(self.vAbListSort[k], kk)
-
-                -- Store the reverse lookup
-                self.vAbListLookup[kk] = k
-            end
-        end
-    end
-end
 
 function MultiplierGameMode:IsValidPlayerID(checkPlayerID)
     local isValid = false
@@ -427,101 +496,6 @@ function MultiplierGameMode:IsValidPlayerID(checkPlayerID)
     return isValid
 end
 
-function MultiplierGameMode:ApplyBuild(hero, build)
-    if hero == nil then
-        Say(nil, COLOR_RED..'WARNING: Failed to apply a build!', false)
-        return
-    end
-
-    -- Grab playerID
-    local playerID = hero:GetPlayerID()
-    if not self:IsValidPlayerID(playerID) then
-        return
-    end
-
-    -- Remove all the skills from our hero
-    self:RemoveAllSkills(hero)
-
-    -- Table to store all the extra skills we need to give
-    local extraSkills = {}
-
-    -- Give all the abilities in this build
-    for k,v in ipairs(build) do
-        -- Check if this skill has sub abilities
-        if self.subAbilities[v] then
-            -- Store that we need this skill
-            extraSkills[self.subAbilities[v]] = true
-        end
-
-        -- Add to build
-        hero:AddAbility(v)
-        self.currentSkillList[hero][k] = v
-    end
-
-    -- Add missing abilities
-    local i = #build+1
-    for k,v in pairs(extraSkills) do
-        -- Add the ability
-        hero:AddAbility(k)
-
-        -- Store that we have it
-        self.currentSkillList[hero][i] = k
-
-        -- Move onto the next slot
-        i = i + 1
-    end
-end
-
-function MultiplierGameMode:GetRandomAbility(sort)
-    if not sort or not self.vAbListSort[sort] then
-        sort = 'Abs'
-    end
-
-    return self.vAbListSort[sort][math.random(1, #self.vAbListSort[sort])]
-end
-
-
-function MultiplierGameMode:RemoveAllSkills( hero )
-	Log('RemoveAllSkills: ')
-	hero:SetGold(hero:GetGold() + 10, false)
-	
-	-- Check if we've touched this hero before
-    if not self.currentSkillList[hero] then
-        -- Grab the name of this hero
-        local heroClass = hero:GetUnitName()
-
-        local skills = self:GetHeroSkills(heroClass)
-
-        -- Store it
-        self.currentSkillList[hero] = skills
-    end
-
-    -- Remove all old skills
-    for k,v in pairs(self.currentSkillList[hero]) do
-        if hero:HasAbility(v) then
-            hero:RemoveAbility(v)
-        end
-    end
-	
-end
-
-function MultiplierGameMode:GetHeroSkills(heroClass)
-    local skills = {}
-
-    -- Build list of abilities
-    for heroName, values in pairs(self.heroListKV) do
-        if heroName == heroClass then
-            for i = 1, 16 do
-                local ab = values["Ability"..i]
-                if ab and ab ~= 'attribute_bonus' then
-                    table.insert(skills, ab)
-                end
-            end
-        end
-    end
-
-    return skills
-end
 
 function MultiplierGameMode:LoopOverPlayers(callback)
   for k, v in pairs(self.vPlayers) do
@@ -535,10 +509,10 @@ function MultiplierGameMode:LoopOverPlayers(callback)
   end
 end
 
-function MultiplierGameMode:ShopReplacement( keys )
+--[[function MultiplierGameMode:ShopReplacement( keys )
   Log('ShopReplacement' )
   PrintTable(keys)
-  Log('Replacing ' .. keys.itemname .. ' with: item_shadow_amulet' )
+  --Log('Replacing ' .. keys.itemname .. ' with: ' .. keys.itemname .. '_x2' )
 
   -- The playerID of the hero who is buying something
   local plyID = keys.PlayerID
@@ -553,18 +527,18 @@ function MultiplierGameMode:ShopReplacement( keys )
   -- The cost of the item purchased
   local itemcost = keys.itemcost
   
-  local item = self:getItemByName(player.hero, keys.itemname)
-  if not item then return end
+  --local item = self:getItemByName(player.hero, keys.itemname)
+  --if not item then return end
   
-  print ( item:GetAbilityName())
+  --print ( item:GetAbilityName())
   --player.hero:SetGold(itemcost, true)
   --item:Remove()
   
   --local v = player.hero
-  --local item2 = CreateItem('item_shadow_amulet', v, v)
+  --local item2 = CreateItem(itemName .. '_x2', v, v)
   --v:AddItem(item2)
   
-end
+end]]
 
 function MultiplierGameMode:getItemByName( hero, name )
   -- Find item by slot
@@ -595,6 +569,23 @@ function MultiplierGameMode:Think()
   end
   local dt = now - MultiplierGameMode.t0
   MultiplierGameMode.t0 = now
+  
+  if currentStage == STAGE_VOTING then
+	  if GameRules:State_Get() >= DOTA_GAMERULES_STATE_HERO_SELECTION then
+	      if voted or now >= 30 then
+			  currentStage = STAGE_VOTED
+			  if not voted then
+			     voted = true
+				 factor = default_factor
+				 local txt = '<font color="'..COLOR_RED2..'">Default Game Mode selected: </font> <font color="'..COLOR_BLUE2..'">x'..factor..'</font> '
+				 Say(nil, txt, false)
+				 MultiplierGameMode:ShowCenterMessage('Default Game Mode: x' .. factor , 10)
+				 MultiplierGameMode:ReplaceAllSkills()
+				 --PauseGame(false)
+			  end
+		  end
+	  end
+  end
 
   --MultiplierGameMode:thinkState( dt )
 
@@ -704,7 +695,7 @@ function MultiplierGameMode:RemoveTimers(killAll)
   self.timers = timers
 end
 
-function MultiplierGameMode:ExampleConsoleCommand()
+--[[function MultiplierGameMode:ExampleConsoleCommand()
   print( '******* Example Console Command ***************' )
   local cmdPlayer = Convars:GetCommandClient()
   if cmdPlayer then
@@ -715,17 +706,18 @@ function MultiplierGameMode:ExampleConsoleCommand()
   end
 
   print( '*********************************************' )
-end
+end]]
 
+--[[
 function MultiplierGameMode:OnModifierEvent( keys )
   Log('OnModifierEvent Called' )
   PrintTable( keys )
   
 
   -- Put code here to handle when an entity gets killed
-end
+end]]
 
-function MultiplierGameMode:OnEntityKilled( keys )
+--[[function MultiplierGameMode:OnEntityKilled( keys )
   --Log('OnEntityKilled Called' )
   --PrintTable( keys )
   
@@ -739,7 +731,7 @@ function MultiplierGameMode:OnEntityKilled( keys )
   end
 
   -- Put code here to handle when an entity gets killed
-end
+end]]
 
 -- A helper function for dealing damage from a source unit to a target unit.  Damage dealt is pure damage
 function dealDamage(source, target, damage)
