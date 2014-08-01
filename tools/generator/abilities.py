@@ -14,21 +14,31 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'enigma_malefice': {'stun_duration'}, 'enigma_black_hole': {'duration'}, 'enigma_malefice': {'tick_rate', 'stun_duration'},
                   'enchantress_natures_attendants': {'radius','heal_interval'}, 'ember_spirit_sleight_of_fist': {'attack_interval', 'creep_damage_penalty'},
                   'ember_spirit_flame_guard': {'radius'}, 'ember_spirit_fire_remnant': {'charge_restore_time', 'radius'},
-                  'ember_spirit_activate_fire_remnant': {'charge_restore_time', 'radius'}, 'earthshaker_fissure': {'fissure_range', 'fissure_duration'}}
+                  'ember_spirit_activate_fire_remnant': {'charge_restore_time', 'radius'}, 'earthshaker_fissure': {'fissure_range', 'fissure_duration', 'fissure_radius'},
+                  'crystal_maiden_freezing_field': {'explosion_interval', 'radius', 'explosion_radius', 'explosion_min_dist', 'explosion_max_dist'},
+                  'rattletrap_power_cogs': {'radius', 'spacing', 'duration'}, 'rattletrap_battery_assault': {'interval'},
+                  'dark_seer_ion_shell': {'radius', 'duration'}, 'necrolyte_heartstopper_aura': {'aura_radius'},
+                  'doom_bringer_doom': {'duration', 'duration_scepter', 'deniable_pct'}, 'doom_bringer_lvl_death': {'lvl_bonus_multiple'},
+                  'doom_bringer_scorched_earth': {'radius', 'duration'}}
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}}
 
-ignore_all_normal = ['ID', 'AbilityCastPoint', 'AbilityManaCost', 'AbilityCooldown']
+ignore_all_normal = ['ID', 'AbilityCastPoint', 'AbilityManaCost', 'AbilityCooldown', 'AbilityModifierSupportValue', 'MaxLevel']
 
 
-dont_parse = ['Version', 'ability_base', 'default_attack']
+dont_parse = ['Version', 'ability_base', 'default_attack', 'invoker_invoke', 'invoker_empty1', 'invoker_empty2']
 
 override_instead = ['abaddon_frostmourne', 'pudge_rot', 'alchemist_unstable_concoction'
              'alchemist_unstable_concoction_throw', 'drow_ranger_frost_arrows', 'axe_counter_helix',
              'beastmaster_call_of_the_wild', 'beastmaster_call_of_the_wild_boar', 'ember_spirit_fire_remnant',
-             'ember_spirit_activate_fire_remnant']
+             'ember_spirit_activate_fire_remnant', 'invoker_cold_snap', 'invoker_ghost_walk', 'invoker_tornado', 'invoker_emp',
+              'invoker_alacrity', 'invoker_chaos_meteor', 'invoker_sun_strike', 'invoker_forge_spirit', 'forged_spirit_melting_strike',
+              'invoker_ice_wall', 'invoker_deafening_blast']
+        #, 'invoker_exort', 'invoker_wex', 'invoker_quas'
 
-factors = [2,3,5]
+item_fixed_value = {'item_heart': {'health_regen_rate':'2'}}
+
+factors = [2,3,5,10]
 override_factor = 2
 
 
@@ -139,11 +149,15 @@ if __name__ == "__main__":
                     for element in itemkv[item]['AbilitySpecial']:
                         basekv['AbilitySpecial'][element] = KeyValues(element)
                         for varElement in itemkv[item]['AbilitySpecial'][element]:
-                            value = itemkv[item]['AbilitySpecial'][element][varElement]
-                            
-                            testinstance = str_to_type(value.split(" ")[0])
-                            if 'cooldown' not in varElement and varElement != 'var_type' and varElement not in ignore_all_special and testinstance in (int, long, float, complex):
-                                value = divide_or_multiply(varElement, value, factor, " ")
+
+                            if item in item_fixed_value and varElement in item_fixed_value[item]:
+                                value = item_fixed_value[item][varElement]
+                            else:
+                                value = itemkv[item]['AbilitySpecial'][element][varElement]
+                                
+                                testinstance = str_to_type(value.split(" ")[0])
+                                if 'cooldown' not in varElement and varElement != 'var_type' and varElement not in ignore_all_special and testinstance in (int, long, float, complex):
+                                    value = divide_or_multiply(varElement, value, factor, " ")
                             basekv['AbilitySpecial'][element][varElement] = value
                             #print varElement
                 rootov[item] = basekv

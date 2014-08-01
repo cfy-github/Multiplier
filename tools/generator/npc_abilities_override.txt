@@ -1942,7 +1942,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"health_regen_rate" "4"
+				"health_regen_rate" "2"
 			}
 			"04"
 			{
@@ -4296,7 +4296,7 @@
 		"AbilityDamage" "30 40 50 60"
 		"AbilityManaCost" "75 85 95 105"
 		"AbilityCastRange" "1800"
-		"AbilityModifierSupportValue" "0.2"
+		"AbilityModifierSupportValue" "0.1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -4509,7 +4509,7 @@
 		"AbilityDuration" "8.0 10.0 12.0 14.0"
 		"AbilityDamage" "40 40 40 40"
 		"AbilityManaCost" "165 165 165 165"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -4544,7 +4544,7 @@
 		"BaseClass" "bane_nightmare_end"
 		"ID" "5523"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 	}
 	"bloodseeker_bloodrage"
 	{
@@ -4560,7 +4560,7 @@
 		"AbilityDamage" "40 40 40 40"
 		"AbilityManaCost" "80 80 80 80"
 		"AbilityCastRange" "1600"
-		"AbilityModifierSupportValue" "0.2"
+		"AbilityModifierSupportValue" "0.1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -4836,17 +4836,17 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"fissure_range" "2800"
+				"fissure_range" "1400"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"fissure_duration" "16.0"
+				"fissure_duration" "8.0"
 			}
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"fissure_radius" "450"
+				"fissure_radius" "225"
 			}
 			"04"
 			{
@@ -5067,7 +5067,7 @@
 		"AbilityCooldown" "12.0 12.0 12.0 12.0"
 		"AbilityDamage" "240 360 480 600"
 		"AbilityManaCost" "120 120 120 120"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -5427,7 +5427,7 @@
 		"AbilityChannelTime" "10.2"
 		"AbilityCooldown" "20.0 15.0 10.0 5.0"
 		"AbilityManaCost" "10 10 10 10"
-		"AbilityModifierSupportValue" "10.0"
+		"AbilityModifierSupportValue" "5.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -5692,7 +5692,7 @@
 		"AbilityCastPoint" "0.25"
 		"AbilityCooldown" "10"
 		"AbilityManaCost" "100 100 100 100"
-		"AbilityModifierSupportValue" "0.6"
+		"AbilityModifierSupportValue" "0.3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -5999,7 +5999,7 @@
 		"AbilityDuration" "10.0 10.0 10.0"
 		"AbilityDamage" "160 240 320"
 		"AbilityManaCost" "150 175 200"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6322,7 +6322,7 @@
 		"AbilityCastPoint" "0.1 0.1 0.1"
 		"AbilityCooldown" "85.0 85.0 85.0"
 		"AbilityManaCost" "100 150 200"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6787,7 +6787,7 @@
 		"AbilityCastPoint" "0.3 0.3 0.3"
 		"AbilityCooldown" "80.0 70.0 60.0"
 		"AbilityManaCost" "100 150 200"
-		"AbilityModifierSupportValue" "0.2"
+		"AbilityModifierSupportValue" "0.1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6835,7 +6835,7 @@
 		"AbilityCooldown" "8.0 8.0 8.0 8.0"
 		"AbilityDamage" "100 200 300 400"
 		"AbilityManaCost" "140"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -6929,7 +6929,7 @@
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCooldown" "260 160 60"
 		"AbilityManaCost" "140"
-		"AbilityModifierSupportValue" "0.4"
+		"AbilityModifierSupportValue" "0.2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -7503,7 +7503,7 @@
 		"AbilityChannelTime" "4.0 4.0 4.0"
 		"AbilityCastPoint" "0.0 0.0 0.0 0.0"
 		"AbilityManaCost" "175 250 325"
-		"AbilityModifierSupportValue" "0.4"
+		"AbilityModifierSupportValue" "0.2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -7601,7 +7601,7 @@
 		"AbilityCastPoint" "0.0 0.0 0.0 0.0"
 		"AbilityCooldown" "9"
 		"AbilityManaCost" "120 120 120 120"
-		"AbilityModifierSupportValue" "0.5"
+		"AbilityModifierSupportValue" "0.25"
 		"AbilitySpecial"
 		{
 			"01"
@@ -7773,7 +7773,7 @@
 		"AbilityDamage" "200 350 550 700"
 		"AbilityCooldown" "6.0 6.0 6.0 6.0"
 		"AbilityManaCost" "75 95 115 135"
-		"AbilityModifierSupportValue" "0.2"
+		"AbilityModifierSupportValue" "0.1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -7907,7 +7907,7 @@
 		"AbilityDuration" "2.0 3 4.0 5"
 		"AbilityDamage" "100 200 300 400"
 		"AbilityManaCost" "80 95 105 115"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -7981,7 +7981,7 @@
 		"AbilityCastPoint" "0.35 0.35 0.35"
 		"AbilityCooldown" "10.0 10.0 10.0"
 		"AbilityManaCost" "25 25 25"
-		"AbilityModifierSupportValue" "12.0"
+		"AbilityModifierSupportValue" "6.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -8289,7 +8289,7 @@
 		"AbilityCooldown" "10.0 10.0 10.0 10.0"
 		"AbilityDamage" "140 140 140 140"
 		"AbilityManaCost" "115 125 140 150"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -8331,23 +8331,23 @@
 		"AbilityCooldown" "150.0 120.0 90.0"
 		"AbilityDuration" "14.0"
 		"AbilityManaCost" "200 400 600"
-		"AbilityModifierSupportValue" "0.7"
+		"AbilityModifierSupportValue" "0.35"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "1370 1370 1370"
+				"radius" "685 685 685"
 			}
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"explosion_radius" "460 460 460"
+				"explosion_radius" "230 230 230"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"explosion_interval" "0.2"
+				"explosion_interval" "0.1"
 			}
 			"05"
 			{
@@ -8367,12 +8367,12 @@
 			"08"
 			{
 				"var_type" "FIELD_INTEGER"
-				"explosion_min_dist" "390"
+				"explosion_min_dist" "195"
 			}
 			"09"
 			{
 				"var_type" "FIELD_INTEGER"
-				"explosion_max_dist" "1270"
+				"explosion_max_dist" "635"
 			}
 			"10"
 			{
@@ -8502,7 +8502,7 @@
 		"AbilityCooldown" "15.0 15.0 15.0 15.0"
 		"AbilityDuration" "5.5 7 8.5 10.0"
 		"AbilityManaCost" "100 100 100 100"
-		"AbilityModifierSupportValue" "0.2"
+		"AbilityModifierSupportValue" "0.1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -8579,7 +8579,7 @@
 		"AbilityDuration" "8.0 8.0 8.0 8.0"
 		"AbilityDamage" "100 200 300 400"
 		"AbilityManaCost" "125 150 170 190"
-		"AbilityModifierSupportValue" "0.6"
+		"AbilityModifierSupportValue" "0.3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -8617,7 +8617,7 @@
 		"AbilityCooldown" "5.0 5.0 5.0 5.0"
 		"AbilityDuration" "80.0 80.0 80.0 80.0"
 		"AbilityManaCost" "50 50 50 50"
-		"AbilityModifierSupportValue" "0.6"
+		"AbilityModifierSupportValue" "0.3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -8745,7 +8745,7 @@
 		"AbilityCooldown" "20.0 18.0 16.0 14.0"
 		"AbilityDamage" "150 200 250 300"
 		"AbilityManaCost" "110 120 130 140"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -9013,7 +9013,7 @@
 		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
 		"AbilityCooldown" "15.0 15.0 15.0 15.0"
 		"AbilityManaCost" "110 130 150 160"
-		"AbilityModifierSupportValue" "0.66"
+		"AbilityModifierSupportValue" "0.33"
 		"AbilitySpecial"
 		{
 			"01"
@@ -9193,7 +9193,7 @@
 		"AbilityCooldown" "14.0 14.0 14.0 14.0"
 		"AbilityDamage" "160 320 480 640"
 		"AbilityManaCost" "95 120 145 170"
-		"AbilityModifierSupportValue" "0.6"
+		"AbilityModifierSupportValue" "0.3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -9322,7 +9322,7 @@
 		"AbilityCooldown" "15.0 15.0 15.0 15.0"
 		"AbilityDamage" "24 48 72 96"
 		"AbilityManaCost" "120 120 120 120"
-		"AbilityModifierSupportValue" "0.5"
+		"AbilityModifierSupportValue" "0.25"
 		"AbilitySpecial"
 		{
 			"01"
@@ -9466,7 +9466,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"aura_radius" "2400"
+				"aura_radius" "1200"
 			}
 			"02"
 			{
@@ -9518,7 +9518,7 @@
 		"AbilityCooldown" "100 85 70"
 		"AbilityManaCost" "175 340 500"
 		"AbilityCastRange" "1200"
-		"AbilityModifierSupportValue" "0.2"
+		"AbilityModifierSupportValue" "0.1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -9671,7 +9671,7 @@
 		"AbilityCooldown" "165 165 165"
 		"AbilityManaCost" "200 300 400"
 		"AbilityCastRange" "2400"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -9727,7 +9727,7 @@
 		"ID" "5166"
 		"AbilityType" "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"MaxLevel" "6"
+		"MaxLevel" "3"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilitySpecial"
 		{
@@ -9754,7 +9754,7 @@
 		"ID" "5167"
 		"AbilityType" "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"MaxLevel" "6"
+		"MaxLevel" "3"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilitySpecial"
 		{
@@ -9949,7 +9949,7 @@
 		"AbilityCooldown" "80.0 75.0 70.0"
 		"AbilityManaCost" "150 175 200"
 		"AbilityCastRange" "1200"
-		"AbilityModifierSupportValue" "1.2"
+		"AbilityModifierSupportValue" "0.6"
 		"AbilitySpecial"
 		{
 			"01"
@@ -10320,7 +10320,7 @@
 		"AbilityCastPoint" "0.35 0.35 0.35 0.35"
 		"AbilityCooldown" "19.0 17.0 15.0 13.0"
 		"AbilityManaCost" "90"
-		"AbilityModifierSupportValue" "0.5"
+		"AbilityModifierSupportValue" "0.25"
 		"AbilitySpecial"
 		{
 			"01"
@@ -10804,7 +10804,7 @@
 		"BaseClass" "templar_assassin_trap"
 		"ID" "5198"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastPoint" "0.0"
 		"AbilityCooldown" "0.5"
 		"AbilityManaCost" "0"
@@ -10838,7 +10838,7 @@
 		"BaseClass" "templar_assassin_self_trap"
 		"ID" "5199"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastPoint" "0.3"
 		"AbilityCooldown" "0.5"
 		"AbilityManaCost" "0"
@@ -11035,7 +11035,7 @@
 		"AbilityCooldown" "6.0 6.0 6.0 6.0"
 		"AbilityDamage" "150 300 450 600"
 		"AbilityManaCost" "90 100 110 120"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11239,7 +11239,7 @@
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCooldown" "115.0 115.0 115.0"
 		"AbilityManaCost" "50 50 50"
-		"AbilityModifierSupportValue" "0.7"
+		"AbilityModifierSupportValue" "0.35"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11337,7 +11337,7 @@
 		"AbilityManaCost" "100 115 130 145"
 		"AbilityDamage" "28 40 52 64"
 		"AbilityDuration" "20"
-		"AbilityModifierSupportValue" "0.7"
+		"AbilityModifierSupportValue" "0.35"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11504,7 +11504,7 @@
 		"AbilityCooldown" "32.0 28.0 24.0 20.0"
 		"AbilityManaCost" "75 75 75 75"
 		"AbilityDamage" "30 70 110 150"
-		"AbilityModifierSupportValue" "0.4"
+		"AbilityModifierSupportValue" "0.2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -11520,7 +11520,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"interval" "1.4 1.4 1.4 1.4"
+				"interval" "0.7 0.7 0.7 0.7"
 			}
 		}
 	}
@@ -11538,12 +11538,12 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "450"
+				"radius" "225"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "10.0 12.0 14.0 16.0"
+				"duration" "5.0 6.0 7.0 8.0"
 			}
 			"03"
 			{
@@ -11568,7 +11568,7 @@
 			"07"
 			{
 				"var_type" "FIELD_INTEGER"
-				"spacing" "320 320 320 320"
+				"spacing" "160 160 160 160"
 			}
 		}
 	}
@@ -12075,7 +12075,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "500"
+				"radius" "250"
 			}
 			"02"
 			{
@@ -12085,7 +12085,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "40"
+				"duration" "20"
 			}
 		}
 	}
@@ -12101,7 +12101,7 @@
 		"AbilityCastPoint" "0.4 0.4 0.4 0.4"
 		"AbilityCooldown" "12.0 11.0 10.0 9.0"
 		"AbilityManaCost" "20 30 40 50"
-		"AbilityModifierSupportValue" "5"
+		"AbilityModifierSupportValue" "2.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -12317,7 +12317,7 @@
 		"AbilityCastPoint" "0.5 0.5 0.5 0.5"
 		"AbilityCooldown" "14.0 14.0 14.0 14.0"
 		"AbilityManaCost" "50 50 50 50"
-		"AbilityModifierSupportValue" "6.0"
+		"AbilityModifierSupportValue" "3.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -12671,7 +12671,7 @@
 		"AbilityCooldown" "8 8 8 8"
 		"AbilityManaCost" "80 90 100 110"
 		"AbilityDamage" "180 320 510 670"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -12972,7 +12972,7 @@
 		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
 		"AbilityCooldown" "10.0 10.0 10.0 10.0"
 		"AbilityManaCost" "90 115 135 155"
-		"AbilityModifierSupportValue" "0.2"
+		"AbilityModifierSupportValue" "0.1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -13107,7 +13107,7 @@
 		"AbilityCastRange" "6000"
 		"AbilityCooldown" "36.0 33.0 30.0 27.0"
 		"AbilityManaCost" "100 100 100 100"
-		"AbilityModifierSupportValue" "0.4"
+		"AbilityModifierSupportValue" "0.2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -13221,7 +13221,7 @@
 		"AbilityDuration" "10.0"
 		"AbilityDamage" "0"
 		"AbilityManaCost" "135 140 155 170"
-		"AbilityModifierSupportValue" "0.5"
+		"AbilityModifierSupportValue" "0.25"
 		"AbilitySpecial"
 		{
 			"01"
@@ -13422,7 +13422,7 @@
 		"AbilityCastPoint" "0.2 0.2 0.2 0.2"
 		"AbilityCooldown" "3.0 3.0 3.0 3.0"
 		"AbilityManaCost" "20 20 20 20"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -13467,7 +13467,7 @@
 		"AbilityCastPoint" "0.2 0.2 0.2 0.2"
 		"AbilityCooldown" "14.0"
 		"AbilityManaCost" "140"
-		"AbilityModifierSupportValue" "2.0"
+		"AbilityModifierSupportValue" "1.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -13871,7 +13871,7 @@
 		"ID" "5338"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityType" "DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastPoint" "0"
 		"AbilityCooldown" "0"
 	}
@@ -13921,7 +13921,7 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "1200 1200 1200 1200"
+				"radius" "600 600 600 600"
 			}
 			"03"
 			{
@@ -13931,7 +13931,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "20.0 24.0 28.0 32.0"
+				"duration" "10.0 12.0 14.0 16.0"
 			}
 		}
 	}
@@ -13963,7 +13963,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"lvl_bonus_multiple" "12 10 8 6"
+				"lvl_bonus_multiple" "6 5 4 3"
 			}
 		}
 	}
@@ -13986,7 +13986,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "30.0"
+				"duration" "15.0"
 			}
 			"02"
 			{
@@ -13996,7 +13996,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_scepter" "32.0 32.0 32.0"
+				"duration_scepter" "16.0 16.0 16.0"
 			}
 			"04"
 			{
@@ -14006,7 +14006,7 @@
 			"05"
 			{
 				"var_type" "FIELD_INTEGER"
-				"deniable_pct" "50 50 50"
+				"deniable_pct" "25 25 25"
 			}
 		}
 	}
@@ -14037,7 +14037,7 @@
 		"AbilityCooldown" "15.0 13.0 11.0 9.0"
 		"AbilityDuration" "8.0 8.0 8.0 8.0"
 		"AbilityManaCost" "150 150 150 150"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -14198,7 +14198,7 @@
 		"ID" "5349"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastPoint" "0 0 0"
 		"AbilityCooldown" "1.0 1.0 1.0"
 	}
@@ -14213,7 +14213,7 @@
 		"AbilityCastRange" "0"
 		"AbilityCooldown" "35"
 		"AbilityManaCost" "100 100 100 100"
-		"AbilityModifierSupportValue" "0.6"
+		"AbilityModifierSupportValue" ".30"
 		"AbilitySpecial"
 		{
 			"01"
@@ -14885,7 +14885,7 @@
 		"BaseClass" "invoker_quas"
 		"ID" "5370"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"MaxLevel" "14"
+		"MaxLevel" "7"
 		"AbilityCooldown" "0"
 		"AbilityManaCost" "0"
 		"AbilitySpecial"
@@ -14907,7 +14907,7 @@
 		"BaseClass" "invoker_wex"
 		"ID" "5371"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"MaxLevel" "14"
+		"MaxLevel" "7"
 		"AbilityCooldown" "0"
 		"AbilityManaCost" "0"
 		"AbilitySpecial"
@@ -14934,7 +14934,7 @@
 		"BaseClass" "invoker_exort"
 		"ID" "5372"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"MaxLevel" "14"
+		"MaxLevel" "7"
 		"AbilityCooldown" "0"
 		"AbilityManaCost" "0"
 		"AbilitySpecial"
@@ -14951,56 +14951,12 @@
 			}
 		}
 	}
-	"invoker_empty1"
-	{
-		"BaseClass" "invoker_empty1"
-		"ID" "5373"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel" "0"
-	}
-	"invoker_empty2"
-	{
-		"BaseClass" "invoker_empty2"
-		"ID" "5374"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel" "0"
-	}
-	"invoker_invoke"
-	{
-		"BaseClass" "invoker_invoke"
-		"ID" "5375"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel" "8"
-		"LevelsBetweenUpgrades" "10"
-		"RequiredLevel" "4"
-		"AbilityCooldown" "22 17 12 5"
-		"AbilityManaCost" "20 40 60 80"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"max_invoked_spells" "4 4 4 4"
-			}
-			"02"
-			{
-				"var_type" "FIELD_FLOAT"
-				"cooldown_scepter" "32 16 8 4"
-			}
-			"03"
-			{
-				"var_type" "FIELD_INTEGER"
-				"mana_cost_scepter" "0"
-			}
-		}
-	}
 	"invoker_cold_snap"
 	{
 		"BaseClass" "invoker_cold_snap"
 		"ID" "5376"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"HotKeyOverride" "Y"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -15009,7 +14965,7 @@
 		"AbilityCastPoint" "0"
 		"AbilityCooldown" "20"
 		"AbilityManaCost" "100"
-		"AbilityModifierSupportValue" "0.3"
+		"AbilityModifierSupportValue" "0.15"
 		"AbilitySpecial"
 		{
 			"01"
@@ -15047,7 +15003,7 @@
 		"BaseClass" "invoker_ghost_walk"
 		"ID" "5381"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"HotKeyOverride" "V"
 		"AbilityCooldown" "35"
 		"AbilityManaCost" "200"
@@ -15087,7 +15043,7 @@
 		"BaseClass" "invoker_tornado"
 		"ID" "5382"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"HotKeyOverride" "X"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange" "4000"
@@ -15152,7 +15108,7 @@
 		"BaseClass" "invoker_emp"
 		"ID" "5383"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"HotKeyOverride" "C"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_PURE"
 		"AbilityCastRange" "1900"
@@ -15190,7 +15146,7 @@
 		"BaseClass" "invoker_alacrity"
 		"ID" "5384"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"HotKeyOverride" "Z"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_CREEP | DOTA_UNIT_TARGET_MECHANICAL"
@@ -15225,7 +15181,7 @@
 		"BaseClass" "invoker_chaos_meteor"
 		"ID" "5385"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"HotKeyOverride" "D"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange" "1400"
@@ -15295,7 +15251,7 @@
 		"BaseClass" "invoker_sun_strike"
 		"ID" "5386"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"HotKeyOverride" "T"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_PURE"
 		"AbilityCastRange" "0"
@@ -15337,7 +15293,7 @@
 		"BaseClass" "invoker_forge_spirit"
 		"ID" "5387"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"HotKeyOverride" "F"
 		"AbilityCooldown" "30"
 		"AbilityManaCost" "75"
@@ -15386,7 +15342,7 @@
 		"BaseClass" "forged_spirit_melting_strike"
 		"ID" "5388"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityManaCost" "40"
 		"AbilitySpecial"
 		{
@@ -15412,7 +15368,7 @@
 		"BaseClass" "invoker_ice_wall"
 		"ID" "5389"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"HotKeyOverride" "G"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilityCooldown" "25"
@@ -15469,14 +15425,14 @@
 		"BaseClass" "invoker_deafening_blast"
 		"ID" "5390"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"HotKeyOverride" "B"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange" "2000"
 		"AbilityCastPoint" "0"
 		"AbilityCooldown" "40"
 		"AbilityManaCost" "200"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -15536,7 +15492,7 @@
 		"AbilityCooldown" "20.0 16.0 12.0 8.0"
 		"AbilityDuration" "12.0"
 		"AbilityManaCost" "75 95 115 135"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -15599,7 +15555,7 @@
 		"AbilityCastRange" "1800"
 		"AbilityCooldown" "36.0 28.0 20.0 12.0"
 		"AbilityManaCost" "115"
-		"AbilityModifierSupportValue" "0.6"
+		"AbilityModifierSupportValue" "0.3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -15629,7 +15585,7 @@
 		"AbilityCooldown" "130.0"
 		"AbilityDuration" "8.0 10.0 12.0"
 		"AbilityManaCost" "250 350 450"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -15681,7 +15637,7 @@
 		"AbilityCastRange" "1000"
 		"AbilityCastPoint" "0.25 0.25 0.25 0.25"
 		"AbilityManaCost" "120 140 160 180"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -15908,7 +15864,7 @@
 	{
 		"BaseClass" "lycan_summon_wolves_critical_strike"
 		"ID" "5399"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -16099,7 +16055,7 @@
 		"BaseClass" "lone_druid_true_form_battle_cry"
 		"ID" "5417"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_TYPE_ULTIMATE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel" "6"
+		"MaxLevel" "3"
 		"AbilityCastPoint" "0.5 0.5 0.5"
 		"AbilityCooldown" "30.0 30.0 30.0"
 		"AbilityDuration" "100.0 100.0 100.0"
@@ -16624,7 +16580,7 @@
 		"BaseClass" "shadow_demon_shadow_poison_release"
 		"ID" "5424"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastPoint" "0.3"
 		"AbilityCooldown" "1.0"
 	}
@@ -17107,7 +17063,7 @@
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastRange" "1200"
 		"AbilityCastPoint" "0.45"
 		"AbilityCooldown" "6"
@@ -17571,7 +17527,7 @@
 		"BaseClass" "rubick_telekinesis_land"
 		"ID" "5449"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_AOE"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -17593,7 +17549,7 @@
 		"AbilityCooldown" "16.0 14.0 12.0 10.0"
 		"AbilityManaCost" "150 150 150 150"
 		"AbilityCastRange" "1600 1600 1600 1600"
-		"AbilityModifierSupportValue" "0.7"
+		"AbilityModifierSupportValue" "0.35"
 		"AbilitySpecial"
 		{
 			"01"
@@ -18127,7 +18083,7 @@
 		"ID" "5478"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastPoint" "0 0 0"
 		"AbilityCooldown" "1.0 1.0 1.0"
 	}
@@ -18248,7 +18204,7 @@
 		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
 		"AbilityCooldown" "19.0 18.0 17.0 16.0"
 		"AbilityManaCost" "25 45 65 85"
-		"AbilityModifierSupportValue" "6.0"
+		"AbilityModifierSupportValue" "3.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -18280,7 +18236,7 @@
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCooldown" "80.0 70.0 60.0"
 		"AbilityManaCost" "100 100 100"
-		"AbilityModifierSupportValue" "0.7"
+		"AbilityModifierSupportValue" "0.35"
 		"AbilitySpecial"
 		{
 			"01"
@@ -18298,7 +18254,7 @@
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetFlags" "DOTA_UNIT_TARGET_FLAG_NOT_MAGIC_IMMUNE_ALLIES"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CUSTOM"
-		"MaxLevel" "6"
+		"MaxLevel" "3"
 		"AbilityCastPoint" "0.3 0.3 0.3"
 		"AbilityCastRange" "0"
 		"AbilityCooldown" "15.0 15.0 15.0"
@@ -18317,12 +18273,12 @@
 		"BaseClass" "keeper_of_the_light_blinding_light"
 		"ID" "5476"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel" "6"
+		"MaxLevel" "3"
 		"AbilityCastRange" "1800 1800 1800"
 		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
 		"AbilityCooldown" "20.0 16.0 12.0"
 		"AbilityManaCost" "50 50 50"
-		"AbilityModifierSupportValue" "2.0"
+		"AbilityModifierSupportValue" "1.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -18616,7 +18572,7 @@
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange" "320"
 		"AbilityCastPoint" "0.0"
-		"MaxLevel" "6"
+		"MaxLevel" "3"
 		"AbilityCooldown" "30.0"
 		"AbilitySpecial"
 		{
@@ -18850,7 +18806,7 @@
 		"BaseClass" "wisp_tether_break"
 		"ID" "5489"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastPoint" "0 0 0 0"
 		"AbilityCooldown" "1.0 1.0 1.0 1.0"
 	}
@@ -18859,7 +18815,7 @@
 		"BaseClass" "wisp_spirits_in"
 		"ID" "5490"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastPoint" "0 0 0 0"
 	}
 	"wisp_spirits_out"
@@ -18867,7 +18823,7 @@
 		"BaseClass" "wisp_spirits_out"
 		"ID" "5493"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastPoint" "0 0 0 0"
 	}
 	"wisp_empty1"
@@ -19386,7 +19342,7 @@
 		"ID" "5512"
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
-		"MaxLevel" "6"
+		"MaxLevel" "3"
 		"AbilityCastPoint" "0.0 0.0 0.0"
 		"AbilityCooldown" "30"
 		"AbilityManaCost" "75 75 75"
@@ -19486,7 +19442,7 @@
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityCooldown" "90.0 75.0 60.0"
 		"AbilityManaCost" "80"
-		"AbilityModifierSupportValue" "0.4"
+		"AbilityModifierSupportValue" "0.2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -19570,7 +19526,7 @@
 		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
 		"AbilityCooldown" "12.0 12.0 12.0 12.0"
 		"AbilityManaCost" "40 40 40 40"
-		"AbilityModifierSupportValue" "0.6"
+		"AbilityModifierSupportValue" "0.3"
 		"AbilitySpecial"
 		{
 			"01"
@@ -19654,7 +19610,7 @@
 		"AbilityCooldown" "120 110 100"
 		"AbilityManaCost" "200 250 300"
 		"AbilityCastRange" "820 820 820"
-		"AbilityModifierSupportValue" "1"
+		"AbilityModifierSupportValue" "0.5"
 		"AbilitySpecial"
 		{
 			"01"
@@ -20680,7 +20636,7 @@
 		"BaseClass" "elder_titan_return_spirit"
 		"ID" "5592"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastPoint" "0.0 0.0 0.0 0.0"
 		"AbilityCooldown" "0.0 0.0 0.0"
 	}
@@ -20853,7 +20809,7 @@
 		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
 		"AbilityCooldown" "16.0 15.0 14.0 13.0"
 		"AbilityManaCost" "80 90 100 110"
-		"AbilityModifierSupportValue" "6.0"
+		"AbilityModifierSupportValue" "3.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -20911,7 +20867,7 @@
 		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
 		"AbilityCooldown" "50.0 50.0 50.0"
 		"AbilityManaCost" "75 75 75"
-		"AbilityModifierSupportValue" "6.0"
+		"AbilityModifierSupportValue" "3.0"
 		"AbilitySpecial"
 		{
 			"01"
@@ -21094,7 +21050,7 @@
 		"ID" "5607"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityType" "DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel" "6"
+		"MaxLevel" "3"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange" "199998"
 		"AbilityCastPoint" "0.0"
@@ -21313,7 +21269,7 @@
 		"ID" "5611"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityType" "DOTA_ABILITY_TYPE_BASIC"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastRange" "2800"
 		"AbilityCastPoint" "0.0"
 		"AbilityCooldown" "0.0"
@@ -21564,7 +21520,7 @@
 		"ID" "5617"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastPoint" "0.0 0.0 0.0 0.0"
 	}
 	"terrorblade_reflection"
@@ -22148,7 +22104,7 @@
 		"BaseClass" "backdoor_protection"
 		"ID" "5350"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -22173,7 +22129,7 @@
 		"BaseClass" "backdoor_protection_in_base"
 		"ID" "5351"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -22287,7 +22243,7 @@
 		"ID" "5205"
 		"AbilityType" "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 	}
 	"courier_go_to_secretshop"
 	{
@@ -22295,7 +22251,7 @@
 		"ID" "5492"
 		"AbilityType" "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 	}
 	"courier_transfer_items"
 	{
@@ -22303,7 +22259,7 @@
 		"ID" "5206"
 		"AbilityType" "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -22319,7 +22275,7 @@
 		"ID" "5207"
 		"AbilityType" "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -22335,7 +22291,7 @@
 		"ID" "5208"
 		"AbilityType" "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -22352,7 +22308,7 @@
 		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityCooldown" "20.0"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -22369,7 +22325,7 @@
 		"AbilityType" "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_MOVEMENT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 		"AbilityCooldown" "40.0"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilitySpecial"
 		{
 			"01"
@@ -22485,7 +22441,7 @@
 	{
 		"BaseClass" "kobold_taskmaster_speed_aura"
 		"ID" "5293"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -22505,7 +22461,7 @@
 	{
 		"BaseClass" "centaur_khan_endurance_aura"
 		"ID" "5294"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -22525,7 +22481,7 @@
 	{
 		"BaseClass" "centaur_khan_war_stomp"
 		"ID" "5295"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilityCastPoint" "0.5"
@@ -22555,7 +22511,7 @@
 	{
 		"BaseClass" "gnoll_assassin_envenomed_weapon"
 		"ID" "5296"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilitySpecial"
@@ -22581,7 +22537,7 @@
 	{
 		"BaseClass" "ghost_frost_attack"
 		"ID" "5301"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityType" "DOTA_ABILITY_TYPE_BASIC"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
@@ -22607,7 +22563,7 @@
 	{
 		"BaseClass" "polar_furbolg_ursa_warrior_thunder_clap"
 		"ID" "5302"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilityCastPoint" "0.5"
@@ -22642,14 +22598,14 @@
 	{
 		"BaseClass" "neutral_spell_immunity"
 		"ID" "5303"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	}
 	"ogre_magi_frost_armor"
 	{
 		"BaseClass" "ogre_magi_frost_armor"
 		"ID" "5304"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -22690,7 +22646,7 @@
 	{
 		"BaseClass" "dark_troll_warlord_ensnare"
 		"ID" "5305"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -22712,7 +22668,7 @@
 	{
 		"BaseClass" "dark_troll_warlord_raise_dead"
 		"ID" "5306"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCastPoint" "0.5"
 		"AbilityCooldown" "25.0"
@@ -22730,7 +22686,7 @@
 	{
 		"BaseClass" "giant_wolf_critical_strike"
 		"ID" "5307"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -22750,7 +22706,7 @@
 	{
 		"BaseClass" "alpha_wolf_critical_strike"
 		"ID" "5308"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -22770,7 +22726,7 @@
 	{
 		"BaseClass" "alpha_wolf_command_aura"
 		"ID" "5309"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -22790,7 +22746,7 @@
 	{
 		"BaseClass" "tornado_tempest"
 		"ID" "5310"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilitySpecial"
@@ -22836,7 +22792,7 @@
 	{
 		"BaseClass" "enraged_wildkin_tornado"
 		"ID" "5312"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange" "1000"
@@ -22857,7 +22813,7 @@
 	{
 		"BaseClass" "enraged_wildkin_toughness_aura"
 		"ID" "5313"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -22877,7 +22833,7 @@
 	{
 		"BaseClass" "satyr_trickster_purge"
 		"ID" "5314"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_BOTH"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -22909,7 +22865,7 @@
 	{
 		"BaseClass" "satyr_soulstealer_mana_burn"
 		"ID" "5315"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"Modelscale" "1.7"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
@@ -22932,7 +22888,7 @@
 	{
 		"BaseClass" "satyr_hellcaller_shockwave"
 		"ID" "5316"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -22970,7 +22926,7 @@
 	{
 		"BaseClass" "satyr_hellcaller_unholy_aura"
 		"ID" "5317"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -22990,7 +22946,7 @@
 	{
 		"BaseClass" "forest_troll_high_priest_heal"
 		"ID" "5318"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
@@ -23011,7 +22967,7 @@
 	{
 		"BaseClass" "harpy_storm_chain_lightning"
 		"ID" "5319"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
@@ -23053,7 +23009,7 @@
 	{
 		"BaseClass" "black_dragon_splash_attack"
 		"ID" "5324"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -23093,7 +23049,7 @@
 	{
 		"BaseClass" "blue_dragonspawn_sorcerer_evasion"
 		"ID" "5325"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -23108,7 +23064,7 @@
 	{
 		"BaseClass" "blue_dragonspawn_overseer_evasion"
 		"ID" "5326"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -23123,7 +23079,7 @@
 	{
 		"BaseClass" "blue_dragonspawn_overseer_devotion_aura"
 		"ID" "5327"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -23143,7 +23099,7 @@
 	{
 		"BaseClass" "big_thunder_lizard_slam"
 		"ID" "5332"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilityCastPoint" "0.0"
@@ -23183,7 +23139,7 @@
 	{
 		"BaseClass" "big_thunder_lizard_frenzy"
 		"ID" "5333"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCastPoint" "0.0"
 		"AbilityCooldown" "8.0"
@@ -23206,7 +23162,7 @@
 	{
 		"BaseClass" "forest_troll_high_priest_mana_aura"
 		"ID" "5491"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -23226,7 +23182,7 @@
 	{
 		"BaseClass" "roshan_halloween_candy"
 		"ID" "9990"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -23256,7 +23212,7 @@
 	{
 		"BaseClass" "roshan_halloween_angry"
 		"ID" "9991"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -23288,7 +23244,7 @@
 		"ID" "9993"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastRange" "0"
 		"AbilityCastPoint" "3.0"
 		"AbilityCooldown" "12.0"
@@ -23334,7 +23290,7 @@
 		"ID" "9994"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCooldown" "1.5"
 		"AbilitySpecial"
 		{
@@ -23368,7 +23324,7 @@
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_CUSTOM"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CUSTOM"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastRange" "2600"
 		"AbilityCastPoint" "0.0"
 		"AbilityCooldown" "5.0"
@@ -23417,7 +23373,7 @@
 		"BaseClass" "roshan_halloween_shell"
 		"ID" "9997"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCooldown" "45.0"
 		"AbilitySpecial"
 		{
@@ -23439,7 +23395,7 @@
 		"ID" "9998"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCastRange" "0"
 		"AbilityCastPoint" "1.0"
 		"AbilityCooldown" "20.0"
@@ -23469,7 +23425,7 @@
 		"ID" "9999"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityTextureName" "dragon_knight_breathe_fire"
 		"AbilityCooldown" "30.0"
 		"AbilityChannelTime" "5"
@@ -23509,7 +23465,7 @@
 	{
 		"BaseClass" "roshan_halloween_levels"
 		"ID" "10000"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilitySpecial"
 		{
@@ -23546,7 +23502,7 @@
 		"ID" "10001"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityTextureName" "roshan_spell_block"
 		"AbilityCastRange" "0"
 		"AbilityCastPoint" "1.0"
@@ -23562,7 +23518,7 @@
 		"ID" "10002"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityTextureName" "jakiro_liquid_fire"
 		"AbilityCastRange" "2400"
 		"AbilityCastPoint" "3.0"
@@ -23885,7 +23841,7 @@
 		"BaseClass" "greevil_ice_wall"
 		"ID" "5547"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"HotKeyOverride" "G"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilityCooldown" "20"
@@ -25282,7 +25238,7 @@
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange" "0"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilityCooldown" "1.0 1.0 1.0"
 		"AbilitySpecial"
 		{
@@ -25300,7 +25256,7 @@
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
 		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
 		"AbilityCastRange" "0"
-		"MaxLevel" "2"
+		"MaxLevel" "1"
 		"AbilitySpecial"
 		{
 			"01"

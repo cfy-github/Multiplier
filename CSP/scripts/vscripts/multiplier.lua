@@ -2,13 +2,19 @@ USE_LOBBY=false
 THINK_TIME = 0.1
 ADDON_NAME="CUSTOM SPELL POWER"
 
---STARTING_GOLD = 650--650
+STARTING_GOLD = 1000--650
 MAX_LEVEL = 25
 
 local STAGE_VOTING = 0
 local STAGE_VOTED = 1
 
 local currentStage = STAGE_VOTING
+
+-- Fill this table up with the required XP per level if you want to change it
+--XP_PER_LEVEL_TABLE = {}
+--for i=1,MAX_LEVEL do
+--  XP_PER_LEVEL_TABLE[i] = i * 100
+--end
 
 -- EXP Needed for each level
 local XP_PER_LEVEL_TABLE = {
@@ -73,9 +79,7 @@ function MultiplierGameMode:InitGameMode()
   -- Setup rules
   GameRules:SetHeroRespawnEnabled( true )
   GameRules:SetUseUniversalShopMode( false )
-  GameRules:SetSameHeroSelectionEnabled( false )
-  GameRules:SetHeroSelectionTime( 60.0 )
-  GameRules:SetPreGameTime( 30.0)
+  
   GameRules:SetPostGameTime( 60.0 )
   GameRules:SetTreeRegrowTime( 60.0 )
   GameRules:SetUseCustomHeroXPValues ( false )
@@ -85,21 +89,21 @@ function MultiplierGameMode:InitGameMode()
   InitLogFile( "log/customspellpower.txt","")
 
   -- Hooks
-  --ListenToGameEvent('modifier_event', Dynamic_Wrap(MultiplierGameMode, 'OnModifierEvent'), self)
-  --ListenToGameEvent('hero_picker_hidden', Dynamic_Wrap(MultiplierGameMode, 'OnHeroPickerHidden'), self)  
-  --ListenToGameEvent('entity_killed', Dynamic_Wrap(MultiplierGameMode, 'OnEntityKilled'), self)
+  ListenToGameEvent('modifier_event', Dynamic_Wrap(MultiplierGameMode, 'OnModifierEvent'), self)
+  ListenToGameEvent('hero_picker_hidden', Dynamic_Wrap(MultiplierGameMode, 'OnHeroPickerHidden'), self)  
+  ListenToGameEvent('entity_killed', Dynamic_Wrap(MultiplierGameMode, 'OnEntityKilled'), self)
   ListenToGameEvent('player_connect_full', Dynamic_Wrap(MultiplierGameMode, 'AutoAssignPlayer'), self)
   ListenToGameEvent('player_disconnect', Dynamic_Wrap(MultiplierGameMode, 'CleanupPlayer'), self)
-  --ListenToGameEvent('dota_item_purchased', Dynamic_Wrap(MultiplierGameMode, 'ShopReplacement'), self)
+  ListenToGameEvent('dota_item_purchased', Dynamic_Wrap(MultiplierGameMode, 'ShopReplacement'), self)
   ListenToGameEvent('player_say', Dynamic_Wrap(MultiplierGameMode, 'PlayerSay'), self)
   ListenToGameEvent('player_connect', Dynamic_Wrap(MultiplierGameMode, 'PlayerConnect'), self)
   --ListenToGameEvent('player_info', Dynamic_Wrap(MultiplierGameMode, 'PlayerInfo'), self)
-  --ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(MultiplierGameMode, 'AbilityUsed'), self)
+  ListenToGameEvent('dota_player_used_ability', Dynamic_Wrap(MultiplierGameMode, 'AbilityUsed'), self)
   ListenToGameEvent('dota_player_gained_level', Dynamic_Wrap(MultiplierGameMode, 'OnLevelUp'), self)
   
   
 
-  --Convars:RegisterCommand( "command_example", Dynamic_Wrap(MultiplierGameMode, 'ExampleConsoleCommand'), "A console command example", 0 )
+  Convars:RegisterCommand( "command_example", Dynamic_Wrap(MultiplierGameMode, 'ExampleConsoleCommand'), "A console command example", 0 )
   
   -- Fill server with fake clients
   Convars:RegisterCommand('fake', function()
@@ -194,10 +198,11 @@ function MultiplierGameMode:CaptureGameMode()
 		endTime = Time() + 1,
 		callback = function(multiplier, args)
 			--Say(nil, COLOR_RED.. string.format("1 Vote for game mode (-x2 or -x3 or -x5)!"), false)
-			Say(nil, '<font color="'..COLOR_RED2..'">Waiting (30s) for HOST to select the Game Mode </font> <font color="'..COLOR_BLUE2..'">(-x2 or -x3 or -x5)</font> ', false)
+			Say(nil, '<font color="'..COLOR_RED2..'">Waiting (30s) for HOST to select the Game Mode </font> <font color="'..COLOR_BLUE2..'">(-x2 or -x3 or -x5 or -x10)</font> ', false)
 			Say(nil, '<font color="'..COLOR_GREEN2..'">Few skills will stay with x2 even if other mode is selected, and for now all items will stay in x2 also</font> ', false)
 		end
 	})
+	
 	
 	
   end 
@@ -211,10 +216,10 @@ function MultiplierGameMode:ShowCenterMessage(msg,dur)
   FireGameEvent("show_center_message",msg)
 end
 
---[[function MultiplierGameMode:AbilityUsed(keys)
+function MultiplierGameMode:AbilityUsed(keys)
   Log('AbilityUsed')
   PrintTable(keys)
-end]]
+end
 
 
 function MultiplierGameMode:ReplaceAllSkills()
@@ -228,7 +233,7 @@ function MultiplierGameMode:ReplaceAllSkills()
 end
 
 function MultiplierGameMode:OnLevelUp( keys )
-	--print( "Somebody leveled up!" )
+	print( "Somebody leveled up!" )
 	
 	self:LoopOverPlayers(function(player, plyID)
 		if self.vUserLevel[plyID] ~= PlayerResource:GetLevel( plyID ) then
@@ -236,15 +241,35 @@ function MultiplierGameMode:OnLevelUp( keys )
 			--PlayerResource:SetGold( plyID, PlayerResource:GetGold( plyID ) + 1000, false)
 			local player = self.vPlayers[plyID]
 			local hero = player.hero
-			--Log("hero: ")
-			--PrintTable(getmetatable(hero))
-			--Log("Player: ")
-			--PrintTable(player)
-			hero:SetBaseStrength(hero:GetBaseStrength()+5)
+			Log("Base Int: " .. hero:GetIntellectGain())
+			Log("Base Agility: " .. hero:GetAgilityGain())
+			Log("Base Strength: " .. hero:GetStrengthGain())
+			Log("hero: ")
+			PrintTable(getmetatable(hero))
+			Log("Player: ")
+			PrintTable(player)
+			hero:SetBaseStrength(hero:GetBaseStrength() + (hero:GetStrengthGain()*factor))
+			hero:SetBaseAgility(hero:GetBaseAgility() + (hero:GetAgilityGain()*factor))
+			hero:SetBaseIntellect(hero:GetBaseIntellect() + (hero:GetIntellectGain()*factor))
 		end
       --PlayerResource:SetGold(plyID, 0, true)
       --PlayerResource:SetGold(plyID, 0, false)
     end)
+	
+	--PrintTable(keys)
+	--local level = keys.level
+	--print 'level: ' .. level
+	--print 'plyID' .. keys.PlayerID
+	
+    --We want to give gold if a player reaches level 6, so we check his level
+    --local level = PlayerResource:GetLevel( keys.PlayerID )
+    
+    --Alternatively we can also just do 'if keys.level == 6 then'
+    --if level == 6 then
+        --the player is level 6, so give him 1000 gold on top of what he already has
+    --PlayerResource:SetGold( keys.PlayerID, PlayerResource:GetGold( keys.PlayerID ) + 1000, true)
+    --end  
+	--print 'Player Agi:' .. player.
 end
 
 
@@ -280,13 +305,14 @@ ListenToGameEvent('npc_spawned', function(keys)
 		--playFactor[playerID] = factor
 		SkillManager:ApplyMultiplier(spawnedUnit, factor)
 		
-		spawnedUnit:SetBaseMoveSpeed(spawnedUnit:GetBaseMoveSpeed()+60)
+		spawnedUnit:SetBaseMoveSpeed(spawnedUnit:GetBaseMoveSpeed()+(10*factor))
+		--spawnedUnit:ModifyMoveSpeed(spawnedUnit:GetBaseMoveSpeed()+(10*factor))
 		--spawnedUnit:SetBaseIntellect(100)
-		spawnedUnit:ModifyAgility(50)
+		--spawnedUnit:ModifyAgility(50)
 		--spawnedUnit:SetMoveCapability(2)
 		--spawnedUnit:SetAttackCapability(DOTA_UNIT_CAP_RANGED_ATTACK)
 
-		--print('intellect: ' .. spawnedUnit:GetIntellect())
+		print('intellect: ' .. spawnedUnit:GetIntellect())
 
 		--hero:SwapAbilities("antimage_blink", "antimage_spell_shield", true, false)
 
@@ -294,9 +320,43 @@ ListenToGameEvent('npc_spawned', function(keys)
 
 		--blink:OnAbilityPinged()
 		
+		
     end
 end, nil)
 
+function MultiplierGameMode:MultiplyTowers(factor)
+	local tower = Entities:FindByClassname( nil, "npc_dota_tower" )
+    while tower do
+		local thisTower = tower
+		tower = Entities:FindByClassname( tower, "npc_dota_tower" )
+		thisTower:SetBaseDamageMin(thisTower:GetBaseDamageMin() * factor)
+		thisTower:SetBaseDamageMax(thisTower:GetBaseDamageMin() * factor)
+		thisTower:SetMaxHealth(thisTower:GetMaxHealth() * factor)
+		thisTower:SetHealth(thisTower:GetHealth() * factor)
+		thisTower:SetPhysicalArmorBaseValue(thisTower:GetPhysicalArmorBaseValue() * factor)
+							
+		--PrintTable(getmetatable(thisTower))
+			--thisTower:ForceKill( false )
+    end
+	
+	local fountain = Entities:FindByClassname( nil, "ent_dota_fountain" )
+	while fountain do
+		local thisFountain = fountain
+		fountain = Entities:FindByClassname( fountain, "ent_dota_fountain" )
+		thisFountain:SetBaseDamageMin(thisFountain:GetBaseDamageMin() * factor)
+		thisFountain:SetBaseDamageMax(thisFountain:GetBaseDamageMin() * factor)
+							
+		--PrintTable(getmetatable(thisTower))
+			--thisTower:ForceKill( false )
+    end
+		
+		
+end
+
+function MultiplierGameMode:OnHeroPickerHidden(keys)
+  Log('OnHeroPickerHidden')
+  PrintTable(keys)
+end
 
 -- Cleanup a player when they leave
 function MultiplierGameMode:CleanupPlayer(keys)
@@ -309,8 +369,8 @@ function MultiplierGameMode:CloseServer()
 end
 
 function MultiplierGameMode:PlayerConnect(keys)
-  --Log('PlayerConnect')
-  --PrintTable(keys)
+  Log('PlayerConnect')
+  PrintTable(keys)
   
   -- Fill in the usernames for this userID
   self.vUserNames[keys.userid] = keys.name
@@ -327,8 +387,8 @@ local particleEffect = ""
 local voted = false
 
 function MultiplierGameMode:PlayerSay(keys)
-  --Log('PlayerSay')
-  --PrintTable(keys)
+  Log('PlayerSay')
+  PrintTable(keys)
   
   -- Get the player entity for the user speaking
   local ply = self.vUserIds[keys.userid]
@@ -349,23 +409,24 @@ function MultiplierGameMode:PlayerSay(keys)
   
   if not voted then
 	  if plyID == 0 then
-			local fac = string.match(text, "^-x+(%d)")
+			local fac = string.match(text, "^-x+(%d+)")
 			if fac ~= nil then
-				--Log("Fac ~= nil")
-				if fac == '2' or fac == '3' or fac == '5' then
+				Log("Fac ~= nil")
+				if fac == '2' or fac == '3' or fac == '5' or fac == '10' then
 					factor = fac
-					--Log("FacX: ")
-					--Log(factor)
+					Log("FacX: ")
+					Log(factor)
 					local txt = '<font color="'..COLOR_RED2..'">Game Mode selected: </font> <font color="'..COLOR_BLUE2..'">x'..factor..'</font> '
 					Say(nil, txt, false)
 					self:ShowCenterMessage('Game Mode: x' .. factor , 10)
 					voted = true
 					MultiplierGameMode:ReplaceAllSkills()
+					MultiplierGameMode:MultiplyTowers(factor)
 					--PauseGame(false)
 				end
 			end
-			--Log("Fac: ")
-			--Log(fac)
+			Log("Fac: ")
+			Log(fac)
 	  end  
   end
   
@@ -379,7 +440,7 @@ function MultiplierGameMode:PlayerSay(keys)
 end
 
 function MultiplierGameMode:AutoAssignPlayer(keys)
-  --Log('AutoAssignPlayer')
+  Log('AutoAssignPlayer')
   PrintTable(keys)
   MultiplierGameMode:CaptureGameMode()
   
@@ -509,7 +570,7 @@ function MultiplierGameMode:LoopOverPlayers(callback)
   end
 end
 
---[[function MultiplierGameMode:ShopReplacement( keys )
+function MultiplierGameMode:ShopReplacement( keys )
   Log('ShopReplacement' )
   PrintTable(keys)
   --Log('Replacing ' .. keys.itemname .. ' with: ' .. keys.itemname .. '_x2' )
@@ -538,7 +599,7 @@ end
   --local item2 = CreateItem(itemName .. '_x2', v, v)
   --v:AddItem(item2)
   
-end]]
+end
 
 function MultiplierGameMode:getItemByName( hero, name )
   -- Find item by slot
@@ -581,8 +642,12 @@ function MultiplierGameMode:Think()
 				 Say(nil, txt, false)
 				 MultiplierGameMode:ShowCenterMessage('Default Game Mode: x' .. factor , 10)
 				 MultiplierGameMode:ReplaceAllSkills()
+				 MultiplierGameMode:MultiplyTowers(factor)
 				 --PauseGame(false)
 			  end
+			  GameRules:SetSameHeroSelectionEnabled( false )
+			  GameRules:SetHeroSelectionTime( 30.0 )
+			  GameRules:SetPreGameTime( 30.0)
 		  end
 	  end
   end
@@ -695,7 +760,7 @@ function MultiplierGameMode:RemoveTimers(killAll)
   self.timers = timers
 end
 
---[[function MultiplierGameMode:ExampleConsoleCommand()
+function MultiplierGameMode:ExampleConsoleCommand()
   print( '******* Example Console Command ***************' )
   local cmdPlayer = Convars:GetCommandClient()
   if cmdPlayer then
@@ -706,18 +771,17 @@ end
   end
 
   print( '*********************************************' )
-end]]
+end
 
---[[
 function MultiplierGameMode:OnModifierEvent( keys )
   Log('OnModifierEvent Called' )
   PrintTable( keys )
   
 
   -- Put code here to handle when an entity gets killed
-end]]
+end
 
---[[function MultiplierGameMode:OnEntityKilled( keys )
+function MultiplierGameMode:OnEntityKilled( keys )
   --Log('OnEntityKilled Called' )
   --PrintTable( keys )
   
@@ -731,7 +795,7 @@ end]]
   end
 
   -- Put code here to handle when an entity gets killed
-end]]
+end
 
 -- A helper function for dealing damage from a source unit to a target unit.  Damage dealt is pure damage
 function dealDamage(source, target, damage)
