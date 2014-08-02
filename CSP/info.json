@@ -2,11 +2,11 @@
   "_id": "csp",
   "name": "csp",
   "fullname": "Power Multiplier",
-  "version": "0.01.00",
+  "version": "0.01.01",
   "author": "DarkSupremo",
   "authorimage": "https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/ef/ef3b2fc1d7e3d7556a7d163d7753f38cf99abf30_full.jpg",
   "thumbnail": "http://i.imgur.com/FiL2Hc5.png",
-  "thumbsmall": "
+  "thumbsmall": "http://i.imgur.com/r3leTMx.png",
   "spreadimage": "http://i.imgur.com/5SeQJAM.jpg",
   "website": "https://github.com/DarkSupremo/Multiplier",
   "subtitle": "Multiply the values of all spells and items!",

@@ -5093,7 +5093,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"delay" "3.2 3.2 3.2 3.2"
+				"delay" "1.6 1.6 1.6 1.6"
 			}
 		}
 	}
@@ -5185,7 +5185,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tooltip_delay" "6.0"
+				"tooltip_delay" "3.0"
 			}
 			"02"
 			{
@@ -5279,7 +5279,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"light_strike_array_delay_time" "1"
+				"light_strike_array_delay_time" "0.5"
 			}
 			"03"
 			{
@@ -5348,7 +5348,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_delay" "0.5"
+				"damage_delay" "0.25"
 			}
 		}
 	}
@@ -5491,7 +5491,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_delay" "0.5"
+				"damage_delay" "0.25"
 			}
 			"05"
 			{
@@ -7257,7 +7257,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"static_remnant_delay" "2.0"
+				"static_remnant_delay" "1.0"
 			}
 			"04"
 			{
@@ -7450,7 +7450,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"sand_storm_invis_delay" "3"
+				"sand_storm_invis_delay" "1.5"
 			}
 			"02"
 			{
@@ -7756,7 +7756,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"jump_delay" "0.5 0.5 0.5 0.5"
+				"jump_delay" "0.25 0.25 0.25 0.25"
 			}
 		}
 	}
@@ -8781,7 +8781,7 @@
 			"07"
 			{
 				"var_type" "FIELD_FLOAT"
-				"bounce_delay" "0.6"
+				"bounce_delay" "0.3"
 			}
 			"08"
 			{
@@ -9348,7 +9348,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_delay" "1.6 1.6 1.6 1.6"
+				"damage_delay" "0.8 0.8 0.8 0.8"
 			}
 			"06"
 			{
@@ -9861,7 +9861,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"idle_invis_delay" "6.0"
+				"idle_invis_delay" "3.0"
 			}
 		}
 	}
@@ -10421,17 +10421,17 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "4.0 4.5 5.0"
+				"duration" "8.0 9 10.0"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_scepter" "4.0 5.0 6.0"
+				"duration_scepter" "8.0 10.0 12.0"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"cooldown_scepter" "120.0 120.0 120.0"
+				"cooldown_scepter" "60.0 60.0 60.0"
 			}
 			"05"
 			{
@@ -10461,7 +10461,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"delay" "1.8 1.8 1.8 1.8"
+				"delay" "0.9 0.9 0.9 0.9"
 			}
 			"03"
 			{
@@ -10940,7 +10940,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "8.0"
+				"duration" "4.0"
 			}
 			"02"
 			{
@@ -10983,7 +10983,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "10.2 10.2 10.2"
+				"duration" "5.1 5.1 5.1"
 			}
 			"02"
 			{
@@ -11676,7 +11676,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"delay" "0.7"
+				"delay" "0.35"
 			}
 			"02"
 			{
@@ -11745,7 +11745,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"jump_delay" "0.5 0.5 0.5 0.5"
+				"jump_delay" "0.25 0.25 0.25 0.25"
 			}
 			"04"
 			{
@@ -11893,7 +11893,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"jump_delay" "0.5"
+				"jump_delay" "0.25"
 			}
 			"05"
 			{
@@ -13176,26 +13176,19 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "350 350 350 350"
+				"radius" "175 175 175 175"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"fade_time" "0.5 0.5 0.5 0.5"
+				"fade_time" "0.25 0.25 0.25 0.25"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "8.0 8.0 8.0 8.0"
+				"duration" "4.0 4.0 4.0 4.0"
 			}
 		}
-	}
-	"weaver_geminate_attack"
-	{
-		"BaseClass" "weaver_geminate_attack"
-		"ID" "5291"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityCooldown" "6.0 5.0 4.0 2.5"
 	}
 	"weaver_time_lapse"
 	{
@@ -13247,7 +13240,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"fire_delay" "0.6 0.6 0.6 0.6"
+				"fire_delay" "0.3 0.3 0.3 0.3"
 			}
 			"06"
 			{
@@ -13294,7 +13287,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"path_delay" "1"
+				"path_delay" "0.5"
 			}
 			"02"
 			{
@@ -13661,7 +13654,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"hero_teleport_delay" "12.0 10.0 8.0 6.0"
+				"hero_teleport_delay" "6.0 5.0 4.0 3.0"
 			}
 		}
 	}
@@ -13856,7 +13849,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"attack_delay" "2.0 2.0 2.0"
+				"attack_delay" "1.0 1.0 1.0"
 			}
 			"05"
 			{
@@ -15110,7 +15103,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"delay" "5.8"
+				"delay" "2.9"
 				"levelkey" "wexlevel"
 			}
 			"02"
@@ -15253,7 +15246,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"delay" "3.4"
+				"delay" "1.7"
 			}
 			"02"
 			{
@@ -17003,7 +16996,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"multicast_delay" "0.6"
+				"multicast_delay" "0.3"
 			}
 		}
 	}
@@ -17031,7 +17024,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"multicast_delay" "0.6"
+				"multicast_delay" "0.3"
 			}
 			"03"
 			{
@@ -17077,7 +17070,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"multicast_delay" "0.6"
+				"multicast_delay" "0.3"
 			}
 		}
 	}
@@ -17517,7 +17510,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"jump_delay" "0.5 0.5 0.5 0.5"
+				"jump_delay" "0.25 0.25 0.25 0.25"
 			}
 			"04"
 			{
@@ -18216,7 +18209,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"teleport_delay" "10.0 8.0 6.0"
+				"teleport_delay" "5.0 4.0 3.0"
 			}
 		}
 	}
@@ -18536,7 +18529,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"stun_delay" "2.0"
+				"stun_delay" "1.0"
 			}
 			"03"
 			{
@@ -18744,7 +18737,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"cast_delay" "5 4.5 4.0"
+				"cast_delay" "2.5 2.25 2.0"
 			}
 			"02"
 			{
@@ -18807,7 +18800,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"delay" "3"
+				"delay" "1.5"
 			}
 			"02"
 			{
@@ -18940,7 +18933,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"activation_delay" "1 1 1"
+				"activation_delay" "0.5 0.5 0.5"
 			}
 			"06"
 			{
@@ -19016,7 +19009,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"jump_delay" "0.5 0.5 0.5 0.5"
+				"jump_delay" "0.25 0.25 0.25 0.25"
 			}
 			"04"
 			{
@@ -21149,7 +21142,7 @@
 			"09"
 			{
 				"var_type" "FIELD_FLOAT"
-				"delay" "1.2"
+				"delay" "0.6"
 			}
 			"10"
 			{
@@ -21291,7 +21284,7 @@
 			"07"
 			{
 				"var_type" "FIELD_FLOAT"
-				"rock_explosion_delay" "10.0"
+				"rock_explosion_delay" "5.0"
 			}
 			"08"
 			{
@@ -21360,7 +21353,7 @@
 			"09"
 			{
 				"var_type" "FIELD_FLOAT"
-				"first_wave_delay" "1.8"
+				"first_wave_delay" "0.9"
 			}
 		}
 	}
@@ -21462,7 +21455,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"teleport_delay" "10.0 8.0 6.0"
+				"teleport_delay" "5.0 4.0 3.0"
 			}
 		}
 	}
@@ -22943,7 +22936,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"jump_delay" "0.5"
+				"jump_delay" "0.25"
 			}
 			"04"
 			{
@@ -23362,7 +23355,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"delay" "4.0"
+				"delay" "2.0"
 			}
 			"03"
 			{
@@ -23745,7 +23738,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_delay" "0.5"
+				"damage_delay" "0.25"
 			}
 		}
 	}
@@ -24800,7 +24793,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"light_strike_array_delay_time" "1"
+				"light_strike_array_delay_time" "0.5"
 			}
 			"03"
 			{
@@ -25025,7 +25018,7 @@
 			"06"
 			{
 				"var_type" "FIELD_FLOAT"
-				"explode_delay" "0.6"
+				"explode_delay" "0.3"
 			}
 			"07"
 			{
@@ -25053,7 +25046,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"activation_delay" "4.0"
+				"activation_delay" "2.0"
 			}
 			"03"
 			{

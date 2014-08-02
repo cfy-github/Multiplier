@@ -1,4 +1,4 @@
-USE_LOBBY=true
+USE_LOBBY=false
 THINK_TIME = 0.1
 ADDON_NAME="CUSTOM SPELL POWER"
 
@@ -7,6 +7,7 @@ MAX_LEVEL = 25
 
 local STAGE_VOTING = 0
 local STAGE_VOTED = 1
+local VOTE_TIME = 0
 
 local EASY_MODE = 0
 
@@ -85,7 +86,7 @@ function MultiplierGameMode:InitGameMode()
   GameRules:SetPostGameTime( 60.0 )
   GameRules:SetTreeRegrowTime( 60.0 )
   GameRules:SetUseCustomHeroXPValues ( false )
-  GameRules:SetGoldPerTick(0)
+  GameRules:SetGoldPerTick(1)
   GameRules:SetSameHeroSelectionEnabled( false )
   GameRules:SetHeroSelectionTime( 30.0 )
   GameRules:SetPreGameTime( 30.0)
@@ -182,7 +183,7 @@ function MultiplierGameMode:CaptureGameMode()
     -- Disables recommended items...though I don't think it works
     GameMode:SetRecommendedItemsDisabled( true )
     -- Override the normal camera distance.  Usual is 1134
-    GameMode:SetCameraDistanceOverride( 1504.0 )
+    GameMode:SetCameraDistanceOverride( 1134.0 )
     -- Set Buyback options
     GameMode:SetCustomBuybackCostEnabled( true )
     GameMode:SetCustomBuybackCooldownEnabled( true )
@@ -200,20 +201,6 @@ function MultiplierGameMode:CaptureGameMode()
 
     Log('Beginning Think' ) 
     GameMode:SetContextThink("BarebonesThink", Dynamic_Wrap( MultiplierGameMode, 'Think' ), 0.1 )
-	
-	--PauseGame(true)
-	self:CreateTimer('vote_msg1', {
-		endTime = Time() + 1,
-		callback = function(multiplier, args)
-			Say(nil, '<font color="'..COLOR_RED2..'">Waiting (30s) for HOST to select the Game Mode: </font>', false)
-			Say(nil, '<font color="'..COLOR_RED2..'">Normal Mode with Multiplier: </font> <font color="'..COLOR_BLUE2..'">(-x2 or -x3 or -x5 or -x10)</font> ', false)
-			Say(nil, '<font color="'..COLOR_RED2..'">Easy Mode with Multiplier: </font> <font color="'..COLOR_BLUE2..'">(-ex2 or -ex3 or -ex5 or -ex10)</font> ', false)
-			Say(nil, '<font color="'..COLOR_GREEN2..'">Few skills will stay with x2 even if other mode is selected, and for now all items will stay in x2 also</font> ', false)
-		end
-	})
-	
-	
-	
 	
 	
   end 
@@ -682,6 +669,8 @@ function MultiplierGameMode:getItemByName( hero, name )
   return nil
 end
 
+local announced = 0
+
 function MultiplierGameMode:Think()
   -- If the game's over, it's over.
   if GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then
@@ -699,7 +688,20 @@ function MultiplierGameMode:Think()
   
   if currentStage == STAGE_VOTING then
 	  if GameRules:State_Get() >= DOTA_GAMERULES_STATE_HERO_SELECTION then
-	      if voted or now >= 30 then
+		  if announced == 0 then
+			  announced = 1
+			  VOTE_TIME = now + 30
+			  MultiplierGameMode:CreateTimer('vote_msg1', {
+					endTime = Time() + 2,
+					callback = function(multiplier, args)
+						Say(nil, '<font color="'..COLOR_RED2..'">Waiting (30s) for HOST to select the Game Mode: </font>', false)
+						Say(nil, '<font color="'..COLOR_RED2..'">Normal Mode with Multiplier: </font> <font color="'..COLOR_BLUE2..'">(-x2 or -x3 or -x5 or -x10)</font> ', false)
+						Say(nil, '<font color="'..COLOR_RED2..'">Easy Mode with Multiplier: </font> <font color="'..COLOR_BLUE2..'">(-ex2 or -ex3 or -ex5 or -ex10)</font> ', false)
+						Say(nil, '<font color="'..COLOR_GREEN2..'">Few skills will stay with x2 even if other mode is selected, and for now all items will stay in x2 also</font> ', false)
+					end
+				})
+		  end
+	      if voted or now >= VOTE_TIME then
 			  currentStage = STAGE_VOTED
 			  if not voted then
 			     voted = true
