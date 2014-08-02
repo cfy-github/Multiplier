@@ -400,7 +400,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "3.0"
+				"tick_interval" "1.0"
 			}
 		}
 	}
@@ -1250,7 +1250,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "0.75"
+				"tick_interval" "0.25"
 			}
 		}
 	}
@@ -2347,7 +2347,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "0.3 0.3 0.3 0.3"
+				"tick_interval" "0.1 0.1 0.1 0.1"
 			}
 			"02"
 			{
@@ -2781,7 +2781,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "1275"
+				"radius" "425"
 			}
 			"02"
 			{
@@ -2848,14 +2848,14 @@
 		"AbilityUnitDamageType" "DAMAGE_TYPE_PHYSICAL"
 		"AbilityCastPoint" "0.5 0.5 0.5"
 		"AbilityCooldown" "115.0"
-		"AbilityDuration" "90.0 90.0 90.0"
+		"AbilityDuration" "30.0 30.0 30.0"
 		"AbilityManaCost" "200 300 400"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "2100 2100 2100"
+				"radius" "700 700 700"
 			}
 			"02"
 			{
@@ -2865,17 +2865,17 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"spirit_speed" "1500 1500 1500"
+				"spirit_speed" "500 500 500"
 			}
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"max_distance" "6000 6000 6000"
+				"max_distance" "2000 2000 2000"
 			}
 			"05"
 			{
 				"var_type" "FIELD_INTEGER"
-				"give_up_distance" "3600 3600 3600"
+				"give_up_distance" "1200 1200 1200"
 			}
 			"06"
 			{
@@ -3340,7 +3340,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "0.75 0.75 0.75 0.75"
+				"tick_interval" "0.25 0.25 0.25 0.25"
 			}
 			"03"
 			{
@@ -4936,7 +4936,7 @@
 			"07"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "0.3 0.3 0.3"
+				"tick_rate" "0.1 0.1 0.1"
 			}
 			"08"
 			{
@@ -5391,7 +5391,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "3.0"
+				"tick_interval" "1.0"
 			}
 		}
 	}
@@ -5908,7 +5908,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "9.0 9.0 9.0 9.0"
+				"tick_interval" "3.0 3.0 3.0 3.0"
 			}
 			"05"
 			{
@@ -6297,7 +6297,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "0.75 0.75 0.75"
+				"tick_rate" "0.25 0.25 0.25"
 			}
 			"05"
 			{
@@ -7062,14 +7062,14 @@
 		"AbilityCooldown" "15 13 11 7"
 		"AbilityManaCost" "100 115 130 145"
 		"AbilityDamage" "42 60 78 96"
-		"AbilityDuration" "30"
+		"AbilityDuration" "10"
 		"AbilityModifierSupportValue" "0.35"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"set_time" "9"
+				"set_time" "3"
 			}
 			"02"
 			{
@@ -7094,7 +7094,7 @@
 			"06"
 			{
 				"var_type" "FIELD_INTEGER"
-				"should_stun" "0 0 0 3"
+				"should_stun" "0 0 0 1"
 			}
 			"07"
 			{
@@ -7104,7 +7104,7 @@
 			"08"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_tooltip" "30"
+				"duration_tooltip" "10"
 			}
 		}
 	}
@@ -7119,13 +7119,13 @@
 		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
 		"AbilityCooldown" "60 45 30 15"
 		"AbilityManaCost" "140 130 120 110"
-		"AbilityDuration" "15 15 15 15"
+		"AbilityDuration" "5 5 5 5"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_tooltip" "15 15 15 15"
+				"duration_tooltip" "5 5 5 5"
 			}
 			"02"
 			{
@@ -7157,7 +7157,7 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"damage_radius" "555"
+				"damage_radius" "185"
 			}
 			"03"
 			{
@@ -7201,7 +7201,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "72.0"
+				"duration" "24.0"
 			}
 			"05"
 			{
@@ -7211,7 +7211,7 @@
 			"06"
 			{
 				"var_type" "FIELD_INTEGER"
-				"duration_scepter" "72"
+				"duration_scepter" "24"
 			}
 			"07"
 			{
@@ -9159,12 +9159,12 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "1125 1125 1125 1125"
+				"radius" "375 375 375 375"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "24.0 24.0 24.0 24.0"
+				"duration" "8.0 8.0 8.0 8.0"
 			}
 			"04"
 			{
@@ -9204,12 +9204,12 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"explosion_radius" "1125 1125 1125 1125"
+				"explosion_radius" "375 375 375 375"
 			}
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"collision_radius" "300 300 300 300"
+				"collision_radius" "100 100 100 100"
 			}
 			"04"
 			{
@@ -9257,22 +9257,22 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "600 600 600 600"
+				"radius" "200 200 200 200"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "54.0 54.0 54.0 54.0"
+				"duration" "18.0 18.0 18.0 18.0"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "1.5 1.5 1.5 1.5"
+				"tick_interval" "0.5 0.5 0.5 0.5"
 			}
 			"05"
 			{
 				"var_type" "FIELD_INTEGER"
-				"tree_radius" "300 300 300 300"
+				"tree_radius" "100 100 100 100"
 			}
 		}
 	}
@@ -9299,7 +9299,7 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"drag_distance" "900 900 900"
+				"drag_distance" "300 300 300"
 			}
 			"03"
 			{
@@ -9852,82 +9852,6 @@
 			}
 		}
 	}
-	"ancient_apparition_ice_blast_x3"
-	{
-		"BaseClass" "ancient_apparition_ice_blast"
-		"ID" "5348"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
-		"AbilityCastPoint" "0.01 0.01 0.01"
-		"AbilityCastRange" "0"
-		"AbilityCooldown" "40.0"
-		"AbilityManaCost" "100 125 150"
-		"AbilityDamage" "750 1050 1350"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"radius_min" "825 825 825"
-			}
-			"02"
-			{
-				"var_type" "FIELD_FLOAT"
-				"radius_grow" "150.0 150.0 150.0"
-			}
-			"03"
-			{
-				"var_type" "FIELD_INTEGER"
-				"radius_max" "3000 3000 3000"
-			}
-			"04"
-			{
-				"var_type" "FIELD_INTEGER"
-				"path_radius" "825 825 825"
-			}
-			"05"
-			{
-				"var_type" "FIELD_FLOAT"
-				"frostbite_duration" "24.0 27.0 30.0"
-			}
-			"06"
-			{
-				"var_type" "FIELD_FLOAT"
-				"dot_damage" "37.5 60.0 96.0"
-			}
-			"07"
-			{
-				"var_type" "FIELD_INTEGER"
-				"speed" "4500 4500 4500 4500"
-			}
-			"08"
-			{
-				"var_type" "FIELD_FLOAT"
-				"kill_pct" "30.0 33.0 36.0"
-			}
-			"09"
-			{
-				"var_type" "FIELD_INTEGER"
-				"target_sight_radius" "1500 1500 1500"
-			}
-			"10"
-			{
-				"var_type" "FIELD_FLOAT"
-				"frostbite_duration_scepter" "51"
-			}
-		}
-	}
-	"ancient_apparition_ice_blast_release_x3"
-	{
-		"BaseClass" "ancient_apparition_ice_blast_release"
-		"ID" "5349"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel" "1"
-		"AbilityCastPoint" "0 0 0"
-		"AbilityCooldown" "1.0 1.0 1.0"
-	}
 	"spirit_breaker_charge_of_darkness_x3"
 	{
 		"BaseClass" "spirit_breaker_charge_of_darkness"
@@ -10397,12 +10321,12 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "1875"
+				"radius" "625"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "48.0"
+				"duration" "16.0"
 			}
 			"03"
 			{
@@ -10417,7 +10341,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "3.0"
+				"tick_rate" "1.0"
 			}
 		}
 	}
@@ -10554,7 +10478,7 @@
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"bonus_gold_cap" "90"
+				"bonus_gold_cap" "30"
 			}
 		}
 	}
@@ -10572,17 +10496,17 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "75.0"
+				"duration" "25.0"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"transformation_time" "1.05"
+				"transformation_time" "0.116666666667"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "4.2 3.6 3.0"
+				"base_attack_time" "0.466666666667 0.4 0.333333333333"
 			}
 			"04"
 			{
@@ -11033,7 +10957,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "4.5 4.5 4.5"
+				"base_attack_time" "0.5 0.5 0.5"
 			}
 			"03"
 			{
@@ -11101,7 +11025,7 @@
 		"BaseClass" "lone_druid_spirit_bear"
 		"ID" "5412"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"DisplayAdditionalHeroes" "3"
+		"DisplayAdditionalHeroes" "1"
 		"AbilityCastPoint" "0.5 0.5 0.5 0.5"
 		"AbilityCooldown" "180.0 160.0 140.0 120.0"
 		"AbilityManaCost" "75 75 75 75"
@@ -11205,7 +11129,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "4.5 4.5 4.5"
+				"base_attack_time" "0.5 0.5 0.5"
 			}
 			"02"
 			{
@@ -11225,7 +11149,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"transformation_time" "5.799"
+				"transformation_time" "0.644333333333"
 			}
 		}
 	}
@@ -11243,7 +11167,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"transformation_time" "5.799"
+				"transformation_time" "0.644333333333"
 			}
 		}
 	}
@@ -11475,7 +11399,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"split_duration" "2.55 2.55 2.55"
+				"split_duration" "0.85 0.85 0.85"
 			}
 		}
 	}
@@ -12032,44 +11956,6 @@
 			{
 				"var_type" "FIELD_FLOAT"
 				"duration_tooltip" "6.0"
-			}
-		}
-	}
-	"meepo_divided_we_stand_x3"
-	{
-		"BaseClass" "meepo_divided_we_stand"
-		"ID" "5433"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"DisplayAdditionalHeroes" "3"
-		"LevelsBetweenUpgrades" "21"
-		"RequiredLevel" "9"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"tooltip_clones" "3 6 9"
-			}
-			"02"
-			{
-				"var_type" "FIELD_INTEGER"
-				"tooltip_share_percentage" "90"
-			}
-			"03"
-			{
-				"var_type" "FIELD_INTEGER"
-				"tooltip_share_percentage_scepter" "300"
-			}
-			"04"
-			{
-				"var_type" "FIELD_FLOAT"
-				"respawn" "0.3 0.6 0.9"
-			}
-			"05"
-			{
-				"var_type" "FIELD_INTEGER"
-				"tooltip_respawn" "30 60 90"
 			}
 		}
 	}
@@ -14381,7 +14267,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "4.65"
+				"base_attack_time" "0.516666666667"
 			}
 			"05"
 			{
@@ -16075,7 +15961,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "3.0"
+				"tick_interval" "1.0"
 			}
 			"06"
 			{
@@ -16109,7 +15995,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"attack_interval" "0.2"
+				"attack_interval" "0.0666666666667"
 			}
 			"04"
 			{
@@ -16148,7 +16034,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "0.6"
+				"tick_interval" "0.2"
 			}
 			"05"
 			{
@@ -16681,12 +16567,12 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"transformation_time" "1.05"
+				"transformation_time" "0.116666666667"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "4.8"
+				"base_attack_time" "0.533333333333"
 			}
 			"04"
 			{
@@ -16843,7 +16729,7 @@
 			"09"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "3.0"
+				"tick_interval" "1.0"
 			}
 		}
 	}
@@ -16888,7 +16774,7 @@
 			"06"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "0.6"
+				"tick_interval" "0.2"
 			}
 			"07"
 			{
@@ -17034,7 +16920,7 @@
 			"09"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "3.0"
+				"tick_interval" "1.0"
 			}
 		}
 	}
@@ -17141,7 +17027,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "3.0"
+				"tick_rate" "1.0"
 			}
 		}
 	}
@@ -17851,7 +17737,7 @@
 			"07"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "0.75"
+				"tick_rate" "0.25"
 			}
 		}
 	}
@@ -19455,7 +19341,7 @@
 			"07"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "0.3"
+				"tick_rate" "0.1"
 			}
 			"08"
 			{
@@ -19959,7 +19845,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "6"
+				"tick_interval" "2"
 			}
 			"05"
 			{
@@ -20733,7 +20619,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "5.0"
+				"tick_interval" "1.0"
 			}
 		}
 	}
@@ -21583,7 +21469,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "1.25"
+				"tick_interval" "0.25"
 			}
 		}
 	}
@@ -22680,7 +22566,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "0.5 0.5 0.5 0.5"
+				"tick_interval" "0.1 0.1 0.1 0.1"
 			}
 			"02"
 			{
@@ -23114,7 +23000,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "2125"
+				"radius" "425"
 			}
 			"02"
 			{
@@ -23181,14 +23067,14 @@
 		"AbilityUnitDamageType" "DAMAGE_TYPE_PHYSICAL"
 		"AbilityCastPoint" "0.5 0.5 0.5"
 		"AbilityCooldown" "115.0"
-		"AbilityDuration" "150.0 150.0 150.0"
+		"AbilityDuration" "30.0 30.0 30.0"
 		"AbilityManaCost" "200 300 400"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "3500 3500 3500"
+				"radius" "700 700 700"
 			}
 			"02"
 			{
@@ -23198,17 +23084,17 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"spirit_speed" "2500 2500 2500"
+				"spirit_speed" "500 500 500"
 			}
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"max_distance" "10000 10000 10000"
+				"max_distance" "2000 2000 2000"
 			}
 			"05"
 			{
 				"var_type" "FIELD_INTEGER"
-				"give_up_distance" "6000 6000 6000"
+				"give_up_distance" "1200 1200 1200"
 			}
 			"06"
 			{
@@ -23673,7 +23559,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "1.25 1.25 1.25 1.25"
+				"tick_interval" "0.25 0.25 0.25 0.25"
 			}
 			"03"
 			{
@@ -25269,7 +25155,7 @@
 			"07"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "0.5 0.5 0.5"
+				"tick_rate" "0.1 0.1 0.1"
 			}
 			"08"
 			{
@@ -25724,7 +25610,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "5.0"
+				"tick_interval" "1.0"
 			}
 		}
 	}
@@ -26241,7 +26127,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "15.0 15.0 15.0 15.0"
+				"tick_interval" "3.0 3.0 3.0 3.0"
 			}
 			"05"
 			{
@@ -26630,7 +26516,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "1.25 1.25 1.25"
+				"tick_rate" "0.25 0.25 0.25"
 			}
 			"05"
 			{
@@ -27395,14 +27281,14 @@
 		"AbilityCooldown" "15 13 11 7"
 		"AbilityManaCost" "100 115 130 145"
 		"AbilityDamage" "70 100 130 160"
-		"AbilityDuration" "50"
+		"AbilityDuration" "10"
 		"AbilityModifierSupportValue" "0.35"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"set_time" "15"
+				"set_time" "3"
 			}
 			"02"
 			{
@@ -27427,7 +27313,7 @@
 			"06"
 			{
 				"var_type" "FIELD_INTEGER"
-				"should_stun" "0 0 0 5"
+				"should_stun" "0 0 0 1"
 			}
 			"07"
 			{
@@ -27437,7 +27323,7 @@
 			"08"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_tooltip" "50"
+				"duration_tooltip" "10"
 			}
 		}
 	}
@@ -27452,13 +27338,13 @@
 		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
 		"AbilityCooldown" "60 45 30 15"
 		"AbilityManaCost" "140 130 120 110"
-		"AbilityDuration" "25 25 25 25"
+		"AbilityDuration" "5 5 5 5"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_tooltip" "25 25 25 25"
+				"duration_tooltip" "5 5 5 5"
 			}
 			"02"
 			{
@@ -27490,7 +27376,7 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"damage_radius" "925"
+				"damage_radius" "185"
 			}
 			"03"
 			{
@@ -27534,7 +27420,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "120.0"
+				"duration" "24.0"
 			}
 			"05"
 			{
@@ -27544,7 +27430,7 @@
 			"06"
 			{
 				"var_type" "FIELD_INTEGER"
-				"duration_scepter" "120"
+				"duration_scepter" "24"
 			}
 			"07"
 			{
@@ -29492,12 +29378,12 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "1875 1875 1875 1875"
+				"radius" "375 375 375 375"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "40.0 40.0 40.0 40.0"
+				"duration" "8.0 8.0 8.0 8.0"
 			}
 			"04"
 			{
@@ -29537,12 +29423,12 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"explosion_radius" "1875 1875 1875 1875"
+				"explosion_radius" "375 375 375 375"
 			}
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"collision_radius" "500 500 500 500"
+				"collision_radius" "100 100 100 100"
 			}
 			"04"
 			{
@@ -29590,22 +29476,22 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "1000 1000 1000 1000"
+				"radius" "200 200 200 200"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "90.0 90.0 90.0 90.0"
+				"duration" "18.0 18.0 18.0 18.0"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "2.5 2.5 2.5 2.5"
+				"tick_interval" "0.5 0.5 0.5 0.5"
 			}
 			"05"
 			{
 				"var_type" "FIELD_INTEGER"
-				"tree_radius" "500 500 500 500"
+				"tree_radius" "100 100 100 100"
 			}
 		}
 	}
@@ -29632,7 +29518,7 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"drag_distance" "1500 1500 1500"
+				"drag_distance" "300 300 300"
 			}
 			"03"
 			{
@@ -30185,82 +30071,6 @@
 			}
 		}
 	}
-	"ancient_apparition_ice_blast_x5"
-	{
-		"BaseClass" "ancient_apparition_ice_blast"
-		"ID" "5348"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
-		"AbilityCastPoint" "0.01 0.01 0.01"
-		"AbilityCastRange" "0"
-		"AbilityCooldown" "40.0"
-		"AbilityManaCost" "100 125 150"
-		"AbilityDamage" "1250 1750 2250"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"radius_min" "1375 1375 1375"
-			}
-			"02"
-			{
-				"var_type" "FIELD_FLOAT"
-				"radius_grow" "250.0 250.0 250.0"
-			}
-			"03"
-			{
-				"var_type" "FIELD_INTEGER"
-				"radius_max" "5000 5000 5000"
-			}
-			"04"
-			{
-				"var_type" "FIELD_INTEGER"
-				"path_radius" "1375 1375 1375"
-			}
-			"05"
-			{
-				"var_type" "FIELD_FLOAT"
-				"frostbite_duration" "40.0 45.0 50.0"
-			}
-			"06"
-			{
-				"var_type" "FIELD_FLOAT"
-				"dot_damage" "62.5 100.0 160.0"
-			}
-			"07"
-			{
-				"var_type" "FIELD_INTEGER"
-				"speed" "7500 7500 7500 7500"
-			}
-			"08"
-			{
-				"var_type" "FIELD_FLOAT"
-				"kill_pct" "50.0 55.0 60.0"
-			}
-			"09"
-			{
-				"var_type" "FIELD_INTEGER"
-				"target_sight_radius" "2500 2500 2500"
-			}
-			"10"
-			{
-				"var_type" "FIELD_FLOAT"
-				"frostbite_duration_scepter" "85"
-			}
-		}
-	}
-	"ancient_apparition_ice_blast_release_x5"
-	{
-		"BaseClass" "ancient_apparition_ice_blast_release"
-		"ID" "5349"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel" "1"
-		"AbilityCastPoint" "0 0 0"
-		"AbilityCooldown" "1.0 1.0 1.0"
-	}
 	"spirit_breaker_charge_of_darkness_x5"
 	{
 		"BaseClass" "spirit_breaker_charge_of_darkness"
@@ -30730,12 +30540,12 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "3125"
+				"radius" "625"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "80.0"
+				"duration" "16.0"
 			}
 			"03"
 			{
@@ -30750,7 +30560,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "5.0"
+				"tick_rate" "1.0"
 			}
 		}
 	}
@@ -30887,7 +30697,7 @@
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"bonus_gold_cap" "150"
+				"bonus_gold_cap" "30"
 			}
 		}
 	}
@@ -30905,17 +30715,17 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "125.0"
+				"duration" "25.0"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"transformation_time" "1.75"
+				"transformation_time" "0.07"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "7 6 5.0"
+				"base_attack_time" "0.28 0.24 0.2"
 			}
 			"04"
 			{
@@ -31366,7 +31176,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "7.5 7.5 7.5"
+				"base_attack_time" "0.3 0.3 0.3"
 			}
 			"03"
 			{
@@ -31434,7 +31244,7 @@
 		"BaseClass" "lone_druid_spirit_bear"
 		"ID" "5412"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"DisplayAdditionalHeroes" "5"
+		"DisplayAdditionalHeroes" "1"
 		"AbilityCastPoint" "0.5 0.5 0.5 0.5"
 		"AbilityCooldown" "180.0 160.0 140.0 120.0"
 		"AbilityManaCost" "75 75 75 75"
@@ -31538,7 +31348,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "7.5 7.5 7.5"
+				"base_attack_time" "0.3 0.3 0.3"
 			}
 			"02"
 			{
@@ -31558,7 +31368,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"transformation_time" "9.665"
+				"transformation_time" "0.3866"
 			}
 		}
 	}
@@ -31576,7 +31386,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"transformation_time" "9.665"
+				"transformation_time" "0.3866"
 			}
 		}
 	}
@@ -31808,7 +31618,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"split_duration" "4.25 4.25 4.25"
+				"split_duration" "0.85 0.85 0.85"
 			}
 		}
 	}
@@ -32365,44 +32175,6 @@
 			{
 				"var_type" "FIELD_FLOAT"
 				"duration_tooltip" "10.0"
-			}
-		}
-	}
-	"meepo_divided_we_stand_x5"
-	{
-		"BaseClass" "meepo_divided_we_stand"
-		"ID" "5433"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"DisplayAdditionalHeroes" "5"
-		"LevelsBetweenUpgrades" "35"
-		"RequiredLevel" "15"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"tooltip_clones" "5 10 15"
-			}
-			"02"
-			{
-				"var_type" "FIELD_INTEGER"
-				"tooltip_share_percentage" "150"
-			}
-			"03"
-			{
-				"var_type" "FIELD_INTEGER"
-				"tooltip_share_percentage_scepter" "500"
-			}
-			"04"
-			{
-				"var_type" "FIELD_FLOAT"
-				"respawn" "0.5 1 1.5"
-			}
-			"05"
-			{
-				"var_type" "FIELD_INTEGER"
-				"tooltip_respawn" "50 100 150"
 			}
 		}
 	}
@@ -34714,7 +34486,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "7.75"
+				"base_attack_time" "0.31"
 			}
 			"05"
 			{
@@ -36408,7 +36180,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "5.0"
+				"tick_interval" "1.0"
 			}
 			"06"
 			{
@@ -36442,7 +36214,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"attack_interval" "0.2"
+				"attack_interval" "0.04"
 			}
 			"04"
 			{
@@ -36481,7 +36253,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "1"
+				"tick_interval" "0.2"
 			}
 			"05"
 			{
@@ -37014,12 +36786,12 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"transformation_time" "1.75"
+				"transformation_time" "0.07"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "8"
+				"base_attack_time" "0.32"
 			}
 			"04"
 			{
@@ -37176,7 +36948,7 @@
 			"09"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "5.0"
+				"tick_interval" "1.0"
 			}
 		}
 	}
@@ -37221,7 +36993,7 @@
 			"06"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "1"
+				"tick_interval" "0.2"
 			}
 			"07"
 			{
@@ -37367,7 +37139,7 @@
 			"09"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "5.0"
+				"tick_interval" "1.0"
 			}
 		}
 	}
@@ -37474,7 +37246,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "5.0"
+				"tick_rate" "1.0"
 			}
 		}
 	}
@@ -38184,7 +37956,7 @@
 			"07"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "1.25"
+				"tick_rate" "0.25"
 			}
 		}
 	}
@@ -39788,7 +39560,7 @@
 			"07"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "0.5"
+				"tick_rate" "0.1"
 			}
 			"08"
 			{
@@ -40292,7 +40064,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "10"
+				"tick_interval" "2"
 			}
 			"05"
 			{
@@ -41066,7 +40838,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "10.0"
+				"tick_interval" "1.0"
 			}
 		}
 	}
@@ -41916,7 +41688,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "2.5"
+				"tick_interval" "0.25"
 			}
 		}
 	}
@@ -43013,7 +42785,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "1 1 1 1"
+				"tick_interval" "0.1 0.1 0.1 0.1"
 			}
 			"02"
 			{
@@ -43447,7 +43219,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "4250"
+				"radius" "425"
 			}
 			"02"
 			{
@@ -43514,14 +43286,14 @@
 		"AbilityUnitDamageType" "DAMAGE_TYPE_PHYSICAL"
 		"AbilityCastPoint" "0.5 0.5 0.5"
 		"AbilityCooldown" "115.0"
-		"AbilityDuration" "300.0 300.0 300.0"
+		"AbilityDuration" "30.0 30.0 30.0"
 		"AbilityManaCost" "200 300 400"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "7000 7000 7000"
+				"radius" "700 700 700"
 			}
 			"02"
 			{
@@ -43531,17 +43303,17 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"spirit_speed" "5000 5000 5000"
+				"spirit_speed" "500 500 500"
 			}
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"max_distance" "20000 20000 20000"
+				"max_distance" "2000 2000 2000"
 			}
 			"05"
 			{
 				"var_type" "FIELD_INTEGER"
-				"give_up_distance" "12000 12000 12000"
+				"give_up_distance" "1200 1200 1200"
 			}
 			"06"
 			{
@@ -44006,7 +43778,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "2.5 2.5 2.5 2.5"
+				"tick_interval" "0.25 0.25 0.25 0.25"
 			}
 			"03"
 			{
@@ -45602,7 +45374,7 @@
 			"07"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "1 1 1"
+				"tick_rate" "0.1 0.1 0.1"
 			}
 			"08"
 			{
@@ -46057,7 +45829,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "10.0"
+				"tick_interval" "1.0"
 			}
 		}
 	}
@@ -46574,7 +46346,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "30.0 30.0 30.0 30.0"
+				"tick_interval" "3.0 3.0 3.0 3.0"
 			}
 			"05"
 			{
@@ -46963,7 +46735,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "2.5 2.5 2.5"
+				"tick_rate" "0.25 0.25 0.25"
 			}
 			"05"
 			{
@@ -47728,14 +47500,14 @@
 		"AbilityCooldown" "15 13 11 7"
 		"AbilityManaCost" "100 115 130 145"
 		"AbilityDamage" "140 200 260 320"
-		"AbilityDuration" "100"
+		"AbilityDuration" "10"
 		"AbilityModifierSupportValue" "0.35"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"set_time" "30"
+				"set_time" "3"
 			}
 			"02"
 			{
@@ -47760,7 +47532,7 @@
 			"06"
 			{
 				"var_type" "FIELD_INTEGER"
-				"should_stun" "0 0 0 10"
+				"should_stun" "0 0 0 1"
 			}
 			"07"
 			{
@@ -47770,7 +47542,7 @@
 			"08"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_tooltip" "100"
+				"duration_tooltip" "10"
 			}
 		}
 	}
@@ -47785,13 +47557,13 @@
 		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
 		"AbilityCooldown" "60 45 30 15"
 		"AbilityManaCost" "140 130 120 110"
-		"AbilityDuration" "50 50 50 50"
+		"AbilityDuration" "5 5 5 5"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_tooltip" "50 50 50 50"
+				"duration_tooltip" "5 5 5 5"
 			}
 			"02"
 			{
@@ -47823,7 +47595,7 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"damage_radius" "1850"
+				"damage_radius" "185"
 			}
 			"03"
 			{
@@ -47867,7 +47639,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "240.0"
+				"duration" "24.0"
 			}
 			"05"
 			{
@@ -47877,7 +47649,7 @@
 			"06"
 			{
 				"var_type" "FIELD_INTEGER"
-				"duration_scepter" "240"
+				"duration_scepter" "24"
 			}
 			"07"
 			{
@@ -49825,12 +49597,12 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "3750 3750 3750 3750"
+				"radius" "375 375 375 375"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "80.0 80.0 80.0 80.0"
+				"duration" "8.0 8.0 8.0 8.0"
 			}
 			"04"
 			{
@@ -49870,12 +49642,12 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"explosion_radius" "3750 3750 3750 3750"
+				"explosion_radius" "375 375 375 375"
 			}
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"collision_radius" "1000 1000 1000 1000"
+				"collision_radius" "100 100 100 100"
 			}
 			"04"
 			{
@@ -49923,22 +49695,22 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "2000 2000 2000 2000"
+				"radius" "200 200 200 200"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "180.0 180.0 180.0 180.0"
+				"duration" "18.0 18.0 18.0 18.0"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "5 5 5 5"
+				"tick_interval" "0.5 0.5 0.5 0.5"
 			}
 			"05"
 			{
 				"var_type" "FIELD_INTEGER"
-				"tree_radius" "1000 1000 1000 1000"
+				"tree_radius" "100 100 100 100"
 			}
 		}
 	}
@@ -49965,7 +49737,7 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"drag_distance" "3000 3000 3000"
+				"drag_distance" "300 300 300"
 			}
 			"03"
 			{
@@ -50518,82 +50290,6 @@
 			}
 		}
 	}
-	"ancient_apparition_ice_blast_x10"
-	{
-		"BaseClass" "ancient_apparition_ice_blast"
-		"ID" "5348"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
-		"AbilityCastPoint" "0.01 0.01 0.01"
-		"AbilityCastRange" "0"
-		"AbilityCooldown" "40.0"
-		"AbilityManaCost" "100 125 150"
-		"AbilityDamage" "2500 3500 4500"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"radius_min" "2750 2750 2750"
-			}
-			"02"
-			{
-				"var_type" "FIELD_FLOAT"
-				"radius_grow" "500.0 500.0 500.0"
-			}
-			"03"
-			{
-				"var_type" "FIELD_INTEGER"
-				"radius_max" "10000 10000 10000"
-			}
-			"04"
-			{
-				"var_type" "FIELD_INTEGER"
-				"path_radius" "2750 2750 2750"
-			}
-			"05"
-			{
-				"var_type" "FIELD_FLOAT"
-				"frostbite_duration" "80.0 90.0 100.0"
-			}
-			"06"
-			{
-				"var_type" "FIELD_FLOAT"
-				"dot_damage" "125 200.0 320.0"
-			}
-			"07"
-			{
-				"var_type" "FIELD_INTEGER"
-				"speed" "15000 15000 15000 15000"
-			}
-			"08"
-			{
-				"var_type" "FIELD_FLOAT"
-				"kill_pct" "100.0 110.0 120.0"
-			}
-			"09"
-			{
-				"var_type" "FIELD_INTEGER"
-				"target_sight_radius" "5000 5000 5000"
-			}
-			"10"
-			{
-				"var_type" "FIELD_FLOAT"
-				"frostbite_duration_scepter" "170"
-			}
-		}
-	}
-	"ancient_apparition_ice_blast_release_x10"
-	{
-		"BaseClass" "ancient_apparition_ice_blast_release"
-		"ID" "5349"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"MaxLevel" "1"
-		"AbilityCastPoint" "0 0 0"
-		"AbilityCooldown" "1.0 1.0 1.0"
-	}
 	"spirit_breaker_charge_of_darkness_x10"
 	{
 		"BaseClass" "spirit_breaker_charge_of_darkness"
@@ -51063,12 +50759,12 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "6250"
+				"radius" "625"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "160.0"
+				"duration" "16.0"
 			}
 			"03"
 			{
@@ -51083,7 +50779,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "10.0"
+				"tick_rate" "1.0"
 			}
 		}
 	}
@@ -51220,7 +50916,7 @@
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"bonus_gold_cap" "300"
+				"bonus_gold_cap" "30"
 			}
 		}
 	}
@@ -51238,17 +50934,17 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "250.0"
+				"duration" "25.0"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"transformation_time" "3.5"
+				"transformation_time" "0.035"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "14 12 10.0"
+				"base_attack_time" "0.14 0.12 0.1"
 			}
 			"04"
 			{
@@ -51699,7 +51395,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "15 15 15"
+				"base_attack_time" "0.15 0.15 0.15"
 			}
 			"03"
 			{
@@ -51767,7 +51463,7 @@
 		"BaseClass" "lone_druid_spirit_bear"
 		"ID" "5412"
 		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"DisplayAdditionalHeroes" "10"
+		"DisplayAdditionalHeroes" "1"
 		"AbilityCastPoint" "0.5 0.5 0.5 0.5"
 		"AbilityCooldown" "180.0 160.0 140.0 120.0"
 		"AbilityManaCost" "75 75 75 75"
@@ -51871,7 +51567,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "15 15 15"
+				"base_attack_time" "0.15 0.15 0.15"
 			}
 			"02"
 			{
@@ -51891,7 +51587,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"transformation_time" "19.33"
+				"transformation_time" "0.1933"
 			}
 		}
 	}
@@ -51909,7 +51605,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"transformation_time" "19.33"
+				"transformation_time" "0.1933"
 			}
 		}
 	}
@@ -52141,7 +51837,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"split_duration" "8.5 8.5 8.5"
+				"split_duration" "0.85 0.85 0.85"
 			}
 		}
 	}
@@ -52698,44 +52394,6 @@
 			{
 				"var_type" "FIELD_FLOAT"
 				"duration_tooltip" "20.0"
-			}
-		}
-	}
-	"meepo_divided_we_stand_x10"
-	{
-		"BaseClass" "meepo_divided_we_stand"
-		"ID" "5433"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"DisplayAdditionalHeroes" "10"
-		"LevelsBetweenUpgrades" "70"
-		"RequiredLevel" "30"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"tooltip_clones" "10 20 30"
-			}
-			"02"
-			{
-				"var_type" "FIELD_INTEGER"
-				"tooltip_share_percentage" "300"
-			}
-			"03"
-			{
-				"var_type" "FIELD_INTEGER"
-				"tooltip_share_percentage_scepter" "1000"
-			}
-			"04"
-			{
-				"var_type" "FIELD_FLOAT"
-				"respawn" "1 2 3"
-			}
-			"05"
-			{
-				"var_type" "FIELD_INTEGER"
-				"tooltip_respawn" "100 200 300"
 			}
 		}
 	}
@@ -55047,7 +54705,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "15.5"
+				"base_attack_time" "0.155"
 			}
 			"05"
 			{
@@ -56741,7 +56399,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "10.0"
+				"tick_interval" "1.0"
 			}
 			"06"
 			{
@@ -56775,7 +56433,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"attack_interval" "0.2"
+				"attack_interval" "0.02"
 			}
 			"04"
 			{
@@ -56814,7 +56472,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "2"
+				"tick_interval" "0.2"
 			}
 			"05"
 			{
@@ -57347,12 +57005,12 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"transformation_time" "3.5"
+				"transformation_time" "0.035"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "16"
+				"base_attack_time" "0.16"
 			}
 			"04"
 			{
@@ -57509,7 +57167,7 @@
 			"09"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "10.0"
+				"tick_interval" "1.0"
 			}
 		}
 	}
@@ -57554,7 +57212,7 @@
 			"06"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "2"
+				"tick_interval" "0.2"
 			}
 			"07"
 			{
@@ -57700,7 +57358,7 @@
 			"09"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "10.0"
+				"tick_interval" "1.0"
 			}
 		}
 	}
@@ -57807,7 +57465,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "10.0"
+				"tick_rate" "1.0"
 			}
 		}
 	}
@@ -58517,7 +58175,7 @@
 			"07"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "2.5"
+				"tick_rate" "0.25"
 			}
 		}
 	}
@@ -60121,7 +59779,7 @@
 			"07"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_rate" "1"
+				"tick_rate" "0.1"
 			}
 			"08"
 			{
@@ -60625,7 +60283,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tick_interval" "20"
+				"tick_interval" "2"
 			}
 			"05"
 			{
