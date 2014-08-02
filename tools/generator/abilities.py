@@ -7,7 +7,10 @@ force_divide = ['min_blink_range', 'base_attack_time', 'transformation_time', 'a
 
 ignore_all_special = ['crit_chance', 'bonus_evasion', 'dodge_chance_pct', 'miss_chance', 'dodge_chance',
                     'illusion_damage_out_pct', 'illusion_damage_in_pct', 'incoming_damage', 'illusion_outgoing_damage',
-                      'illusion_incoming_damage', 'illusion_outgoing_tooltip', 'shadowraze_range', 'miss_rate', 'tick_rate', 'tick_interval']
+                      'illusion_incoming_damage', 'illusion_outgoing_tooltip', 'shadowraze_range', 'miss_rate', 'tick_rate', 'tick_interval',
+                      'delay', 'tooltip_delay', 'light_strike_array_delay_time', 'damage_delay', 'static_remnant_delay', 'sand_storm_invis_delay', 'jump_delay',
+                      'bounce_delay', 'idle_invis_delay', 'fire_delay', 'path_delay', 'hero_teleport_delay', 'attack_delay', 'multicast_delay', 'teleport_delay',
+                      'stun_delay', 'cast_delay', 'activation_delay', 'rock_explosion_delay', 'first_wave_delay', 'explode_delay', ]
 
 ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'chance_pct', 'duration'},
                   'shadow_shaman_mass_serpent_ward': {'duration'}, 'faceless_void_chronosphere': {'duration', 'duration_scepter'},
@@ -26,7 +29,7 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'batrider_flaming_lasso': {'drag_distance'}, 'brewmaster_primal_split': {'split_duration'},
                   'death_prophet_exorcism': {'radius', 'max_distance', 'give_up_distance', 'spirit_speed'}, 'death_prophet_silence': {'radius'},
                   'alchemist_acid_spray': {'duration', 'radius'}, 'alchemist_chemical_rage': {'duration'},
-                  'alchemist_goblins_greed': {'bonus_gold_cap'}}
+                  'alchemist_goblins_greed': {'bonus_gold_cap'}, 'faceless_void_chronosphere': {'cooldown_scepter'}, 'weaver_shukuchi': {'radius', 'fade_time', 'duration'}}
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}, 'dazzle_shallow_grave':{'AbilityDuration'}, 'dazzle_poison_touch': {'AbilityDuration'},
                  'death_prophet_exorcism': {'AbilityDuration'}}
@@ -35,7 +38,7 @@ ignore_all_normal = ['ID', 'AbilityCastPoint', 'AbilityManaCost', 'AbilityCooldo
 
 
 dont_parse = ['Version', 'ability_base', 'default_attack', 'invoker_invoke', 'invoker_empty1', 'invoker_empty2', 'ancient_apparition_ice_blast_release',
-              'meepo_divided_we_stand']
+              'meepo_divided_we_stand', 'weaver_geminate_attack']
 
 override_instead = ['abaddon_frostmourne', 'pudge_rot', 'alchemist_unstable_concoction'
              'alchemist_unstable_concoction_throw', 'drow_ranger_frost_arrows', 'axe_counter_helix',
