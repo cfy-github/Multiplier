@@ -29,7 +29,8 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'batrider_flaming_lasso': {'drag_distance'}, 'brewmaster_primal_split': {'split_duration'},
                   'death_prophet_exorcism': {'radius', 'max_distance', 'give_up_distance', 'spirit_speed'}, 'death_prophet_silence': {'radius'},
                   'alchemist_acid_spray': {'duration', 'radius'}, 'alchemist_chemical_rage': {'duration'},
-                  'alchemist_goblins_greed': {'bonus_gold_cap'}, 'faceless_void_chronosphere': {'cooldown_scepter'}, 'weaver_shukuchi': {'radius', 'fade_time', 'duration'}}
+                  'alchemist_goblins_greed': {'bonus_gold_cap'}, 'faceless_void_chronosphere': {'cooldown_scepter'}, 'weaver_shukuchi': {'radius', 'fade_time', 'duration'},
+                  'viper_corrosive_skin': {'duration'}, 'viper_viper_strike': {'duration'}}
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}, 'dazzle_shallow_grave':{'AbilityDuration'}, 'dazzle_poison_touch': {'AbilityDuration'},
                  'death_prophet_exorcism': {'AbilityDuration'}}
