@@ -8433,7 +8433,7 @@
 			"05"
 			{
 				"var_type" "FIELD_INTEGER"
-				"shackle_count" "2"
+				"shackle_count" "1"
 			}
 		}
 	}
@@ -8454,17 +8454,17 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"damage_reduction" "0.2 0.2 0.2 0.2"
+				"damage_reduction" "0.1 0.1 0.1 0.1"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"speed_reduction" "0.2 0.2 0.2 0.2"
+				"speed_reduction" "0.1 0.1 0.1 0.1"
 			}
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"arrow_width" "250 250 250 250"
+				"arrow_width" "125 125 125 125"
 			}
 			"04"
 			{
@@ -8479,7 +8479,7 @@
 			"06"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tree_width" "150 150 150 150"
+				"tree_width" "75 75 75 75"
 			}
 			"07"
 			{
@@ -8489,7 +8489,7 @@
 			"08"
 			{
 				"var_type" "FIELD_FLOAT"
-				"vision_duration" "6.68 6.68 6.68 6.68"
+				"vision_duration" "3.34 3.34 3.34 3.34"
 			}
 		}
 	}
@@ -8546,12 +8546,12 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"focusfire_damage_reduction" "-100 -80 -60"
+				"focusfire_damage_reduction" "-50 -40 -30"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"cooldown_scepter" "30.0 30.0 30.0"
+				"cooldown_scepter" "15.0 15.0 15.0"
 			}
 			"03"
 			{
@@ -8561,7 +8561,7 @@
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"focusfire_damage_reduction_scepter" "-60 -30 0"
+				"focusfire_damage_reduction_scepter" "-30 -15 0"
 			}
 		}
 	}
