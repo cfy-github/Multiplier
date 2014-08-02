@@ -10,7 +10,9 @@ ignore_all_special = ['crit_chance', 'bonus_evasion', 'dodge_chance_pct', 'miss_
                       'illusion_incoming_damage', 'illusion_outgoing_tooltip', 'shadowraze_range', 'miss_rate', 'tick_rate', 'tick_interval',
                       'delay', 'tooltip_delay', 'light_strike_array_delay_time', 'damage_delay', 'static_remnant_delay', 'sand_storm_invis_delay', 'jump_delay',
                       'bounce_delay', 'idle_invis_delay', 'fire_delay', 'path_delay', 'hero_teleport_delay', 'attack_delay', 'multicast_delay', 'teleport_delay',
-                      'stun_delay', 'cast_delay', 'activation_delay', 'rock_explosion_delay', 'first_wave_delay', 'explode_delay', ]
+                      'stun_delay', 'cast_delay', 'activation_delay', 'rock_explosion_delay', 'first_wave_delay', 'explode_delay', 'cooldown_scepter',
+                      'omni_slash_cooldown_scepter', 'epicenter_cooldown_scepter', 'nether_swap_cooldown_scepter', 'scepter_cooldown', 'replica_damage_outgoing_scepter',
+                      'tooltip_outgoing_scepter']
 
 ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'chance_pct', 'duration'},
                   'shadow_shaman_mass_serpent_ward': {'duration'}, 'faceless_void_chronosphere': {'duration', 'duration_scepter'},
@@ -29,8 +31,8 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'batrider_flaming_lasso': {'drag_distance'}, 'brewmaster_primal_split': {'split_duration'},
                   'death_prophet_exorcism': {'radius', 'max_distance', 'give_up_distance', 'spirit_speed'}, 'death_prophet_silence': {'radius'},
                   'alchemist_acid_spray': {'duration', 'radius'}, 'alchemist_chemical_rage': {'duration'},
-                  'alchemist_goblins_greed': {'bonus_gold_cap'}, 'faceless_void_chronosphere': {'cooldown_scepter'}, 'weaver_shukuchi': {'radius', 'fade_time', 'duration'},
-                  'viper_corrosive_skin': {'duration'}, 'viper_viper_strike': {'duration'}, 'windrunner_focusfire': {'focusfire_damage_reduction', 'cooldown_scepter', 'focusfire_damage_reduction_scepter'},
+                  'alchemist_goblins_greed': {'bonus_gold_cap'}, 'weaver_shukuchi': {'radius', 'fade_time', 'duration'},
+                  'viper_corrosive_skin': {'duration'}, 'viper_viper_strike': {'duration'}, 'windrunner_focusfire': {'focusfire_damage_reduction', 'focusfire_damage_reduction_scepter'},
                   'windrunner_powershot': {'damage_reduction', 'speed_reduction', 'arrow_width', 'tree_width', 'vision_duration'},
                   'windrunner_shackleshot': {'shackle_count'}}
 

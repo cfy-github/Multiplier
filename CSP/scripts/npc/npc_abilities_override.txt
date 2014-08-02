@@ -4387,7 +4387,7 @@
 			"06"
 			{
 				"var_type" "FIELD_FLOAT"
-				"cooldown_scepter" "12.0 12.0 12.0"
+				"cooldown_scepter" "6.0 6.0 6.0"
 			}
 			"07"
 			{
@@ -5047,7 +5047,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"omni_slash_cooldown_scepter" "140"
+				"omni_slash_cooldown_scepter" "70"
 			}
 			"06"
 			{
@@ -5496,7 +5496,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"cooldown_scepter" "200.0 120.0 40.0"
+				"cooldown_scepter" "100.0 60.0 20.0"
 			}
 			"06"
 			{
@@ -7544,7 +7544,7 @@
 			"08"
 			{
 				"var_type" "FIELD_FLOAT"
-				"epicenter_cooldown_scepter" "240.0 200.0 160.0"
+				"epicenter_cooldown_scepter" "120.0 100.0 80.0"
 			}
 		}
 	}
@@ -8230,7 +8230,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"nether_swap_cooldown_scepter" "20"
+				"nether_swap_cooldown_scepter" "10"
 			}
 		}
 	}
@@ -9539,7 +9539,7 @@
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"cooldown_scepter" "140"
+				"cooldown_scepter" "70"
 			}
 			"05"
 			{
@@ -10005,7 +10005,7 @@
 			"11"
 			{
 				"var_type" "FIELD_FLOAT"
-				"cooldown_scepter" "90.0 90.0 90.0"
+				"cooldown_scepter" "45.0 45.0 45.0"
 			}
 		}
 	}
@@ -10143,7 +10143,7 @@
 			"06"
 			{
 				"var_type" "FIELD_FLOAT"
-				"cooldown_scepter" "80"
+				"cooldown_scepter" "40"
 			}
 			"07"
 			{
@@ -10292,7 +10292,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"cooldown_scepter" "280.0 240.0 120.0"
+				"cooldown_scepter" "140.0 120.0 60.0"
 			}
 			"06"
 			{
@@ -10421,12 +10421,12 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "8.0 9 10.0"
+				"duration" "4.0 4.5 5.0"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_scepter" "8.0 10.0 12.0"
+				"duration_scepter" "4.0 5.0 6.0"
 			}
 			"04"
 			{
@@ -11008,7 +11008,7 @@
 			"06"
 			{
 				"var_type" "FIELD_FLOAT"
-				"cooldown_scepter" "24.0 24.0 24.0"
+				"cooldown_scepter" "12.0 12.0 12.0"
 			}
 			"07"
 			{
@@ -11653,7 +11653,7 @@
 			"07"
 			{
 				"var_type" "FIELD_FLOAT"
-				"cooldown_scepter" "24.0 24.0 24.0"
+				"cooldown_scepter" "12.0 12.0 12.0"
 			}
 		}
 	}
@@ -12152,7 +12152,7 @@
 			"06"
 			{
 				"var_type" "FIELD_INTEGER"
-				"replica_damage_outgoing_scepter" "0 40 80"
+				"replica_damage_outgoing_scepter" "0 20 40"
 			}
 			"07"
 			{
@@ -12172,7 +12172,7 @@
 			"10"
 			{
 				"var_type" "FIELD_INTEGER"
-				"tooltip_outgoing_scepter" "200 240 280"
+				"tooltip_outgoing_scepter" "100 120 140"
 			}
 		}
 	}
@@ -12649,7 +12649,7 @@
 			"08"
 			{
 				"var_type" "FIELD_FLOAT"
-				"cooldown_scepter" "8"
+				"cooldown_scepter" "4"
 			}
 			"09"
 			{
@@ -13703,7 +13703,7 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"cooldown_scepter" "60.0 60.0 60.0"
+				"cooldown_scepter" "30.0 30.0 30.0"
 			}
 		}
 	}
@@ -14348,7 +14348,7 @@
 			"06"
 			{
 				"var_type" "FIELD_FLOAT"
-				"cooldown_scepter" "40.0 40.0 40.0"
+				"cooldown_scepter" "20.0 20.0 20.0"
 			}
 		}
 	}
@@ -17586,7 +17586,7 @@
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"cooldown_scepter" "10"
+				"cooldown_scepter" "5"
 			}
 		}
 	}
@@ -20287,7 +20287,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"scepter_cooldown" "40 20 0"
+				"scepter_cooldown" "20 10 0"
 			}
 		}
 	}
