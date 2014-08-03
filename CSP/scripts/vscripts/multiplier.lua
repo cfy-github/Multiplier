@@ -349,7 +349,7 @@ ListenToGameEvent('npc_spawned', function(keys)
 		--spawnedUnit:SetMoveCapability(2)
 		--spawnedUnit:SetAttackCapability(DOTA_UNIT_CAP_RANGED_ATTACK)
 
-		print('intellect: ' .. spawnedUnit:GetIntellect())
+		--print('intellect: ' .. spawnedUnit:GetIntellect())
 
 		--hero:SwapAbilities("antimage_blink", "antimage_spell_shield", true, false)
 

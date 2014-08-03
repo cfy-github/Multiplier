@@ -9263,22 +9263,22 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "1800 1800 1800 1800"
+				"radius" "900 900 900 900"
 			}
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"collision_radius" "100 100 100 100"
+				"collision_radius" "50 50 50 50"
 			}
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"splash_radius" "300 300 300 300"
+				"splash_radius" "150 150 150 150"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "12.0 12.0 12.0 12.0"
+				"duration" "6.0 6.0 6.0 6.0"
 			}
 			"05"
 			{
@@ -9288,7 +9288,7 @@
 			"06"
 			{
 				"var_type" "FIELD_INTEGER"
-				"machines_per_sec" "48 48 48 48"
+				"machines_per_sec" "24 24 24 24"
 			}
 		}
 	}
@@ -13736,32 +13736,32 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"dagger_path_duration" "24.0 24.0 24.0 24.0"
+				"dagger_path_duration" "12.0 12.0 12.0 12.0"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"hero_path_duration" "14.0 14.0 14.0 14.0"
+				"hero_path_duration" "7.0 7.0 7.0 7.0"
 			}
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"buff_persistence" "8.0 8.0 8.0 8.0"
+				"buff_persistence" "4.0 4.0 4.0 4.0"
 			}
 			"08"
 			{
 				"var_type" "FIELD_INTEGER"
-				"dagger_radius" "250 250 250 250"
+				"dagger_radius" "125 125 125 125"
 			}
 			"09"
 			{
 				"var_type" "FIELD_INTEGER"
-				"path_radius" "350 350 350 350"
+				"path_radius" "175 175 175 175"
 			}
 			"10"
 			{
 				"var_type" "FIELD_INTEGER"
-				"vision_radius" "400"
+				"vision_radius" "200"
 			}
 			"11"
 			{
@@ -13771,7 +13771,7 @@
 			"12"
 			{
 				"var_type" "FIELD_FLOAT"
-				"dagger_grace_period" "4.0"
+				"dagger_grace_period" "2.0"
 			}
 		}
 	}

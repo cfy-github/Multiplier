@@ -5033,22 +5033,22 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "2700 2700 2700 2700"
+				"radius" "900 900 900 900"
 			}
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"collision_radius" "150 150 150 150"
+				"collision_radius" "50 50 50 50"
 			}
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"splash_radius" "450 450 450 450"
+				"splash_radius" "150 150 150 150"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "18.0 18.0 18.0 18.0"
+				"duration" "6.0 6.0 6.0 6.0"
 			}
 			"05"
 			{
@@ -5058,7 +5058,7 @@
 			"06"
 			{
 				"var_type" "FIELD_INTEGER"
-				"machines_per_sec" "72 72 72 72"
+				"machines_per_sec" "24 24 24 24"
 			}
 		}
 	}
@@ -9462,32 +9462,32 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"dagger_path_duration" "36.0 36.0 36.0 36.0"
+				"dagger_path_duration" "12.0 12.0 12.0 12.0"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"hero_path_duration" "21.0 21.0 21.0 21.0"
+				"hero_path_duration" "7.0 7.0 7.0 7.0"
 			}
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"buff_persistence" "12.0 12.0 12.0 12.0"
+				"buff_persistence" "4.0 4.0 4.0 4.0"
 			}
 			"08"
 			{
 				"var_type" "FIELD_INTEGER"
-				"dagger_radius" "375 375 375 375"
+				"dagger_radius" "125 125 125 125"
 			}
 			"09"
 			{
 				"var_type" "FIELD_INTEGER"
-				"path_radius" "525 525 525 525"
+				"path_radius" "175 175 175 175"
 			}
 			"10"
 			{
 				"var_type" "FIELD_INTEGER"
-				"vision_radius" "600"
+				"vision_radius" "200"
 			}
 			"11"
 			{
@@ -9497,7 +9497,7 @@
 			"12"
 			{
 				"var_type" "FIELD_FLOAT"
-				"dagger_grace_period" "6.0"
+				"dagger_grace_period" "2.0"
 			}
 		}
 	}
@@ -10839,43 +10839,6 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"damage_multiplier_scepter" "27 30 33"
-			}
-		}
-	}
-	"lycan_summon_wolves_x3"
-	{
-		"BaseClass" "lycan_summon_wolves"
-		"ID" "5395"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
-		"AbilityCooldown" "30.0 30.0 30.0 30.0"
-		"AbilityManaCost" "145"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"wolf_index" "3 6 9 12"
-			}
-			"02"
-			{
-				"var_type" "FIELD_FLOAT"
-				"wolf_duration" "165.0 165.0 165.0 165.0"
-			}
-			"03"
-			{
-				"var_type" "FIELD_FLOAT"
-				"wolf_bat" "3.75 3.6 3.45 3.3"
-			}
-			"04"
-			{
-				"var_type" "FIELD_INTEGER"
-				"wolf_damage" "54 87 111 138"
-			}
-			"05"
-			{
-				"var_type" "FIELD_INTEGER"
-				"wolf_hp" "600 720 840 960"
 			}
 		}
 	}
@@ -25245,22 +25208,22 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "4500 4500 4500 4500"
+				"radius" "900 900 900 900"
 			}
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"collision_radius" "250 250 250 250"
+				"collision_radius" "50 50 50 50"
 			}
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"splash_radius" "750 750 750 750"
+				"splash_radius" "150 150 150 150"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "30.0 30.0 30.0 30.0"
+				"duration" "6.0 6.0 6.0 6.0"
 			}
 			"05"
 			{
@@ -25270,7 +25233,7 @@
 			"06"
 			{
 				"var_type" "FIELD_INTEGER"
-				"machines_per_sec" "120 120 120 120"
+				"machines_per_sec" "24 24 24 24"
 			}
 		}
 	}
@@ -29674,32 +29637,32 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"dagger_path_duration" "60.0 60.0 60.0 60.0"
+				"dagger_path_duration" "12.0 12.0 12.0 12.0"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"hero_path_duration" "35.0 35.0 35.0 35.0"
+				"hero_path_duration" "7.0 7.0 7.0 7.0"
 			}
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"buff_persistence" "20.0 20.0 20.0 20.0"
+				"buff_persistence" "4.0 4.0 4.0 4.0"
 			}
 			"08"
 			{
 				"var_type" "FIELD_INTEGER"
-				"dagger_radius" "625 625 625 625"
+				"dagger_radius" "125 125 125 125"
 			}
 			"09"
 			{
 				"var_type" "FIELD_INTEGER"
-				"path_radius" "875 875 875 875"
+				"path_radius" "175 175 175 175"
 			}
 			"10"
 			{
 				"var_type" "FIELD_INTEGER"
-				"vision_radius" "1000"
+				"vision_radius" "200"
 			}
 			"11"
 			{
@@ -29709,7 +29672,7 @@
 			"12"
 			{
 				"var_type" "FIELD_FLOAT"
-				"dagger_grace_period" "10.0"
+				"dagger_grace_period" "2.0"
 			}
 		}
 	}
@@ -31051,43 +31014,6 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"damage_multiplier_scepter" "45 50 55"
-			}
-		}
-	}
-	"lycan_summon_wolves_x5"
-	{
-		"BaseClass" "lycan_summon_wolves"
-		"ID" "5395"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
-		"AbilityCooldown" "30.0 30.0 30.0 30.0"
-		"AbilityManaCost" "145"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"wolf_index" "5 10 15 20"
-			}
-			"02"
-			{
-				"var_type" "FIELD_FLOAT"
-				"wolf_duration" "275.0 275.0 275.0 275.0"
-			}
-			"03"
-			{
-				"var_type" "FIELD_FLOAT"
-				"wolf_bat" "6.25 6 5.75 5.5"
-			}
-			"04"
-			{
-				"var_type" "FIELD_INTEGER"
-				"wolf_damage" "90 145 185 230"
-			}
-			"05"
-			{
-				"var_type" "FIELD_INTEGER"
-				"wolf_hp" "1000 1200 1400 1600"
 			}
 		}
 	}
@@ -45457,22 +45383,22 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "9000 9000 9000 9000"
+				"radius" "900 900 900 900"
 			}
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"collision_radius" "500 500 500 500"
+				"collision_radius" "50 50 50 50"
 			}
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"splash_radius" "1500 1500 1500 1500"
+				"splash_radius" "150 150 150 150"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "60.0 60.0 60.0 60.0"
+				"duration" "6.0 6.0 6.0 6.0"
 			}
 			"05"
 			{
@@ -45482,7 +45408,7 @@
 			"06"
 			{
 				"var_type" "FIELD_INTEGER"
-				"machines_per_sec" "240 240 240 240"
+				"machines_per_sec" "24 24 24 24"
 			}
 		}
 	}
@@ -49886,32 +49812,32 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"dagger_path_duration" "120.0 120.0 120.0 120.0"
+				"dagger_path_duration" "12.0 12.0 12.0 12.0"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"hero_path_duration" "70.0 70.0 70.0 70.0"
+				"hero_path_duration" "7.0 7.0 7.0 7.0"
 			}
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"buff_persistence" "40.0 40.0 40.0 40.0"
+				"buff_persistence" "4.0 4.0 4.0 4.0"
 			}
 			"08"
 			{
 				"var_type" "FIELD_INTEGER"
-				"dagger_radius" "1250 1250 1250 1250"
+				"dagger_radius" "125 125 125 125"
 			}
 			"09"
 			{
 				"var_type" "FIELD_INTEGER"
-				"path_radius" "1750 1750 1750 1750"
+				"path_radius" "175 175 175 175"
 			}
 			"10"
 			{
 				"var_type" "FIELD_INTEGER"
-				"vision_radius" "2000"
+				"vision_radius" "200"
 			}
 			"11"
 			{
@@ -49921,7 +49847,7 @@
 			"12"
 			{
 				"var_type" "FIELD_FLOAT"
-				"dagger_grace_period" "20.0"
+				"dagger_grace_period" "2.0"
 			}
 		}
 	}
@@ -51263,43 +51189,6 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"damage_multiplier_scepter" "90 100 110"
-			}
-		}
-	}
-	"lycan_summon_wolves_x10"
-	{
-		"BaseClass" "lycan_summon_wolves"
-		"ID" "5395"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
-		"AbilityCooldown" "30.0 30.0 30.0 30.0"
-		"AbilityManaCost" "145"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"wolf_index" "10 20 30 40"
-			}
-			"02"
-			{
-				"var_type" "FIELD_FLOAT"
-				"wolf_duration" "550.0 550.0 550.0 550.0"
-			}
-			"03"
-			{
-				"var_type" "FIELD_FLOAT"
-				"wolf_bat" "12.5 12 11.5 11"
-			}
-			"04"
-			{
-				"var_type" "FIELD_INTEGER"
-				"wolf_damage" "180 290 370 460"
-			}
-			"05"
-			{
-				"var_type" "FIELD_INTEGER"
-				"wolf_hp" "2000 2400 2800 3200"
 			}
 		}
 	}

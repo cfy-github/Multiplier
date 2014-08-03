@@ -34,7 +34,9 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'alchemist_goblins_greed': {'bonus_gold_cap'}, 'weaver_shukuchi': {'radius', 'fade_time', 'duration'},
                   'viper_corrosive_skin': {'duration'}, 'viper_viper_strike': {'duration'}, 'windrunner_focusfire': {'focusfire_damage_reduction', 'focusfire_damage_reduction_scepter'},
                   'windrunner_powershot': {'damage_reduction', 'speed_reduction', 'arrow_width', 'tree_width', 'vision_duration'},
-                  'windrunner_shackleshot': {'shackle_count'}}
+                  'windrunner_shackleshot': {'shackle_count'},
+                  'spectre_spectral_dagger': {'dagger_path_duration', 'hero_path_duration', 'buff_persistence', 'dagger_radius', 'path_radius', 'vision_radius', 'dagger_grace_period'},
+                  'tinker_march_of_the_machines': {'radius', 'collision_radius', 'splash_radius', 'duration', 'machines_per_sec'}}
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}, 'dazzle_shallow_grave':{'AbilityDuration'}, 'dazzle_poison_touch': {'AbilityDuration'},
                  'death_prophet_exorcism': {'AbilityDuration'}}
@@ -50,7 +52,7 @@ override_instead = ['abaddon_frostmourne', 'pudge_rot', 'alchemist_unstable_conc
              'beastmaster_call_of_the_wild', 'beastmaster_call_of_the_wild_boar', 'ember_spirit_fire_remnant',
              'ember_spirit_activate_fire_remnant', 'invoker_cold_snap', 'invoker_ghost_walk', 'invoker_tornado', 'invoker_emp',
               'invoker_alacrity', 'invoker_chaos_meteor', 'invoker_sun_strike', 'invoker_forge_spirit', 'forged_spirit_melting_strike',
-              'invoker_ice_wall', 'invoker_deafening_blast', 'ancient_apparition_ice_blast']
+              'invoker_ice_wall', 'invoker_deafening_blast', 'ancient_apparition_ice_blast', 'lycan_summon_wolves']
         #, 'invoker_exort', 'invoker_wex', 'invoker_quas'
 
 item_fixed_value = {'item_heart': {'health_regen_rate':'2'}}

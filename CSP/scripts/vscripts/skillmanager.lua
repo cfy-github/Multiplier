@@ -246,10 +246,10 @@ function skillManager:ApplyMultiplier(hero, factor)
 				hero:AddAbility(mab)
 				Log("Add abb: " .. mab .. " / from: " .. v)
 				Log("Hero")
-				PrintTable(getmetatable(hero))
+				--PrintTable(getmetatable(hero))
 				Log("abNum: " .. abNum )
 				Log("mab: " .. mab)
-				PrintTable(currentSkillList)
+				--PrintTable(currentSkillList)
 				--currentSkillList[hero][abNum] = v
 				table.insert(newSkills, mab)
 
