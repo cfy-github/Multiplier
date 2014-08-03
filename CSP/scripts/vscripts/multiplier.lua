@@ -245,6 +245,65 @@ function MultiplierGameMode:ReplaceAllSkills()
     end)
 end
 
+-- This will be fired when the game starts - By Ash47
+-- This will be fired when the game starts
+local function backdoorFix()
+	Log('Backdoor fix')
+    local ents = Entities:FindAllByClassname('npc_dota_tower')
+
+    -- List of towers to not protect
+    local ignore = {
+        dota_goodguys_tower1_bot = true,
+        dota_goodguys_tower1_mid = true,
+        dota_goodguys_tower1_top = true,
+        dota_badguys_tower1_bot = true,
+        dota_badguys_tower1_mid = true,
+        dota_badguys_tower1_top = true
+    }
+
+    -- Loop over all ents
+    for k,ent in pairs(ents) do
+        local name = ent:GetName()
+        local ab
+
+        -- Check if this unit has backdoor protection
+    	if ent:HasAbility('backdoor_protection') then
+    		ab = ent:FindAbilityByName('backdoor_protection')
+    	elseif ent:HasAbility('backdoor_protection_in_base') then
+    		ab = ent:FindAbilityByName('backdoor_protection_in_base')
+    	end
+
+        -- Should we protect it?
+        if not ignore[name] then
+            -- Stop towers going down in the wrong order
+            ent:AddNewModifier(ent, nil, 'modifier_invulnerable', {})
+
+            -- Prevent anal (backdooring)
+            ent:AddNewModifier(ent, ab, 'modifier_'..ab:GetAbilityName(), {})
+        end
+    end
+
+    -- Protect rax
+    ents = Entities:FindAllByClassname('npc_dota_barracks')
+    for k,ent in pairs(ents) do
+        -- Stop it going down before towers are removed
+        ent:AddNewModifier(ent, nil, 'modifier_invulnerable', {})
+
+        -- Prevent Anal (backdooring)
+        ent:AddNewModifier(ent, ent:FindAbilityByName('backdoor_protection_in_base'), 'modifier_backdoor_protection_in_base', {})
+    end
+
+	-- Protect ancient
+    ents = Entities:FindAllByClassname('npc_dota_fort')
+    for k,ent in pairs(ents) do
+        -- Stop the fort going down before the correct towers
+        ent:AddNewModifier(ent, nil, 'modifier_invulnerable', {})
+
+        -- Prevent backdooring
+        ent:AddNewModifier(ent, ent:FindAbilityByName('backdoor_protection_in_base'), 'modifier_backdoor_protection_in_base', {})
+    end
+end
+
 function MultiplierGameMode:OnLevelUp( keys )
 	print( "Somebody leveled up!" )
 	
@@ -296,11 +355,17 @@ local handled = {}
 ListenToGameEvent('npc_spawned', function(keys)
     -- Grab the unit that spawned
     local spawnedUnit = EntIndexToHScript(keys.entindex)
-	
-	if string.find(spawnedUnit:GetUnitName(), "creep") then
+	if string.find(spawnedUnit:GetUnitName(), "roshan") then
+		spawnedUnit:SetBaseDamageMin((spawnedUnit:GetBaseDamageMin() * factor) * 4)
+		spawnedUnit:SetBaseDamageMax((spawnedUnit:GetBaseDamageMax() * factor) * 4)
+		spawnedUnit:SetMaxHealth((spawnedUnit:GetMaxHealth() * factor) * 5)
+		spawnedUnit:SetHealth((spawnedUnit:GetHealth() * factor) * 5)
+		spawnedUnit:SetPhysicalArmorBaseValue((spawnedUnit:GetPhysicalArmorBaseValue() * factor) / 2)	
+	end
+	if string.find(spawnedUnit:GetUnitName(), "creep") or string.find(spawnedUnit:GetUnitName(), "neutral") then
 		if EASY_MODE == 1 then
 			spawnedUnit:SetBaseDamageMin((spawnedUnit:GetBaseDamageMin() * factor) / 2)
-			spawnedUnit:SetBaseDamageMax((spawnedUnit:GetBaseDamageMin() * factor) / 2)
+			spawnedUnit:SetBaseDamageMax((spawnedUnit:GetBaseDamageMax() * factor) / 2)
 			spawnedUnit:SetMaxHealth((spawnedUnit:GetMaxHealth() * factor) / 2)
 			spawnedUnit:SetHealth((spawnedUnit:GetHealth() * factor) / 2)
 			spawnedUnit:SetPhysicalArmorBaseValue((spawnedUnit:GetPhysicalArmorBaseValue() * factor) / 2)	
@@ -311,7 +376,7 @@ ListenToGameEvent('npc_spawned', function(keys)
 			
 		else
 			spawnedUnit:SetBaseDamageMin(spawnedUnit:GetBaseDamageMin() * factor)
-			spawnedUnit:SetBaseDamageMax(spawnedUnit:GetBaseDamageMin() * factor)
+			spawnedUnit:SetBaseDamageMax(spawnedUnit:GetBaseDamageMax() * factor)
 			spawnedUnit:SetMaxHealth(spawnedUnit:GetMaxHealth() * factor)
 			spawnedUnit:SetHealth(spawnedUnit:GetHealth() * factor)
 			spawnedUnit:SetPhysicalArmorBaseValue(spawnedUnit:GetPhysicalArmorBaseValue() * factor)	
@@ -362,38 +427,67 @@ ListenToGameEvent('npc_spawned', function(keys)
 end, nil)
 
 function MultiplierGameMode:MultiplyTowers(factor)
+	-- improve towers
 	local tower = Entities:FindByClassname( nil, "npc_dota_tower" )
     while tower do
 		local thisTower = tower
 		tower = Entities:FindByClassname( tower, "npc_dota_tower" )
 		if EASY_MODE == 1 then
 			thisTower:SetBaseDamageMin((thisTower:GetBaseDamageMin() * factor) / 2)
-			thisTower:SetBaseDamageMax((thisTower:GetBaseDamageMin() * factor) / 2)
+			thisTower:SetBaseDamageMax((thisTower:GetBaseDamageMax() * factor) / 2)
 			thisTower:SetMaxHealth((thisTower:GetMaxHealth() * factor) / 2)
 			thisTower:SetHealth((thisTower:GetHealth() * factor) / 2)
 			thisTower:SetPhysicalArmorBaseValue((thisTower:GetPhysicalArmorBaseValue() * factor) / 2)
 		else
 			thisTower:SetBaseDamageMin(thisTower:GetBaseDamageMin() * factor)
-			thisTower:SetBaseDamageMax(thisTower:GetBaseDamageMin() * factor)
+			thisTower:SetBaseDamageMax(thisTower:GetBaseDamageMax() * factor)
 			thisTower:SetMaxHealth(thisTower:GetMaxHealth() * factor)
 			thisTower:SetHealth(thisTower:GetHealth() * factor)
 			thisTower:SetPhysicalArmorBaseValue(thisTower:GetPhysicalArmorBaseValue() * factor)
 		end
-							
-		--PrintTable(getmetatable(thisTower))
-			--thisTower:ForceKill( false )
     end
 	
+	-- improve fontain dmg
 	local fountain = Entities:FindByClassname( nil, "ent_dota_fountain" )
 	while fountain do
 		local thisFountain = fountain
 		fountain = Entities:FindByClassname( fountain, "ent_dota_fountain" )
 		thisFountain:SetBaseDamageMin(thisFountain:GetBaseDamageMin() * factor)
-		thisFountain:SetBaseDamageMax(thisFountain:GetBaseDamageMin() * factor)
-							
-		--PrintTable(getmetatable(thisTower))
-			--thisTower:ForceKill( false )
+		thisFountain:SetBaseDamageMax(thisFountain:GetBaseDamageMax() * factor)
     end
+	
+	-- improve barracks
+	local rax = Entities:FindByClassname( nil, "npc_dota_barracks" )
+	while rax do
+		local thisRax = rax
+		rax = Entities:FindByClassname( rax, "npc_dota_barracks" )
+		if EASY_MODE == 1 then
+			thisRax:SetMaxHealth(thisRax:GetMaxHealth() * factor)
+			thisRax:SetHealth(thisRax:GetHealth() * factor)
+			thisRax:SetPhysicalArmorBaseValue((thisRax:GetPhysicalArmorBaseValue() * factor) / 2)
+		else
+			thisRax:SetMaxHealth(thisRax:GetMaxHealth() * factor)
+			thisRax:SetHealth(thisRax:GetHealth() * factor)
+			thisRax:SetPhysicalArmorBaseValue(thisRax:GetPhysicalArmorBaseValue() * factor)
+		end
+	end
+	
+	-- improve ancient
+	local ancient = Entities:FindByClassname( nil, "npc_dota_fort" )
+	while ancient do
+		local thisAncient = ancient
+		ancient = Entities:FindByClassname( ancient, "npc_dota_fort" )
+		if EASY_MODE == 1 then
+			thisAncient:SetMaxHealth(thisAncient:GetMaxHealth() * factor)
+			thisAncient:SetHealth(thisAncient:GetHealth() * factor)
+			thisAncient:SetPhysicalArmorBaseValue((thisAncient:GetPhysicalArmorBaseValue() * factor) / 2)
+		else
+			thisAncient:SetMaxHealth(thisAncient:GetMaxHealth() * factor)
+			thisAncient:SetHealth(thisAncient:GetHealth() * factor)
+			thisAncient:SetPhysicalArmorBaseValue(thisAncient:GetPhysicalArmorBaseValue() * factor)
+		end
+	end
+
 		
 		
 end
@@ -670,6 +764,7 @@ function MultiplierGameMode:getItemByName( hero, name )
 end
 
 local announced = 0
+local backdoor = 0
 
 function MultiplierGameMode:Think()
   -- If the game's over, it's over.
@@ -716,6 +811,15 @@ function MultiplierGameMode:Think()
 			  end
 		  end
 	  end
+  end
+  
+  
+  if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
+        -- Fix backdoor
+		if backdoor == 0 then
+			backdoor = 1
+			backdoorFix()
+		end
   end
 
   --MultiplierGameMode:thinkState( dt )

@@ -1942,7 +1942,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"health_regen_rate" "2"
+				"health_regen_rate" "1"
 			}
 			"04"
 			{
@@ -5876,7 +5876,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"shadowraze_radius" "500"
+				"shadowraze_radius" "250"
 			}
 			"02"
 			{
@@ -5901,7 +5901,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"shadowraze_radius" "500"
+				"shadowraze_radius" "250"
 			}
 			"02"
 			{
@@ -5926,7 +5926,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"shadowraze_radius" "500"
+				"shadowraze_radius" "250"
 			}
 			"02"
 			{
@@ -10456,7 +10456,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"structure_damage_mod" "0.5"
+				"structure_damage_mod" "0.25"
 			}
 			"02"
 			{
@@ -10467,42 +10467,6 @@
 			{
 				"var_type" "FIELD_INTEGER"
 				"radius" "400 400 400 400"
-			}
-		}
-	}
-	"pugna_decrepify"
-	{
-		"BaseClass" "pugna_decrepify"
-		"ID" "5187"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_CUSTOM"
-		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_CUSTOM"
-		"AbilityCastRange" "1400 1400 1400 1400"
-		"AbilityCastPoint" "0.2 0.2 0.2 0.2"
-		"AbilityCooldown" "12.0 10.0 8.0 6.0"
-		"AbilityDuration" "4.0 5 6.0 7"
-		"AbilityManaCost" "60"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_spell_damage_pct_allies" "-50"
-			}
-			"02"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_spell_damage_pct" "-100"
-			}
-			"03"
-			{
-				"var_type" "FIELD_INTEGER"
-				"bonus_movement_speed" "-100 -100 -100 -100"
-			}
-			"04"
-			{
-				"var_type" "FIELD_FLOAT"
-				"tooltip_duration" "4.0 5 6.0 7"
 			}
 		}
 	}
@@ -15901,17 +15865,17 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"bear_regen_tooltip" "4 6 8 10"
+				"bear_regen_tooltip" "2 3 4 5"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"bear_bat" "3.5 3.3 3.1 2.9"
+				"bear_bat" "1.75 1.65 1.55 1.45"
 			}
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"bear_armor" "6 8 10 12"
+				"bear_armor" "3 4 5 6"
 			}
 			"05"
 			{
@@ -15991,7 +15955,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"base_attack_time" "0.75 0.75 0.75"
+				"base_attack_time" "1.5 1.5 1.5"
 			}
 			"02"
 			{
@@ -16009,24 +15973,6 @@
 				"speed_loss" "45"
 			}
 			"05"
-			{
-				"var_type" "FIELD_FLOAT"
-				"transformation_time" "0.9665"
-			}
-		}
-	}
-	"lone_druid_true_form_druid"
-	{
-		"BaseClass" "lone_druid_true_form_druid"
-		"ID" "5416"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityCastPoint" "0 0 0"
-		"AbilityCooldown" "0.0 0.0 0.0"
-		"AbilityManaCost" "25 25 25"
-		"AbilitySpecial"
-		{
-			"01"
 			{
 				"var_type" "FIELD_FLOAT"
 				"transformation_time" "0.9665"
@@ -16067,23 +16013,6 @@
 			}
 		}
 	}
-	"lone_druid_spirit_bear_return"
-	{
-		"BaseClass" "lone_druid_spirit_bear_return"
-		"ID" "5418"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"AbilityCastPoint" "0.3"
-		"AbilityCooldown" "5.0"
-		"AbilityManaCost" "0"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"return_damage_cooldown" "6"
-			}
-		}
-	}
 	"lone_druid_spirit_bear_entangle"
 	{
 		"BaseClass" "lone_druid_spirit_bear_entangle"
@@ -16102,12 +16031,12 @@
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"hero_duration" "6.0"
+				"hero_duration" "3.0"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"creep_duration" "18.0"
+				"creep_duration" "9.0"
 			}
 		}
 	}
@@ -16126,7 +16055,7 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"bonus_building_damage" "80"
+				"bonus_building_damage" "40"
 			}
 		}
 	}

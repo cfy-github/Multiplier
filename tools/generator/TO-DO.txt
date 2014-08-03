@@ -1,0 +1,1 @@
+Fix Lone Druid - RABID not working on bear

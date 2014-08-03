@@ -1,9 +1,10 @@
 from lib.keyvalues import KeyValues
 from lib import clean
+from lib import update_addons
 import os
 
 
-force_divide = ['min_blink_range', 'base_attack_time', 'transformation_time', 'attack_interval']
+force_divide = ['min_blink_range', 'base_attack_time', 'transformation_time', 'attack_interval', 'structure_damage_mod']
 
 ignore_all_special = ['crit_chance', 'bonus_evasion', 'dodge_chance_pct', 'miss_chance', 'dodge_chance',
                     'illusion_damage_out_pct', 'illusion_damage_in_pct', 'incoming_damage', 'illusion_outgoing_damage',
@@ -12,7 +13,7 @@ ignore_all_special = ['crit_chance', 'bonus_evasion', 'dodge_chance_pct', 'miss_
                       'bounce_delay', 'idle_invis_delay', 'fire_delay', 'path_delay', 'hero_teleport_delay', 'attack_delay', 'multicast_delay', 'teleport_delay',
                       'stun_delay', 'cast_delay', 'activation_delay', 'rock_explosion_delay', 'first_wave_delay', 'explode_delay', 'cooldown_scepter',
                       'omni_slash_cooldown_scepter', 'epicenter_cooldown_scepter', 'nether_swap_cooldown_scepter', 'scepter_cooldown', 'replica_damage_outgoing_scepter',
-                      'tooltip_outgoing_scepter']
+                      'tooltip_outgoing_scepter', 'shadowraze_radius']
 
 ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'chance_pct', 'duration'},
                   'shadow_shaman_mass_serpent_ward': {'duration'}, 'faceless_void_chronosphere': {'duration', 'duration_scepter'},
@@ -32,31 +33,34 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'death_prophet_exorcism': {'radius', 'max_distance', 'give_up_distance', 'spirit_speed'}, 'death_prophet_silence': {'radius'},
                   'alchemist_acid_spray': {'duration', 'radius'}, 'alchemist_chemical_rage': {'duration'},
                   'alchemist_goblins_greed': {'bonus_gold_cap'}, 'weaver_shukuchi': {'radius', 'fade_time', 'duration'},
-                  'viper_corrosive_skin': {'duration'}, 'viper_viper_strike': {'duration'}, 'windrunner_focusfire': {'focusfire_damage_reduction', 'focusfire_damage_reduction_scepter'},
+                  'viper_corrosive_skin': {'duration'}, 'windrunner_focusfire': {'focusfire_damage_reduction', 'focusfire_damage_reduction_scepter'},
                   'windrunner_powershot': {'damage_reduction', 'speed_reduction', 'arrow_width', 'tree_width', 'vision_duration'},
-                  'windrunner_shackleshot': {'shackle_count'},
+                  'windrunner_shackleshot': {'shackle_count'}, 'lone_druid_true_form': {'speed_loss'}, 'viper_viper_strike': {'duration'},
                   'spectre_spectral_dagger': {'dagger_path_duration', 'hero_path_duration', 'buff_persistence', 'dagger_radius', 'path_radius', 'vision_radius', 'dagger_grace_period'},
-                  'tinker_march_of_the_machines': {'radius', 'collision_radius', 'splash_radius', 'duration', 'machines_per_sec'}, 'pugna_nether_blast': {'structure_damage_mod', 'radius'},
-                  'lone_druid_true_form': {'speed_loss'}}
+                  'tinker_march_of_the_machines': {'radius', 'collision_radius', 'splash_radius', 'duration', 'machines_per_sec'}, 'pugna_nether_blast': {'radius'},
+                  'lone_druid_spirit_bear_entangle': {'hero_duration', 'creep_duration'}, 'lone_druid_spirit_bear_demolish': {'bonus_building_damage'},
+                  'lone_druid_true_form': {'base_attack_time', 'speed_loss'}, 'lone_druid_spirit_bear': {'bear_regen_tooltip', 'bear_bat', 'bear_armor'}}
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}, 'dazzle_shallow_grave':{'AbilityDuration'}, 'dazzle_poison_touch': {'AbilityDuration'},
                  'death_prophet_exorcism': {'AbilityDuration'}}
 
-ignore_all_normal = ['ID', 'AbilityCastPoint', 'AbilityManaCost', 'AbilityCooldown', 'AbilityModifierSupportValue', 'MaxLevel', 'RequiredLevel', 'LevelsBetweenUpgrades', 'DisplayAdditionalHeroes']
+ignore_all_normal = ['ID', 'AbilityCastPoint', 'AbilityManaCost', 'AbilityCooldown', 'AbilityModifierSupportValue', 'MaxLevel', 'RequiredLevel', 'LevelsBetweenUpgrades',
+                     'DisplayAdditionalHeroes']
 
 
 dont_parse = ['Version', 'ability_base', 'default_attack', 'invoker_invoke', 'invoker_empty1', 'invoker_empty2', 'ancient_apparition_ice_blast_release',
-              'meepo_divided_we_stand', 'weaver_geminate_attack']
+              'meepo_divided_we_stand', 'weaver_geminate_attack', 'lone_druid_true_form_druid', 'lone_druid_spirit_bear_return', 'pugna_decrepify']
 
 override_instead = ['abaddon_frostmourne', 'pudge_rot', 'alchemist_unstable_concoction'
              'alchemist_unstable_concoction_throw', 'drow_ranger_frost_arrows', 'axe_counter_helix',
              'beastmaster_call_of_the_wild', 'beastmaster_call_of_the_wild_boar', 'ember_spirit_fire_remnant',
              'ember_spirit_activate_fire_remnant', 'invoker_cold_snap', 'invoker_ghost_walk', 'invoker_tornado', 'invoker_emp',
               'invoker_alacrity', 'invoker_chaos_meteor', 'invoker_sun_strike', 'invoker_forge_spirit', 'forged_spirit_melting_strike',
-              'invoker_ice_wall', 'invoker_deafening_blast', 'ancient_apparition_ice_blast', 'lycan_summon_wolves']
+              'invoker_ice_wall', 'invoker_deafening_blast', 'ancient_apparition_ice_blast', 'lycan_summon_wolves',
+              'lone_druid_true_form_battle_cry', 'lone_druid_spirit_bear_entangle', 'lone_druid_spirit_bear_demolish' ]
         #, 'invoker_exort', 'invoker_wex', 'invoker_quas'
 
-item_fixed_value = {'item_heart': {'health_regen_rate':'2'}}
+item_fixed_value = {'item_heart': {'health_regen_rate':'1'}}
 
 factors = [2,3,5,10]
 override_factor = 2
@@ -241,3 +245,4 @@ if __name__ == "__main__":
     root.save('npc_abilities_custom.txt')
     rootov.save('npc_abilities_override.txt')
     os.remove('npc_abilities_custom.tmp')
+    update_addons.updateAddons()
