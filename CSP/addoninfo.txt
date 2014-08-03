@@ -2,7 +2,7 @@
 {
 	"addonSteamAppID"	"816"
 	"addontitle"	"Custom Spell Power"
-	"addonversion"	"0.1"
+	"addonversion"	"0.01.04"
 	"addontagline"	"CSP"
 	"addonauthor"	"DarkSupremo"
 	"addonSteamGroupName"	""

@@ -323,9 +323,10 @@ function MultiplierGameMode:OnLevelUp( keys )
 			hero:SetBaseStrength(hero:GetBaseStrength() + (hero:GetStrengthGain()*factor))
 			hero:SetBaseAgility(hero:GetBaseAgility() + (hero:GetAgilityGain()*factor))
 			
-			if hero:GetBaseIntellect() < 100 then
-				hero:SetBaseIntellect(hero:GetBaseIntellect() + (hero:GetIntellectGain()*factor))
-			end
+			
+			--if hero:GetBaseIntellect() < 100 then
+			--	hero:SetBaseIntellect(hero:GetBaseIntellect() + (hero:GetIntellectGain()*factor))
+			--end
 			hero:CalculateStatBonus()
 		end
       --PlayerResource:SetGold(plyID, 0, true)
