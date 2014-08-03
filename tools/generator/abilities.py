@@ -13,7 +13,11 @@ ignore_all_special = ['crit_chance', 'bonus_evasion', 'dodge_chance_pct', 'miss_
                       'bounce_delay', 'idle_invis_delay', 'fire_delay', 'path_delay', 'hero_teleport_delay', 'attack_delay', 'multicast_delay', 'teleport_delay',
                       'stun_delay', 'cast_delay', 'activation_delay', 'rock_explosion_delay', 'first_wave_delay', 'explode_delay', 'cooldown_scepter',
                       'omni_slash_cooldown_scepter', 'epicenter_cooldown_scepter', 'nether_swap_cooldown_scepter', 'scepter_cooldown', 'replica_damage_outgoing_scepter',
-                      'tooltip_outgoing_scepter', 'shadowraze_radius']
+                      'tooltip_outgoing_scepter', 'shadowraze_radius', 'mana_cost_per_second', 'stun_duration', 'light_strike_array_stun_duration', 'arrow_min_stun',
+                      'arrow_max_stun', 'stun_min', 'stun_max', 'coil_stun_duration', 'blast_stun_duration', 'bolt_stun_duration', 'stun_chance', 'magic_missile_stun',
+                      'fail_stun_duration', 'min_stun', 'max_stun', 'stun_delay', 'hero_stun_duration', 'creep_stun_duration', 'initial_stun_duration', 'sleep_duration',
+                      'non_hero_stun_duration', 'magic_missile_stun', 'cast_animation', 'stun_radius', 'lift_duration', 'silence_duration', 'knockback_duration', 'fade_time',
+                      'shock_radius', 'pre_flight_time']
 
 ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'chance_pct', 'duration'},
                   'shadow_shaman_mass_serpent_ward': {'duration'}, 'faceless_void_chronosphere': {'duration', 'duration_scepter'},
@@ -22,34 +26,45 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'ember_spirit_flame_guard': {'radius'}, 'ember_spirit_fire_remnant': {'charge_restore_time', 'radius'},
                   'ember_spirit_activate_fire_remnant': {'charge_restore_time', 'radius'}, 'earthshaker_fissure': {'fissure_range', 'fissure_duration', 'fissure_radius'},
                   'crystal_maiden_freezing_field': {'explosion_interval', 'radius', 'explosion_radius', 'explosion_min_dist', 'explosion_max_dist'},
-                  'rattletrap_power_cogs': {'radius', 'spacing', 'duration'}, 'rattletrap_battery_assault': {'interval'},
+                  'rattletrap_power_cogs': {'radius', 'spacing', 'duration'}, 'rattletrap_battery_assault': {'interval', 'radius', 'duration'},
                   'dark_seer_ion_shell': {'radius', 'duration'}, 'necrolyte_heartstopper_aura': {'aura_radius'},
                   'doom_bringer_doom': {'duration', 'duration_scepter', 'deniable_pct'}, 'doom_bringer_lvl_death': {'lvl_bonus_multiple'},
                   'doom_bringer_scorched_earth': {'radius', 'duration'}, 'dazzle_shallow_grave':{'duration_tooltip'},
-                  'dazzle_shadow_wave':{'damage_radius'}, 'dazzle_weave':{'duration', 'duration_scepter'},
+                  'dazzle_shadow_wave':{'damage_radius'}, 'dazzle_weave':{'duration', 'duration_scepter'},'sniper_assassinate': {'projectile_speed'},
                   'dazzle_poison_touch': {'should_stun', 'duration_tooltip', 'set_time'}, 'batrider_sticky_napalm': {'radius', 'duration'},
                   'batrider_flamebreak': {'explosion_radius', 'collision_radius'}, 'batrider_firefly': {'radius', 'tree_radius', 'duration'},
-                  'batrider_flaming_lasso': {'drag_distance'}, 'brewmaster_primal_split': {'split_duration'},
+                  'batrider_flaming_lasso': {'drag_distance'}, 'brewmaster_primal_split': {'split_duration'}, 'sniper_shrapnel': {'duration', 'damage_delay', 'slow_duration', 'radius'},
                   'death_prophet_exorcism': {'radius', 'max_distance', 'give_up_distance', 'spirit_speed'}, 'death_prophet_silence': {'radius'},
-                  'alchemist_acid_spray': {'duration', 'radius'}, 'alchemist_chemical_rage': {'duration'},
-                  'alchemist_goblins_greed': {'bonus_gold_cap'}, 'weaver_shukuchi': {'radius', 'fade_time', 'duration'},
+                  'alchemist_acid_spray': {'duration', 'radius'}, 'alchemist_chemical_rage': {'duration'}, 'spirit_breaker_greater_bash': {'chance_pct', 'duration'},
+                  'alchemist_goblins_greed': {'bonus_gold_cap'}, 'weaver_shukuchi': {'radius', 'fade_time', 'duration'}, 'sniper_headshot': {'stun_duration'},
                   'viper_corrosive_skin': {'duration'}, 'windrunner_focusfire': {'focusfire_damage_reduction', 'focusfire_damage_reduction_scepter'},
                   'windrunner_powershot': {'damage_reduction', 'speed_reduction', 'arrow_width', 'tree_width', 'vision_duration'},
                   'windrunner_shackleshot': {'shackle_count'}, 'lone_druid_true_form': {'speed_loss'}, 'viper_viper_strike': {'duration'},
                   'spectre_spectral_dagger': {'dagger_path_duration', 'hero_path_duration', 'buff_persistence', 'dagger_radius', 'path_radius', 'vision_radius', 'dagger_grace_period'},
-                  'tinker_march_of_the_machines': {'radius', 'collision_radius', 'splash_radius', 'duration', 'machines_per_sec'}, 'pugna_nether_blast': {'radius'},
+                  'tinker_march_of_the_machines': {'radius', 'collision_radius', 'splash_radius', 'duration'}, 'pugna_nether_blast': {'radius'},
                   'lone_druid_spirit_bear_entangle': {'hero_duration', 'creep_duration'}, 'lone_druid_spirit_bear_demolish': {'bonus_building_damage'},
-                  'lone_druid_true_form': {'base_attack_time', 'speed_loss'}, 'lone_druid_spirit_bear': {'bear_regen_tooltip', 'bear_bat', 'bear_armor'}}
+                  'lone_druid_true_form': {'base_attack_time', 'speed_loss'}, 'lone_druid_spirit_bear': {'bear_regen_tooltip', 'bear_bat', 'bear_armor'},
+                  'shadow_shaman_shackles': {'channel_time'}, 'antimage_mana_break': {'damage_per_burn'}, 'antimage_mana_void': {'mana_void_aoe_radius'},
+                  'rubick_telekinesis': {'radius', 'lift_duration', 'stun_duration'}, 'rubick_fade_bolt': {'duration', 'slow_duration'},
+                  'leshrac_pulse_nova': {'radius'}, 'leshrac_lightning_storm': {'slow_duration'}, 'leshrac_diabolic_edict': {'radius'},
+                  'leshrac_split_earth': {'duration'}, 'rattletrap_hookshot': {'latch_radius', 'stun_radius', 'duration'}, 'ursa_overpower': {'duration_tooltip'},
+                  'dragon_knight_frost_breath': {'duration'}, 'drow_ranger_silence': {'duration', 'silence_radius'}, 'drow_ranger_wave_of_silence': {''},
+                  'dragon_knight_elder_dragon_form': {'duration', 'bonus_attack_range', 'corrosive_breath_duration', 'splash_radius', 'splash_damage_percent', 'frost_duration', 'frost_aoe'},
+                  'ursa_fury_swipes': {'bonus_reset_time', 'bonus_reset_time_roshan'}, 'ursa_enrage': {'life_damage_bonus_percent'},
+                  'gyrocopter_rocket_barrage': {'radius'}, 'gyrocopter_flak_cannon': {'radius'}, 'gyrocopter_call_down': {'radius'}, 'tinker_laser': {'duration_hero', 'miss_rate', 'speed'}}
+
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}, 'dazzle_shallow_grave':{'AbilityDuration'}, 'dazzle_poison_touch': {'AbilityDuration'},
-                 'death_prophet_exorcism': {'AbilityDuration'}}
+                 'death_prophet_exorcism': {'AbilityDuration'}, 'leshrac_diabolic_edict': {'AbilityDuration'}, 'leshrac_split_earth': {'AbilityDuration'},
+                 'ursa_overpower': {'AbilityDuration'}, 'gyrocopter_flak_cannon': {'AbilityDuration'}}
 
 ignore_all_normal = ['ID', 'AbilityCastPoint', 'AbilityManaCost', 'AbilityCooldown', 'AbilityModifierSupportValue', 'MaxLevel', 'RequiredLevel', 'LevelsBetweenUpgrades',
                      'DisplayAdditionalHeroes']
 
 
 dont_parse = ['Version', 'ability_base', 'default_attack', 'invoker_invoke', 'invoker_empty1', 'invoker_empty2', 'ancient_apparition_ice_blast_release',
-              'meepo_divided_we_stand', 'weaver_geminate_attack', 'lone_druid_true_form_druid', 'lone_druid_spirit_bear_return', 'pugna_decrepify']
+              'meepo_divided_we_stand', 'weaver_geminate_attack', 'lone_druid_true_form_druid', 'lone_druid_spirit_bear_return', 'pugna_decrepify', 'shadow_shaman_voodoo',
+              'rubick_telekinesis_land', 'tinker_rearm']
 
 override_instead = ['abaddon_frostmourne', 'pudge_rot', 'alchemist_unstable_concoction'
              'alchemist_unstable_concoction_throw', 'drow_ranger_frost_arrows', 'axe_counter_helix',
