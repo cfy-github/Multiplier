@@ -6182,7 +6182,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"structure_damage_mod" "1.5"
+				"structure_damage_mod" "0.5"
 			}
 			"02"
 			{
@@ -6192,7 +6192,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "1200 1200 1200 1200"
+				"radius" "400 400 400 400"
 			}
 		}
 	}
@@ -26357,7 +26357,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"structure_damage_mod" "2.5"
+				"structure_damage_mod" "0.5"
 			}
 			"02"
 			{
@@ -26367,7 +26367,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "2000 2000 2000 2000"
+				"radius" "400 400 400 400"
 			}
 		}
 	}
@@ -46532,7 +46532,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"structure_damage_mod" "5"
+				"structure_damage_mod" "0.5"
 			}
 			"02"
 			{
@@ -46542,7 +46542,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "4000 4000 4000 4000"
+				"radius" "400 400 400 400"
 			}
 		}
 	}

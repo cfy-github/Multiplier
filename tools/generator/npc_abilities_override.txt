@@ -10456,7 +10456,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"structure_damage_mod" "1"
+				"structure_damage_mod" "0.5"
 			}
 			"02"
 			{
@@ -10466,7 +10466,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "800 800 800 800"
+				"radius" "400 400 400 400"
 			}
 		}
 	}
