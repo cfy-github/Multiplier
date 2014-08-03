@@ -36,7 +36,8 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'windrunner_powershot': {'damage_reduction', 'speed_reduction', 'arrow_width', 'tree_width', 'vision_duration'},
                   'windrunner_shackleshot': {'shackle_count'},
                   'spectre_spectral_dagger': {'dagger_path_duration', 'hero_path_duration', 'buff_persistence', 'dagger_radius', 'path_radius', 'vision_radius', 'dagger_grace_period'},
-                  'tinker_march_of_the_machines': {'radius', 'collision_radius', 'splash_radius', 'duration', 'machines_per_sec'}, 'pugna_nether_blast': {'structure_damage_mod', 'radius'}}
+                  'tinker_march_of_the_machines': {'radius', 'collision_radius', 'splash_radius', 'duration', 'machines_per_sec'}, 'pugna_nether_blast': {'structure_damage_mod', 'radius'},
+                  'lone_druid_true_form': {'speed_loss'}}
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}, 'dazzle_shallow_grave':{'AbilityDuration'}, 'dazzle_poison_touch': {'AbilityDuration'},
                  'death_prophet_exorcism': {'AbilityDuration'}}

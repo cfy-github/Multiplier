@@ -11100,7 +11100,7 @@
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"speed_loss" "135"
+				"speed_loss" "45"
 			}
 			"05"
 			{
@@ -31275,7 +31275,7 @@
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"speed_loss" "225"
+				"speed_loss" "45"
 			}
 			"05"
 			{
@@ -51450,7 +51450,7 @@
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"speed_loss" "450"
+				"speed_loss" "45"
 			}
 			"05"
 			{

@@ -16006,7 +16006,7 @@
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"speed_loss" "90"
+				"speed_loss" "45"
 			}
 			"05"
 			{
