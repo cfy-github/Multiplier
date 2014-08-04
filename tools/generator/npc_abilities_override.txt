@@ -4559,7 +4559,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "12.0 14.0 16.0 18.0"
+				"duration" "6.0 7.0 8.0 9.0"
 			}
 			"02"
 			{
@@ -4612,12 +4612,12 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"visibility_threshold_pct" "100"
+				"visibility_threshold_pct" "50"
 			}
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"invis_threshold_pct" "50"
+				"invis_threshold_pct" "25"
 			}
 			"03"
 			{
