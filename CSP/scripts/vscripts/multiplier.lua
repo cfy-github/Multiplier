@@ -10,8 +10,10 @@ local STAGE_VOTED = 1
 local VOTE_TIME = 0
 
 local EASY_MODE = 0
+local ALL_RANDOM = 0
 
 local currentStage = STAGE_VOTING
+local allowed_factors = {2, 3, 5, 10}
 
 -- Fill this table up with the required XP per level if you want to change it
 --XP_PER_LEVEL_TABLE = {}
@@ -221,6 +223,62 @@ end
   end
 end]]
 
+local heroKV = LoadKeyValues('scripts/npc/npc_heroes.txt')
+
+-- Build a table of valid hero IDs to pick from, and skill owners
+local validHeroIDs = {}
+local validHeroNames = {}
+local skillOwningHero = {}
+for k,v in pairs(heroKV) do
+    if k ~= 'Version' and k ~= 'npc_dota_hero_base' then
+        -- If this hero has an ID
+        if v.HeroID then
+            -- Store the hero name as valid
+            validHeroNames[k] = true
+
+            -- Store the ID as valid
+            table.insert(validHeroIDs, v.HeroID)
+
+            -- Loop over all possible 16 slots
+            for i=1,16 do
+                -- Grab the ability
+                local ab = v['Ability'..i]
+
+                -- Did we actually find an ability?
+                if ab then
+                    -- Yep, store this hero as the owner
+                    skillOwningHero[ab] = v.HeroID
+                end
+            end
+        end
+    end
+end
+
+-- Tells you if a hero name is valid, or not
+local function isValidHeroName(heroName)
+    if validHeroNames[heroName] then
+        return true
+    end
+
+    return false
+end
+
+-- Attempts to pick a random hero, returns 'random' if it fails
+local function getRandomHeroName()
+    local choices = {}
+
+    for k,v in pairs(validHeroNames) do
+        table.insert(choices, k)
+    end
+
+    if #choices > 0 then
+        return choices[math.random(#choices)]
+    else
+        return 'random'
+    end
+end
+
+
 function MultiplierGameMode:ShowCenterMessage(msg,dur)
   local msg = {
     message = msg,
@@ -240,8 +298,6 @@ function MultiplierGameMode:ReplaceAllSkills()
       local ply = self.vPlayers[plyID]
 	  local hero = player.hero
 	  SkillManager:ApplyMultiplier(hero, factor)
-      --PlayerResource:SetGold(plyID, 0, true)
-      --PlayerResource:SetGold(plyID, 0, false)
     end)
 end
 
@@ -520,6 +576,18 @@ function MultiplierGameMode:PlayerConnect(keys)
   end
 end
 
+function valid(data, array)
+ local valid = {}
+ for i = 1, #array do
+  valid[array[i]] = true
+ end
+ if valid[data] then
+  return false
+ else
+  return true
+ end
+end
+
 local hook = nil
 local attach = 0
 local controlPoints = {}
@@ -549,27 +617,48 @@ function MultiplierGameMode:PlayerSay(keys)
   
   if not voted then
 	  if plyID == 0 then
-			local fac = string.match(text, "^-x+(%d+)")
+			local trash, fac = string.match(text, "^-(.*)x+(%d+)")
+			Log("Fac: " .. fac)
 			if fac ~= nil then
-				if fac == '2' or fac == '3' or fac == '5' or fac == '10' then
+				if valid(fac, allowed_factors) then
+				--if fac == '2' or fac == '3' or fac == '5' or fac == '10' then
+					if string.find(text, "em") then EASY_MODE = 1 end
+					if string.find(text, "ar") then ALL_RANDOM = 1 end		
+					local GM = ""
+					if EASY_MODE == 1 and ALL_RANDOM == 1 then
+						GM = 'Easy / Random'
+					elseif EASY_MODE == 1 and ALL_RANDOM == 0 then
+						GM = 'Easy Mode'
+					elseif EASY_MODE == 0 and ALL_RANDOM == 1 then
+						GM = 'All Random'
+					else
+						GM = 'Normal'
+					end
 					factor = fac
-					EASY_MODE = 0
-					local txt = '<font color="'..COLOR_RED2..'">Game Mode: </font> <font color="'..COLOR_BLUE2..'">Normal x'..factor..'</font> '
+					if ALL_RANDOM == 1 then		
+						for i=0, 9 do
+							-- Grab player instance
+							local plyd = PlayerResource:GetPlayer(i)
+							-- Make sure we actually found a player instance
+							if plyd then
+								Log("creating hero: " .. i)
+								local testhero = plyd:GetAssignedHero()
+								if testhero == null then
+									plyd = CreateHeroForPlayer(getRandomHeroName(), plyd)
+									plyd:SetGold(1000, false)
+								else
+									PlayerResource:ReplaceHeroWith(plyd:GetPlayerID(), getRandomHeroName(), 1000, 0)
+								end
+							end
+						end
+						SendToServerConsole('sv_cheats 1')
+						SendToServerConsole('dota_dev forcegamestart')
+						SendToServerConsole('sv_cheats 0')
+					end
+
+					local txt = '<font color="'..COLOR_RED2..'">Game Mode: </font> <font color="'..COLOR_BLUE2..'">' .. GM .. ' x'..factor..'</font> '
 					Say(nil, txt, false)
-					self:ShowCenterMessage('Game Mode: Normal x' .. factor , 10)
-					voted = true
-					MultiplierGameMode:ReplaceAllSkills()
-					MultiplierGameMode:MultiplyTowers(factor)
-				end
-			end
-			local fac = string.match(text, "^-ex+(%d+)")
-			if fac ~= nil then
-				if fac == '2' or fac == '3' or fac == '5' or fac == '10' then
-					factor = fac
-					EASY_MODE = 1
-					local txt = '<font color="'..COLOR_RED2..'">Game Mode: </font> <font color="'..COLOR_BLUE2..'">Easy x'..factor..'</font> '
-					Say(nil, txt, false)
-					self:ShowCenterMessage('Game Mode: Easy x' .. factor , 10)
+					self:ShowCenterMessage(GM ..' x' .. factor , 10)
 					voted = true
 					MultiplierGameMode:ReplaceAllSkills()
 					MultiplierGameMode:MultiplyTowers(factor)
@@ -718,6 +807,16 @@ function MultiplierGameMode:LoopOverPlayers(callback)
   end
 end
 
+
+function MultiplierGameMode:LoopOverPlayersNoHero(callback)
+  for k, v in pairs(self.vPlayers) do
+      -- Run the callback
+      if callback(v, v.hero:GetPlayerID()) then
+        break
+      end
+  end
+end
+
 --[[function MultiplierGameMode:ShopReplacement( keys )
   Log('ShopReplacement' )
   PrintTable(keys)
@@ -791,8 +890,9 @@ function MultiplierGameMode:Think()
 					endTime = Time() + 2,
 					callback = function(multiplier, args)
 						Say(nil, '<font color="'..COLOR_RED2..'">Waiting (30s) for HOST to select the Game Mode: </font>', false)
-						Say(nil, '<font color="'..COLOR_RED2..'">Normal Mode with Multiplier: </font> <font color="'..COLOR_BLUE2..'">(-x2 or -x3 or -x5 or -x10)</font> ', false)
-						Say(nil, '<font color="'..COLOR_RED2..'">Easy Mode with Multiplier: </font> <font color="'..COLOR_BLUE2..'">(-ex2 or -ex3 or -ex5 or -ex10)</font> ', false)
+						Say(nil, '<font color="'..COLOR_RED2..'">Required Multipliers: </font> <font color="'..COLOR_BLUE2..'">(x2 or x3 or x5 or x10)</font> ', false)
+						Say(nil, '<font color="'..COLOR_RED2..'">Optional: </font> <font color="'..COLOR_BLUE2..'">(em [easy mode], ar [all random heroes])</font> ', false)
+						Say(nil, '<font color="'..COLOR_RED2..'">Example: </font> <font color="'..COLOR_BLUE2..'">-x3 or -emx3 or -arx3 or -aremx3)</font> ', false)
 						Say(nil, '<font color="'..COLOR_GREEN2..'">Few skills will stay with x2 even if other mode is selected, and for now all items will stay in x2 also</font> ', false)
 					end
 				})
