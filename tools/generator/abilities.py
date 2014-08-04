@@ -17,7 +17,7 @@ ignore_all_special = ['crit_chance', 'bonus_evasion', 'dodge_chance_pct', 'miss_
                       'arrow_max_stun', 'stun_min', 'stun_max', 'coil_stun_duration', 'blast_stun_duration', 'bolt_stun_duration', 'stun_chance', 'magic_missile_stun',
                       'fail_stun_duration', 'min_stun', 'max_stun', 'stun_delay', 'hero_stun_duration', 'creep_stun_duration', 'initial_stun_duration', 'sleep_duration',
                       'non_hero_stun_duration', 'magic_missile_stun', 'cast_animation', 'stun_radius', 'lift_duration', 'silence_duration', 'knockback_duration', 'fade_time',
-                      'shock_radius', 'pre_flight_time']
+                      'shock_radius', 'pre_flight_time', 'fiend_grip_tick_interval', 'fiend_grip_duration', 'fiend_grip_duration_scepter']
 
 ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'chance_pct', 'duration'},
                   'shadow_shaman_mass_serpent_ward': {'duration'}, 'faceless_void_chronosphere': {'duration', 'duration_scepter'},
@@ -29,7 +29,7 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'rattletrap_power_cogs': {'radius', 'spacing', 'duration'}, 'rattletrap_battery_assault': {'interval', 'radius', 'duration'},
                   'dark_seer_ion_shell': {'radius', 'duration'}, 'necrolyte_heartstopper_aura': {'aura_radius'}, 'axe_battle_hunger': {'duration'},
                   'doom_bringer_doom': {'duration', 'duration_scepter', 'deniable_pct'}, 'doom_bringer_lvl_death': {'lvl_bonus_multiple'},
-                  'doom_bringer_scorched_earth': {'radius', 'duration'}, 'dazzle_shallow_grave':{'duration_tooltip'},
+                  'doom_bringer_scorched_earth': {'radius', 'duration'}, 'dazzle_shallow_grave':{'duration_tooltip'}, 
                   'dazzle_shadow_wave':{'damage_radius'}, 'dazzle_weave':{'duration', 'duration_scepter'},'sniper_assassinate': {'projectile_speed'},
                   'dazzle_poison_touch': {'should_stun', 'duration_tooltip', 'set_time'}, 'batrider_sticky_napalm': {'radius', 'duration'},
                   'batrider_flamebreak': {'explosion_radius', 'collision_radius'}, 'batrider_firefly': {'radius', 'tree_radius', 'duration'},
@@ -51,7 +51,8 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'dragon_knight_frost_breath': {'duration'}, 'drow_ranger_silence': {'duration', 'silence_radius'}, 'drow_ranger_wave_of_silence': {''},
                   'dragon_knight_elder_dragon_form': {'duration', 'bonus_attack_range', 'corrosive_breath_duration', 'splash_radius', 'splash_damage_percent', 'frost_duration', 'frost_aoe'},
                   'ursa_fury_swipes': {'bonus_reset_time', 'bonus_reset_time_roshan'}, 'ursa_enrage': {'life_damage_bonus_percent'},
-                  'gyrocopter_rocket_barrage': {'radius'}, 'gyrocopter_flak_cannon': {'radius'}, 'gyrocopter_call_down': {'radius'}, 'tinker_laser': {'duration_hero', 'miss_rate', 'speed'}}
+                  'gyrocopter_rocket_barrage': {'radius'}, 'gyrocopter_flak_cannon': {'radius'}, 'gyrocopter_call_down': {'radius'}, 'tinker_laser': {'duration_hero', 'miss_rate', 'speed'},
+                  'bane_nightmare': {'duration', 'animation_rate', 'nightmare_dot_interval', 'nightmare_invuln_time'}}
 
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}, 'dazzle_shallow_grave':{'AbilityDuration'}, 'dazzle_poison_touch': {'AbilityDuration'},
@@ -64,7 +65,7 @@ ignore_all_normal = ['ID', 'AbilityCastPoint', 'AbilityManaCost', 'AbilityCooldo
 
 dont_parse = ['Version', 'ability_base', 'default_attack', 'invoker_invoke', 'invoker_empty1', 'invoker_empty2', 'ancient_apparition_ice_blast_release',
               'meepo_divided_we_stand', 'weaver_geminate_attack', 'lone_druid_true_form_druid', 'lone_druid_spirit_bear_return', 'pugna_decrepify', 'shadow_shaman_voodoo',
-              'rubick_telekinesis_land', 'tinker_rearm']
+              'rubick_telekinesis_land', 'tinker_rearm', 'bane_nightmare_end']
 
 override_instead = ['abaddon_frostmourne', 'pudge_rot', 'alchemist_unstable_concoction'
              'alchemist_unstable_concoction_throw', 'drow_ranger_frost_arrows', 'axe_counter_helix',

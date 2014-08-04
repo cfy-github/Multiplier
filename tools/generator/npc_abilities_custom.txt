@@ -284,7 +284,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"fiend_grip_tick_interval" "3.0"
+				"fiend_grip_tick_interval" "1.0"
 			}
 			"02"
 			{
@@ -294,7 +294,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"fiend_grip_duration" "15.0 15.0 15.0"
+				"fiend_grip_duration" "5.0 5.0 5.0"
 			}
 			"04"
 			{
@@ -309,7 +309,7 @@
 			"06"
 			{
 				"var_type" "FIELD_FLOAT"
-				"fiend_grip_duration_scepter" "21.0 21.0 21.0"
+				"fiend_grip_duration_scepter" "7.0 7.0 7.0"
 			}
 			"07"
 			{
@@ -339,22 +339,22 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"nightmare_dot_interval" "3.0"
+				"nightmare_dot_interval" "1.0"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"nightmare_invuln_time" "3.0"
+				"nightmare_invuln_time" "1.0"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "12.0 15.0 18.0 21.0"
+				"duration" "4.0 5.0 6.0 7.0"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"animation_rate" "0.6 0.6 0.6 0.6"
+				"animation_rate" "0.2 0.2 0.2 0.2"
 			}
 			"05"
 			{
@@ -362,13 +362,6 @@
 				"cast_range_tooltip" "1500 1650 1800 1950"
 			}
 		}
-	}
-	"bane_nightmare_end_x3"
-	{
-		"BaseClass" "bane_nightmare_end"
-		"ID" "5523"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
-		"MaxLevel" "1"
 	}
 	"bloodseeker_bloodrage_x3"
 	{
@@ -20249,7 +20242,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"fiend_grip_tick_interval" "5.0"
+				"fiend_grip_tick_interval" "1.0"
 			}
 			"02"
 			{
@@ -20259,7 +20252,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"fiend_grip_duration" "25.0 25.0 25.0"
+				"fiend_grip_duration" "5.0 5.0 5.0"
 			}
 			"04"
 			{
@@ -20274,7 +20267,7 @@
 			"06"
 			{
 				"var_type" "FIELD_FLOAT"
-				"fiend_grip_duration_scepter" "35.0 35.0 35.0"
+				"fiend_grip_duration_scepter" "7.0 7.0 7.0"
 			}
 			"07"
 			{
@@ -20304,22 +20297,22 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"nightmare_dot_interval" "5.0"
+				"nightmare_dot_interval" "1.0"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"nightmare_invuln_time" "5.0"
+				"nightmare_invuln_time" "1.0"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "20.0 25.0 30.0 35.0"
+				"duration" "4.0 5.0 6.0 7.0"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"animation_rate" "1 1 1 1"
+				"animation_rate" "0.2 0.2 0.2 0.2"
 			}
 			"05"
 			{
@@ -20327,13 +20320,6 @@
 				"cast_range_tooltip" "2500 2750 3000 3250"
 			}
 		}
-	}
-	"bane_nightmare_end_x5"
-	{
-		"BaseClass" "bane_nightmare_end"
-		"ID" "5523"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
-		"MaxLevel" "1"
 	}
 	"bloodseeker_bloodrage_x5"
 	{
@@ -40214,7 +40200,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"fiend_grip_tick_interval" "10.0"
+				"fiend_grip_tick_interval" "1.0"
 			}
 			"02"
 			{
@@ -40224,7 +40210,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"fiend_grip_duration" "50.0 50.0 50.0"
+				"fiend_grip_duration" "5.0 5.0 5.0"
 			}
 			"04"
 			{
@@ -40239,7 +40225,7 @@
 			"06"
 			{
 				"var_type" "FIELD_FLOAT"
-				"fiend_grip_duration_scepter" "70.0 70.0 70.0"
+				"fiend_grip_duration_scepter" "7.0 7.0 7.0"
 			}
 			"07"
 			{
@@ -40269,22 +40255,22 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"nightmare_dot_interval" "10.0"
+				"nightmare_dot_interval" "1.0"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"nightmare_invuln_time" "10.0"
+				"nightmare_invuln_time" "1.0"
 			}
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "40.0 50.0 60.0 70.0"
+				"duration" "4.0 5.0 6.0 7.0"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"animation_rate" "2 2 2 2"
+				"animation_rate" "0.2 0.2 0.2 0.2"
 			}
 			"05"
 			{
@@ -40292,13 +40278,6 @@
 				"cast_range_tooltip" "5000 5500 6000 6500"
 			}
 		}
-	}
-	"bane_nightmare_end_x10"
-	{
-		"BaseClass" "bane_nightmare_end"
-		"ID" "5523"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
-		"MaxLevel" "1"
 	}
 	"bloodseeker_bloodrage_x10"
 	{
