@@ -187,7 +187,7 @@ function MultiplierGameMode:CaptureGameMode()
     -- Set Buyback options
     GameMode:SetCustomBuybackCostEnabled( true )
     GameMode:SetCustomBuybackCooldownEnabled( true )
-    GameMode:SetBuybackEnabled( false )
+    GameMode:SetBuybackEnabled( true )
     -- Override the top bar values to show your own settings instead of total deaths
     GameMode:SetTopBarTeamValuesOverride ( false )
     -- Use custom hero level maximum and your own XP per level
@@ -195,7 +195,7 @@ function MultiplierGameMode:CaptureGameMode()
     GameMode:SetCustomHeroMaxLevel ( MAX_LEVEL )
     GameMode:SetCustomXPRequiredToReachNextLevel( XP_PER_LEVEL_TABLE )
     -- Chage the minimap icon size
-    GameRules:SetHeroMinimapIconSize( 300 )
+    --GameRules:SetHeroMinimapIconSize( 300 )
 	
 	
 
