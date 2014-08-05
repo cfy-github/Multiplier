@@ -7524,7 +7524,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "550 550 550 550"
+				"radius" "275 275 275 275"
 			}
 			"02"
 			{
@@ -7534,7 +7534,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"num_ticks" "8 8 8 8"
+				"num_ticks" "4 4 4 4"
 			}
 			"04"
 			{
@@ -7544,7 +7544,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"projectile_duration" "1"
+				"projectile_duration" "0.5"
 			}
 		}
 	}
@@ -7571,12 +7571,12 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"grab_radius" "500 500 500 500"
+				"grab_radius" "250 250 250 250"
 			}
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "550 550 550 550"
+				"radius" "275 275 275 275"
 			}
 			"04"
 			{

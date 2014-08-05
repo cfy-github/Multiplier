@@ -19,7 +19,7 @@ ignore_all_special = ['crit_chance', 'bonus_evasion', 'dodge_chance_pct', 'miss_
                       'non_hero_stun_duration', 'magic_missile_stun', 'cast_animation', 'stun_radius', 'lift_duration', 'silence_duration', 'knockback_duration', 'fade_time',
                       'shock_radius', 'pre_flight_time', 'fiend_grip_tick_interval', 'fiend_grip_duration', 'fiend_grip_duration_scepter', 'damage_modifier', 'damage_modifier_tooltip',
                       'illusion_incoming_dmg_pct_tooltip', 'duration', 'duration_scepter', 'bash_chance', 'bonus_range', 'bonus_range_scepter', 'bonus_cleave_damage_scepter',
-                      'trance_duration', 'blind_duration', 'blind_pct', 'whirl_duration']
+                      'trance_duration', 'blind_duration', 'blind_pct', 'whirl_duration', 'projectile_duration']
 
 ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'chance_pct', 'duration'},
                   'shadow_shaman_mass_serpent_ward': {'duration'}, 'faceless_void_chronosphere': {'duration', 'duration_scepter'},
@@ -67,7 +67,8 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'omniknight_guardian_angel': {'duration', 'duration_scepter'}, 'omniknight_degen_aura': {'radius'}, 'omniknight_repel': {'duration'},
                   'omniknight_purification': {'radius'}, 'clinkz_death_pact': {'damage_gain_pct', 'duration'}, 'clinkz_wind_walk': {'duration"'},
                   'clinkz_strafe': {'duration'}, 'troll_warlord_whirling_axes_melee': {'max_range', 'hit_radius'},
-                  'troll_warlord_whirling_axes_ranged': {'axe_width', 'axe_range', 'axe_slow_duration'}, 'troll_warlord_berserkers_rage': {'bash_duration', 'base_attack_time'}}
+                  'troll_warlord_whirling_axes_ranged': {'axe_width', 'axe_range', 'axe_slow_duration'}, 'troll_warlord_berserkers_rage': {'bash_duration', 'base_attack_time'},
+                  'tiny_avalanche': {'radius', 'num_ticks'}, 'tiny_toss': {'duration', 'grab_radius', 'radius'}}
 
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}, 'dazzle_shallow_grave':{'AbilityDuration'}, 'dazzle_poison_touch': {'AbilityDuration'},

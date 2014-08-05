@@ -3228,7 +3228,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "825 825 825 825"
+				"radius" "275 275 275 275"
 			}
 			"02"
 			{
@@ -3238,7 +3238,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"num_ticks" "12 12 12 12"
+				"num_ticks" "4 4 4 4"
 			}
 			"04"
 			{
@@ -3248,7 +3248,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"projectile_duration" "1.5"
+				"projectile_duration" "0.5"
 			}
 		}
 	}
@@ -3275,12 +3275,12 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"grab_radius" "750 750 750 750"
+				"grab_radius" "250 250 250 250"
 			}
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "825 825 825 825"
+				"radius" "275 275 275 275"
 			}
 			"04"
 			{
@@ -22897,7 +22897,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "1375 1375 1375 1375"
+				"radius" "275 275 275 275"
 			}
 			"02"
 			{
@@ -22907,7 +22907,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"num_ticks" "20 20 20 20"
+				"num_ticks" "4 4 4 4"
 			}
 			"04"
 			{
@@ -22917,7 +22917,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"projectile_duration" "2.5"
+				"projectile_duration" "0.5"
 			}
 		}
 	}
@@ -22944,12 +22944,12 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"grab_radius" "1250 1250 1250 1250"
+				"grab_radius" "250 250 250 250"
 			}
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "1375 1375 1375 1375"
+				"radius" "275 275 275 275"
 			}
 			"04"
 			{
@@ -42566,7 +42566,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "2750 2750 2750 2750"
+				"radius" "275 275 275 275"
 			}
 			"02"
 			{
@@ -42576,7 +42576,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"num_ticks" "40 40 40 40"
+				"num_ticks" "4 4 4 4"
 			}
 			"04"
 			{
@@ -42586,7 +42586,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"projectile_duration" "5"
+				"projectile_duration" "0.5"
 			}
 		}
 	}
@@ -42613,12 +42613,12 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"grab_radius" "2500 2500 2500 2500"
+				"grab_radius" "250 250 250 250"
 			}
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "2750 2750 2750 2750"
+				"radius" "275 275 275 275"
 			}
 			"04"
 			{
