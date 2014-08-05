@@ -18432,13 +18432,13 @@
 		"AbilityCooldown" "12.0 12.0 12.0 12.0"
 		"AbilityDuration" "24.0 24.0 24.0 24.0"
 		"AbilityManaCost" "40 40 40 40"
-		"AbilityCastRange" "3600 3600 3600 3600"
+		"AbilityCastRange" "1800 1800 1800 1800"
 		"AbilitySpecial"
 		{
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "1800 1800 1800 1800"
+				"radius" "900 900 900 900"
 			}
 			"02"
 			{
@@ -18448,7 +18448,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"latch_distance" "1400 1400 1400 1400"
+				"latch_distance" "700 700 700 700"
 			}
 			"04"
 			{
@@ -18458,7 +18458,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"tether_duration" "24.0 24.0 24.0 24.0"
+				"tether_duration" "12.0 12.0 12.0 12.0"
 			}
 			"06"
 			{
@@ -18511,7 +18511,7 @@
 			"05"
 			{
 				"var_type" "FIELD_INTEGER"
-				"min_range" "200 200 200 200"
+				"min_range" "100 100 100 100"
 			}
 			"06"
 			{
@@ -18521,12 +18521,12 @@
 			"07"
 			{
 				"var_type" "FIELD_INTEGER"
-				"hero_hit_radius" "140 140 140 140"
+				"hero_hit_radius" "70 70 70 70"
 			}
 			"08"
 			{
 				"var_type" "FIELD_INTEGER"
-				"explode_radius" "600 600 600 600"
+				"explode_radius" "300 300 300 300"
 			}
 			"09"
 			{
@@ -18536,7 +18536,7 @@
 			"10"
 			{
 				"var_type" "FIELD_INTEGER"
-				"default_radius" "300"
+				"default_radius" "150"
 			}
 			"11"
 			{
@@ -18572,81 +18572,19 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"drain_interval" "0.4 0.4 0.4 0.4"
+				"drain_interval" "0.2 0.2 0.2 0.2"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"drain_pct" "0.09 0.09 0.09 0.09"
+				"drain_pct" "0.045 0.045 0.045 0.045"
 			}
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"drain_pct_tooltip" "9 9 9 9"
+				"drain_pct_tooltip" "4.5 4.5 4.5 4.5"
 			}
 		}
-	}
-	"wisp_relocate"
-	{
-		"BaseClass" "wisp_relocate"
-		"ID" "5488"
-		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_POINT"
-		"AbilityCastPoint" "0 0 0"
-		"AbilityCooldown" "90.0 75.0 60.0"
-		"AbilityManaCost" "100 100 100"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_FLOAT"
-				"cast_delay" "2.5 2.25 2.0"
-			}
-			"02"
-			{
-				"var_type" "FIELD_FLOAT"
-				"return_time" "24.0 24.0 24.0"
-			}
-		}
-	}
-	"wisp_tether_break"
-	{
-		"BaseClass" "wisp_tether_break"
-		"ID" "5489"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-		"MaxLevel" "1"
-		"AbilityCastPoint" "0 0 0 0"
-		"AbilityCooldown" "1.0 1.0 1.0 1.0"
-	}
-	"wisp_spirits_in"
-	{
-		"BaseClass" "wisp_spirits_in"
-		"ID" "5490"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"MaxLevel" "1"
-		"AbilityCastPoint" "0 0 0 0"
-	}
-	"wisp_spirits_out"
-	{
-		"BaseClass" "wisp_spirits_out"
-		"ID" "5493"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
-		"MaxLevel" "1"
-		"AbilityCastPoint" "0 0 0 0"
-	}
-	"wisp_empty1"
-	{
-		"BaseClass" "wisp_empty1"
-		"ID" "5498"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel" "0"
-	}
-	"wisp_empty2"
-	{
-		"BaseClass" "wisp_empty2"
-		"ID" "5499"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
-		"MaxLevel" "0"
 	}
 	"slark_dark_pact"
 	{

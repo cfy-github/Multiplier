@@ -618,7 +618,7 @@ function MultiplierGameMode:PlayerSay(keys)
   if not voted then
 	  if plyID == 0 then
 			local trash, fac = string.match(text, "^-(.*)x+(%d+)")
-			Log("Fac: " .. fac)
+			--Log("Fac: " .. fac)
 			if fac ~= nil then
 				if valid(fac, allowed_factors) then
 				--if fac == '2' or fac == '3' or fac == '5' or fac == '10' then
