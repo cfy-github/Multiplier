@@ -18,7 +18,7 @@ ignore_all_special = ['crit_chance', 'bonus_evasion', 'dodge_chance_pct', 'miss_
                       'fail_stun_duration', 'min_stun', 'max_stun', 'stun_delay', 'hero_stun_duration', 'creep_stun_duration', 'initial_stun_duration', 'sleep_duration',
                       'non_hero_stun_duration', 'magic_missile_stun', 'cast_animation', 'stun_radius', 'lift_duration', 'silence_duration', 'knockback_duration', 'fade_time',
                       'shock_radius', 'pre_flight_time', 'fiend_grip_tick_interval', 'fiend_grip_duration', 'fiend_grip_duration_scepter', 'damage_modifier', 'damage_modifier_tooltip',
-                      'illusion_incoming_dmg_pct_tooltip']
+                      'illusion_incoming_dmg_pct_tooltip', 'duration', 'duration_scepter']
 
 ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'chance_pct', 'duration'},
                   'shadow_shaman_mass_serpent_ward': {'duration'}, 'faceless_void_chronosphere': {'duration', 'duration_scepter'},
@@ -62,7 +62,10 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'magnataur_skewer': {'skewer_radius', 'slow_duration', 'tree_radius'}, 'magnataur_reverse_polarity': {'pull_radius', 'pull_duration'},
                   'medusa_stone_gaze': {'duration', 'stone_duration', 'face_duration', 'vision_cone'}, 'medusa_split_shot': {'range', 'projectile_speed'},
                   'medusa_mystic_snake': {'radius', 'initial_speed', 'return_speed', 'snake_scale'}, 'morphling_waveform': {'width'}, 'morphling_replicate': {'duration'},
-                  'morphling_morph_agi': {'mana_cost', 'morph_cooldown'}, 'morphling_morph_str': {'mana_cost', 'morph_cooldown'}}
+                  'morphling_morph_agi': {'mana_cost', 'morph_cooldown'}, 'morphling_morph_str': {'mana_cost', 'morph_cooldown'},
+                  'omniknight_guardian_angel': {'duration', 'duration_scepter'}, 'omniknight_degen_aura': {'radius'}, 'omniknight_repel': {'duration'},
+                  'omniknight_purification': {'radius'}, 'clinkz_death_pact': {'damage_gain_pct', 'duration'}, 'clinkz_wind_walk': {'duration"'},
+                  'clinkz_strafe': {'duration'}}
 
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}, 'dazzle_shallow_grave':{'AbilityDuration'}, 'dazzle_poison_touch': {'AbilityDuration'},
