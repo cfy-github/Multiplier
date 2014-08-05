@@ -55,7 +55,9 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'bane_nightmare': {'duration', 'animation_rate', 'nightmare_dot_interval', 'nightmare_invuln_time'}, 'bloodseeker_bloodrage': {'duration'},
                   'bloodseeker_thirst': {'visibility_threshold_pct', 'invis_threshold_pct'}, 'wisp_tether': {'radius', 'latch_distance', 'tether_duration'},
                   'wisp_overcharge': {'drain_interval', 'drain_pct', 'drain_pct_tooltip'}, 'wisp_spirits': {'min_range', 'hero_hit_radius', 'explode_radius', 'default_radius'},
-                  'lion_impale': {'duration', 'width'}, 'lion_voodoo': {'duration', 'movespeed'}, 'lion_mana_drain': {'duration', 'break_distance', 'illusion_kill_time', 'tick_interval'}}
+                  'lion_impale': {'duration', 'width'}, 'lion_voodoo': {'duration', 'movespeed'}, 'lion_mana_drain': {'duration', 'break_distance', 'illusion_kill_time', 'tick_interval'},
+                  'luna_moon_glaive': {'damage_reduction_percent', 'range'}, 'luna_eclipse': {'radius', 'beam_interval', 'duration_tooltip', 'duration_tooltip_scepter'},
+                  'lina_light_strike_array': {'light_strike_array_aoe', 'light_strike_array_delay_time'}}
 
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}, 'dazzle_shallow_grave':{'AbilityDuration'}, 'dazzle_poison_touch': {'AbilityDuration'},
@@ -78,7 +80,7 @@ override_instead = ['abaddon_frostmourne', 'pudge_rot', 'alchemist_unstable_conc
                     'invoker_alacrity', 'invoker_chaos_meteor', 'invoker_sun_strike', 'invoker_forge_spirit', 'forged_spirit_melting_strike',
                     'invoker_ice_wall', 'invoker_deafening_blast', 'ancient_apparition_ice_blast', 'lycan_summon_wolves',
                     'lone_druid_true_form_battle_cry', 'lone_druid_spirit_bear_entangle', 'lone_druid_spirit_bear_demolish', 'wisp_spirits',
-                    'wisp_tether']
+                    'wisp_tether', 'luna_lucent_beam', 'lina_fiery_soul']
         #, 'invoker_exort', 'invoker_wex', 'invoker_quas'
 
 item_fixed_value = {'item_heart': {'health_regen_rate':'1'}}

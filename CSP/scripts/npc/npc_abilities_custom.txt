@@ -1064,7 +1064,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"light_strike_array_aoe" "675"
+				"light_strike_array_aoe" "225"
 			}
 			"02"
 			{
@@ -1075,31 +1075,6 @@
 			{
 				"var_type" "FIELD_FLOAT"
 				"light_strike_array_stun_duration" "1.6 1.7 1.8 1.9"
-			}
-		}
-	}
-	"lina_fiery_soul_x3"
-	{
-		"BaseClass" "lina_fiery_soul"
-		"ID" "5042"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityDuration" "27"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"fiery_soul_attack_speed_bonus" "120 165 210 255"
-			}
-			"02"
-			{
-				"var_type" "FIELD_INTEGER"
-				"fiery_soul_move_speed_bonus" "15 18 21 24"
-			}
-			"03"
-			{
-				"var_type" "FIELD_INTEGER"
-				"fiery_soul_max_stacks" "9"
 			}
 		}
 	}
@@ -6661,29 +6636,6 @@
 			}
 		}
 	}
-	"luna_lucent_beam_x3"
-	{
-		"BaseClass" "luna_lucent_beam"
-		"ID" "5222"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
-		"AbilityCastRange" "2400"
-		"AbilityCastPoint" "0.6 0.6 0.6 0.6"
-		"AbilityCooldown" "6.0 6.0 6.0 6.0"
-		"AbilityDamage" "225 450 675 900"
-		"AbilityManaCost" "90 100 110 120"
-		"AbilityModifierSupportValue" "0.5"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_FLOAT"
-				"stun_duration" "0.6 0.6 0.6 0.6"
-			}
-		}
-	}
 	"luna_moon_glaive_x3"
 	{
 		"BaseClass" "luna_moon_glaive"
@@ -6694,7 +6646,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"range" "1500 1500 1500 1500"
+				"range" "500 500 500 500"
 			}
 			"02"
 			{
@@ -6704,7 +6656,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"damage_reduction_percent" "105"
+				"damage_reduction_percent" "35"
 			}
 		}
 	}
@@ -6747,12 +6699,12 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "2025 2025 2025"
+				"radius" "675 675 675"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"beam_interval" "1.8 1.8 1.8"
+				"beam_interval" "0.6 0.6 0.6"
 			}
 			"03"
 			{
@@ -6767,7 +6719,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_tooltip" "5.4 10.8 16.2"
+				"duration_tooltip" "1.8 3.6 5.4"
 			}
 			"06"
 			{
@@ -6782,7 +6734,7 @@
 			"08"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_tooltip_scepter" "5.4 12.6 19.8"
+				"duration_tooltip_scepter" "1.8 4.2 6.6"
 			}
 		}
 	}
@@ -20831,7 +20783,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"light_strike_array_aoe" "1125"
+				"light_strike_array_aoe" "225"
 			}
 			"02"
 			{
@@ -20842,31 +20794,6 @@
 			{
 				"var_type" "FIELD_FLOAT"
 				"light_strike_array_stun_duration" "1.6 1.7 1.8 1.9"
-			}
-		}
-	}
-	"lina_fiery_soul_x5"
-	{
-		"BaseClass" "lina_fiery_soul"
-		"ID" "5042"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityDuration" "45"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"fiery_soul_attack_speed_bonus" "200 275 350 425"
-			}
-			"02"
-			{
-				"var_type" "FIELD_INTEGER"
-				"fiery_soul_move_speed_bonus" "25 30 35 40"
-			}
-			"03"
-			{
-				"var_type" "FIELD_INTEGER"
-				"fiery_soul_max_stacks" "15"
 			}
 		}
 	}
@@ -26428,29 +26355,6 @@
 			}
 		}
 	}
-	"luna_lucent_beam_x5"
-	{
-		"BaseClass" "luna_lucent_beam"
-		"ID" "5222"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
-		"AbilityCastRange" "4000"
-		"AbilityCastPoint" "0.6 0.6 0.6 0.6"
-		"AbilityCooldown" "6.0 6.0 6.0 6.0"
-		"AbilityDamage" "375 750 1125 1500"
-		"AbilityManaCost" "90 100 110 120"
-		"AbilityModifierSupportValue" "0.5"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_FLOAT"
-				"stun_duration" "0.6 0.6 0.6 0.6"
-			}
-		}
-	}
 	"luna_moon_glaive_x5"
 	{
 		"BaseClass" "luna_moon_glaive"
@@ -26461,7 +26365,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"range" "2500 2500 2500 2500"
+				"range" "500 500 500 500"
 			}
 			"02"
 			{
@@ -26471,7 +26375,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"damage_reduction_percent" "175"
+				"damage_reduction_percent" "35"
 			}
 		}
 	}
@@ -26514,12 +26418,12 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "3375 3375 3375"
+				"radius" "675 675 675"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"beam_interval" "3 3 3"
+				"beam_interval" "0.6 0.6 0.6"
 			}
 			"03"
 			{
@@ -26534,7 +26438,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_tooltip" "9 18 27"
+				"duration_tooltip" "1.8 3.6 5.4"
 			}
 			"06"
 			{
@@ -26549,7 +26453,7 @@
 			"08"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_tooltip_scepter" "9 21 33"
+				"duration_tooltip_scepter" "1.8 4.2 6.6"
 			}
 		}
 	}
@@ -40598,7 +40502,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"light_strike_array_aoe" "2250"
+				"light_strike_array_aoe" "225"
 			}
 			"02"
 			{
@@ -40609,31 +40513,6 @@
 			{
 				"var_type" "FIELD_FLOAT"
 				"light_strike_array_stun_duration" "1.6 1.7 1.8 1.9"
-			}
-		}
-	}
-	"lina_fiery_soul_x10"
-	{
-		"BaseClass" "lina_fiery_soul"
-		"ID" "5042"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityDuration" "90"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_INTEGER"
-				"fiery_soul_attack_speed_bonus" "400 550 700 850"
-			}
-			"02"
-			{
-				"var_type" "FIELD_INTEGER"
-				"fiery_soul_move_speed_bonus" "50 60 70 80"
-			}
-			"03"
-			{
-				"var_type" "FIELD_INTEGER"
-				"fiery_soul_max_stacks" "30"
 			}
 		}
 	}
@@ -46195,29 +46074,6 @@
 			}
 		}
 	}
-	"luna_lucent_beam_x10"
-	{
-		"BaseClass" "luna_lucent_beam"
-		"ID" "5222"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
-		"AbilityCastRange" "8000"
-		"AbilityCastPoint" "0.6 0.6 0.6 0.6"
-		"AbilityCooldown" "6.0 6.0 6.0 6.0"
-		"AbilityDamage" "750 1500 2250 3000"
-		"AbilityManaCost" "90 100 110 120"
-		"AbilityModifierSupportValue" "0.5"
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type" "FIELD_FLOAT"
-				"stun_duration" "0.6 0.6 0.6 0.6"
-			}
-		}
-	}
 	"luna_moon_glaive_x10"
 	{
 		"BaseClass" "luna_moon_glaive"
@@ -46228,7 +46084,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"range" "5000 5000 5000 5000"
+				"range" "500 500 500 500"
 			}
 			"02"
 			{
@@ -46238,7 +46094,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"damage_reduction_percent" "350"
+				"damage_reduction_percent" "35"
 			}
 		}
 	}
@@ -46281,12 +46137,12 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "6750 6750 6750"
+				"radius" "675 675 675"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"beam_interval" "6 6 6"
+				"beam_interval" "0.6 0.6 0.6"
 			}
 			"03"
 			{
@@ -46301,7 +46157,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_tooltip" "18 36 54"
+				"duration_tooltip" "1.8 3.6 5.4"
 			}
 			"06"
 			{
@@ -46316,7 +46172,7 @@
 			"08"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_tooltip_scepter" "18 42 66"
+				"duration_tooltip_scepter" "1.8 4.2 6.6"
 			}
 		}
 	}

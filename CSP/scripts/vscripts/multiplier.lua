@@ -187,8 +187,8 @@ function MultiplierGameMode:CaptureGameMode()
     -- Override the normal camera distance.  Usual is 1134
     GameMode:SetCameraDistanceOverride( 1134.0 )
     -- Set Buyback options
-    GameMode:SetCustomBuybackCostEnabled( true )
-    GameMode:SetCustomBuybackCooldownEnabled( true )
+    GameMode:SetCustomBuybackCostEnabled( false )
+    GameMode:SetCustomBuybackCooldownEnabled( false )
     GameMode:SetBuybackEnabled( true )
     -- Override the top bar values to show your own settings instead of total deaths
     GameMode:SetTopBarTeamValuesOverride ( false )

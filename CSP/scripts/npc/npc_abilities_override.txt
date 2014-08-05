@@ -5267,7 +5267,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"light_strike_array_aoe" "450"
+				"light_strike_array_aoe" "225"
 			}
 			"02"
 			{
@@ -10968,7 +10968,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"range" "1000 1000 1000 1000"
+				"range" "500 500 500 500"
 			}
 			"02"
 			{
@@ -10978,7 +10978,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"damage_reduction_percent" "70"
+				"damage_reduction_percent" "35"
 			}
 		}
 	}
@@ -11021,12 +11021,12 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"radius" "1350 1350 1350"
+				"radius" "675 675 675"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"beam_interval" "1.2 1.2 1.2"
+				"beam_interval" "0.6 0.6 0.6"
 			}
 			"03"
 			{
@@ -11041,7 +11041,7 @@
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_tooltip" "3.6 7.2 10.8"
+				"duration_tooltip" "1.8 3.6 5.4"
 			}
 			"06"
 			{
@@ -11056,7 +11056,7 @@
 			"08"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration_tooltip_scepter" "3.6 8.4 13.2"
+				"duration_tooltip_scepter" "1.8 4.2 6.6"
 			}
 		}
 	}
