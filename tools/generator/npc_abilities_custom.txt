@@ -14115,7 +14115,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"empower_duration" "120.0 120.0 120.0 120.0"
+				"empower_duration" "40.0 40.0 40.0 40.0"
 			}
 			"02"
 			{
@@ -14125,12 +14125,12 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"cleave_damage_pct" "60 90 120 150"
+				"cleave_damage_pct" "20 30 40 50"
 			}
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"cleave_radius" "600"
+				"cleave_radius" "200"
 			}
 		}
 	}
@@ -14163,12 +14163,12 @@
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"skewer_radius" "375"
+				"skewer_radius" "125"
 			}
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"slow_duration" "7.5"
+				"slow_duration" "2.5"
 			}
 			"06"
 			{
@@ -14178,7 +14178,7 @@
 			"07"
 			{
 				"var_type" "FIELD_INTEGER"
-				"tree_radius" "600"
+				"tree_radius" "200"
 			}
 		}
 	}
@@ -14199,7 +14199,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"pull_radius" "1230"
+				"pull_radius" "410"
 			}
 			"02"
 			{
@@ -33834,7 +33834,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"empower_duration" "200.0 200.0 200.0 200.0"
+				"empower_duration" "40.0 40.0 40.0 40.0"
 			}
 			"02"
 			{
@@ -33844,12 +33844,12 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"cleave_damage_pct" "100 150 200 250"
+				"cleave_damage_pct" "20 30 40 50"
 			}
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"cleave_radius" "1000"
+				"cleave_radius" "200"
 			}
 		}
 	}
@@ -33882,12 +33882,12 @@
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"skewer_radius" "625"
+				"skewer_radius" "125"
 			}
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"slow_duration" "12.5"
+				"slow_duration" "2.5"
 			}
 			"06"
 			{
@@ -33897,7 +33897,7 @@
 			"07"
 			{
 				"var_type" "FIELD_INTEGER"
-				"tree_radius" "1000"
+				"tree_radius" "200"
 			}
 		}
 	}
@@ -33918,7 +33918,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"pull_radius" "2050"
+				"pull_radius" "410"
 			}
 			"02"
 			{
@@ -53553,7 +53553,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"empower_duration" "400.0 400.0 400.0 400.0"
+				"empower_duration" "40.0 40.0 40.0 40.0"
 			}
 			"02"
 			{
@@ -53563,12 +53563,12 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"cleave_damage_pct" "200 300 400 500"
+				"cleave_damage_pct" "20 30 40 50"
 			}
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"cleave_radius" "2000"
+				"cleave_radius" "200"
 			}
 		}
 	}
@@ -53601,12 +53601,12 @@
 			"04"
 			{
 				"var_type" "FIELD_INTEGER"
-				"skewer_radius" "1250"
+				"skewer_radius" "125"
 			}
 			"05"
 			{
 				"var_type" "FIELD_FLOAT"
-				"slow_duration" "25"
+				"slow_duration" "2.5"
 			}
 			"06"
 			{
@@ -53616,7 +53616,7 @@
 			"07"
 			{
 				"var_type" "FIELD_INTEGER"
-				"tree_radius" "2000"
+				"tree_radius" "200"
 			}
 		}
 	}
@@ -53637,7 +53637,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"pull_radius" "4100"
+				"pull_radius" "410"
 			}
 			"02"
 			{

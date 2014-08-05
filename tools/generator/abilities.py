@@ -57,7 +57,8 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'wisp_overcharge': {'drain_interval', 'drain_pct', 'drain_pct_tooltip'}, 'wisp_spirits': {'min_range', 'hero_hit_radius', 'explode_radius', 'default_radius'},
                   'lion_impale': {'duration', 'width'}, 'lion_voodoo': {'duration', 'movespeed'}, 'lion_mana_drain': {'duration', 'break_distance', 'illusion_kill_time', 'tick_interval'},
                   'luna_moon_glaive': {'damage_reduction_percent', 'range'}, 'luna_eclipse': {'radius', 'beam_interval', 'duration_tooltip', 'duration_tooltip_scepter'},
-                  'lina_light_strike_array': {'light_strike_array_aoe', 'light_strike_array_delay_time'}}
+                  'lina_light_strike_array': {'light_strike_array_aoe', 'light_strike_array_delay_time'}, 'magnataur_empower': {'empower_duration', 'cleave_damage_pct', 'cleave_radius'},
+                  'magnataur_skewer': {'skewer_radius', 'slow_duration', 'tree_radius'}, 'magnataur_reverse_polarity': {'pull_radius', 'pull_duration'}}
 
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}, 'dazzle_shallow_grave':{'AbilityDuration'}, 'dazzle_poison_touch': {'AbilityDuration'},
