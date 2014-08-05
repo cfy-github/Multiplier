@@ -17,7 +17,7 @@ ignore_all_special = ['crit_chance', 'bonus_evasion', 'dodge_chance_pct', 'miss_
                       'arrow_max_stun', 'stun_min', 'stun_max', 'coil_stun_duration', 'blast_stun_duration', 'bolt_stun_duration', 'stun_chance', 'magic_missile_stun',
                       'fail_stun_duration', 'min_stun', 'max_stun', 'stun_delay', 'hero_stun_duration', 'creep_stun_duration', 'initial_stun_duration', 'sleep_duration',
                       'non_hero_stun_duration', 'magic_missile_stun', 'cast_animation', 'stun_radius', 'lift_duration', 'silence_duration', 'knockback_duration', 'fade_time',
-                      'shock_radius', 'pre_flight_time', 'fiend_grip_tick_interval', 'fiend_grip_duration', 'fiend_grip_duration_scepter']
+                      'shock_radius', 'pre_flight_time', 'fiend_grip_tick_interval', 'fiend_grip_duration', 'fiend_grip_duration_scepter', 'damage_modifier', 'damage_modifier_tooltip']
 
 ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'chance_pct', 'duration'},
                   'shadow_shaman_mass_serpent_ward': {'duration'}, 'faceless_void_chronosphere': {'duration', 'duration_scepter'},
@@ -58,7 +58,9 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'lion_impale': {'duration', 'width'}, 'lion_voodoo': {'duration', 'movespeed'}, 'lion_mana_drain': {'duration', 'break_distance', 'illusion_kill_time', 'tick_interval'},
                   'luna_moon_glaive': {'damage_reduction_percent', 'range'}, 'luna_eclipse': {'radius', 'beam_interval', 'duration_tooltip', 'duration_tooltip_scepter'},
                   'lina_light_strike_array': {'light_strike_array_aoe', 'light_strike_array_delay_time'}, 'magnataur_empower': {'empower_duration', 'cleave_damage_pct', 'cleave_radius'},
-                  'magnataur_skewer': {'skewer_radius', 'slow_duration', 'tree_radius'}, 'magnataur_reverse_polarity': {'pull_radius', 'pull_duration'}}
+                  'magnataur_skewer': {'skewer_radius', 'slow_duration', 'tree_radius'}, 'magnataur_reverse_polarity': {'pull_radius', 'pull_duration'},
+                  'medusa_stone_gaze': {'duration', 'stone_duration', 'face_duration', 'vision_cone'}, 'medusa_split_shot': {'range', 'projectile_speed'},
+                  'medusa_mystic_snake': {'radius', 'initial_speed', 'return_speed', 'snake_scale'}}
 
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}, 'dazzle_shallow_grave':{'AbilityDuration'}, 'dazzle_poison_touch': {'AbilityDuration'},
