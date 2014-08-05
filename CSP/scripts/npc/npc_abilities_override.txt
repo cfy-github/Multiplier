@@ -5363,12 +5363,12 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"width" "250 250 250 250"
+				"width" "125 125 125 125"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "2.04 3.04 4.04 5.04"
+				"duration" "1.02 1.52 2.02 2.52"
 			}
 			"03"
 			{
@@ -5398,12 +5398,12 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "5 6 7 8"
+				"duration" "2.5 3 3.5 4"
 			}
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"movespeed" "200"
+				"movespeed" "100"
 			}
 		}
 	}
@@ -5415,9 +5415,9 @@
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
-		"AbilityCastRange" "1700"
+		"AbilityCastRange" "850"
 		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
-		"AbilityChannelTime" "10.2"
+		"AbilityChannelTime" "5.1"
 		"AbilityCooldown" "20.0 15.0 10.0 5.0"
 		"AbilityManaCost" "10 10 10 10"
 		"AbilityModifierSupportValue" "5.0"
@@ -5426,7 +5426,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "10.0"
+				"duration" "5.0"
 			}
 			"02"
 			{
@@ -5436,12 +5436,12 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"break_distance" "2400"
+				"break_distance" "1200"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"illusion_kill_time" "0.5"
+				"illusion_kill_time" "0.25"
 			}
 			"05"
 			{

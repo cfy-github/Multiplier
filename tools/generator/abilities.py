@@ -54,12 +54,14 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'gyrocopter_rocket_barrage': {'radius'}, 'gyrocopter_flak_cannon': {'radius'}, 'gyrocopter_call_down': {'radius'}, 'tinker_laser': {'duration_hero', 'miss_rate', 'speed'},
                   'bane_nightmare': {'duration', 'animation_rate', 'nightmare_dot_interval', 'nightmare_invuln_time'}, 'bloodseeker_bloodrage': {'duration'},
                   'bloodseeker_thirst': {'visibility_threshold_pct', 'invis_threshold_pct'}, 'wisp_tether': {'radius', 'latch_distance', 'tether_duration'},
-                  'wisp_overcharge': {'drain_interval', 'drain_pct', 'drain_pct_tooltip'}, 'wisp_spirits': {'min_range', 'hero_hit_radius', 'explode_radius', 'default_radius'}}
+                  'wisp_overcharge': {'drain_interval', 'drain_pct', 'drain_pct_tooltip'}, 'wisp_spirits': {'min_range', 'hero_hit_radius', 'explode_radius', 'default_radius'},
+                  'lion_impale': {'duration', 'width'}, 'lion_voodoo': {'duration', 'movespeed'}, 'lion_mana_drain': {'duration', 'break_distance', 'illusion_kill_time', 'tick_interval'}}
 
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}, 'dazzle_shallow_grave':{'AbilityDuration'}, 'dazzle_poison_touch': {'AbilityDuration'},
                  'death_prophet_exorcism': {'AbilityDuration'}, 'leshrac_diabolic_edict': {'AbilityDuration'}, 'leshrac_split_earth': {'AbilityDuration'},
-                 'ursa_overpower': {'AbilityDuration'}, 'gyrocopter_flak_cannon': {'AbilityDuration'}, 'wisp_tether': {'AbilityCastRange'}}
+                 'ursa_overpower': {'AbilityDuration'}, 'gyrocopter_flak_cannon': {'AbilityDuration'}, 'wisp_tether': {'AbilityCastRange'},
+                 'lion_mana_drain': {'AbilityCastRange', 'AbilityChannelTime'}}
 
 ignore_all_normal = ['ID', 'AbilityCastPoint', 'AbilityManaCost', 'AbilityCooldown', 'AbilityModifierSupportValue', 'MaxLevel', 'RequiredLevel', 'LevelsBetweenUpgrades',
                      'DisplayAdditionalHeroes']

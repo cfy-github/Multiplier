@@ -1160,12 +1160,12 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"width" "375 375 375 375"
+				"width" "125 125 125 125"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "3.06 4.56 6.06 7.56"
+				"duration" "1.02 1.52 2.02 2.52"
 			}
 			"03"
 			{
@@ -1195,12 +1195,12 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "7.5 9 10.5 12"
+				"duration" "2.5 3 3.5 4"
 			}
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"movespeed" "300"
+				"movespeed" "100"
 			}
 		}
 	}
@@ -1212,9 +1212,9 @@
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
-		"AbilityCastRange" "2550"
+		"AbilityCastRange" "850"
 		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
-		"AbilityChannelTime" "15.3"
+		"AbilityChannelTime" "5.1"
 		"AbilityCooldown" "20.0 15.0 10.0 5.0"
 		"AbilityManaCost" "10 10 10 10"
 		"AbilityModifierSupportValue" "5.0"
@@ -1223,7 +1223,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "15.0"
+				"duration" "5.0"
 			}
 			"02"
 			{
@@ -1233,12 +1233,12 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"break_distance" "3600"
+				"break_distance" "1200"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"illusion_kill_time" "0.75"
+				"illusion_kill_time" "0.25"
 			}
 			"05"
 			{
@@ -20927,12 +20927,12 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"width" "625 625 625 625"
+				"width" "125 125 125 125"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "5.1 7.6 10.1 12.6"
+				"duration" "1.02 1.52 2.02 2.52"
 			}
 			"03"
 			{
@@ -20962,12 +20962,12 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "12.5 15 17.5 20"
+				"duration" "2.5 3 3.5 4"
 			}
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"movespeed" "500"
+				"movespeed" "100"
 			}
 		}
 	}
@@ -20979,9 +20979,9 @@
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
-		"AbilityCastRange" "4250"
+		"AbilityCastRange" "850"
 		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
-		"AbilityChannelTime" "25.5"
+		"AbilityChannelTime" "5.1"
 		"AbilityCooldown" "20.0 15.0 10.0 5.0"
 		"AbilityManaCost" "10 10 10 10"
 		"AbilityModifierSupportValue" "5.0"
@@ -20990,7 +20990,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "25.0"
+				"duration" "5.0"
 			}
 			"02"
 			{
@@ -21000,12 +21000,12 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"break_distance" "6000"
+				"break_distance" "1200"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"illusion_kill_time" "1.25"
+				"illusion_kill_time" "0.25"
 			}
 			"05"
 			{
@@ -40694,12 +40694,12 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"width" "1250 1250 1250 1250"
+				"width" "125 125 125 125"
 			}
 			"02"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "10.2 15.2 20.2 25.2"
+				"duration" "1.02 1.52 2.02 2.52"
 			}
 			"03"
 			{
@@ -40729,12 +40729,12 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "25 30 35 40"
+				"duration" "2.5 3 3.5 4"
 			}
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"movespeed" "1000"
+				"movespeed" "100"
 			}
 		}
 	}
@@ -40746,9 +40746,9 @@
 		"AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType" "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityUnitTargetFlags" "DOTA_UNIT_TARGET_FLAG_FOW_VISIBLE"
-		"AbilityCastRange" "8500"
+		"AbilityCastRange" "850"
 		"AbilityCastPoint" "0.3 0.3 0.3 0.3"
-		"AbilityChannelTime" "51"
+		"AbilityChannelTime" "5.1"
 		"AbilityCooldown" "20.0 15.0 10.0 5.0"
 		"AbilityManaCost" "10 10 10 10"
 		"AbilityModifierSupportValue" "5.0"
@@ -40757,7 +40757,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "50.0"
+				"duration" "5.0"
 			}
 			"02"
 			{
@@ -40767,12 +40767,12 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"break_distance" "12000"
+				"break_distance" "1200"
 			}
 			"04"
 			{
 				"var_type" "FIELD_FLOAT"
-				"illusion_kill_time" "2.5"
+				"illusion_kill_time" "0.25"
 			}
 			"05"
 			{
