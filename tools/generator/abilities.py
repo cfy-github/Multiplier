@@ -17,7 +17,8 @@ ignore_all_special = ['crit_chance', 'bonus_evasion', 'dodge_chance_pct', 'miss_
                       'arrow_max_stun', 'stun_min', 'stun_max', 'coil_stun_duration', 'blast_stun_duration', 'bolt_stun_duration', 'stun_chance', 'magic_missile_stun',
                       'fail_stun_duration', 'min_stun', 'max_stun', 'stun_delay', 'hero_stun_duration', 'creep_stun_duration', 'initial_stun_duration', 'sleep_duration',
                       'non_hero_stun_duration', 'magic_missile_stun', 'cast_animation', 'stun_radius', 'lift_duration', 'silence_duration', 'knockback_duration', 'fade_time',
-                      'shock_radius', 'pre_flight_time', 'fiend_grip_tick_interval', 'fiend_grip_duration', 'fiend_grip_duration_scepter', 'damage_modifier', 'damage_modifier_tooltip']
+                      'shock_radius', 'pre_flight_time', 'fiend_grip_tick_interval', 'fiend_grip_duration', 'fiend_grip_duration_scepter', 'damage_modifier', 'damage_modifier_tooltip',
+                      'illusion_incoming_dmg_pct_tooltip']
 
 ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'chance_pct', 'duration'},
                   'shadow_shaman_mass_serpent_ward': {'duration'}, 'faceless_void_chronosphere': {'duration', 'duration_scepter'},
@@ -60,7 +61,8 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'lina_light_strike_array': {'light_strike_array_aoe', 'light_strike_array_delay_time'}, 'magnataur_empower': {'empower_duration', 'cleave_damage_pct', 'cleave_radius'},
                   'magnataur_skewer': {'skewer_radius', 'slow_duration', 'tree_radius'}, 'magnataur_reverse_polarity': {'pull_radius', 'pull_duration'},
                   'medusa_stone_gaze': {'duration', 'stone_duration', 'face_duration', 'vision_cone'}, 'medusa_split_shot': {'range', 'projectile_speed'},
-                  'medusa_mystic_snake': {'radius', 'initial_speed', 'return_speed', 'snake_scale'}}
+                  'medusa_mystic_snake': {'radius', 'initial_speed', 'return_speed', 'snake_scale'}, 'morphling_waveform': {'width'}, 'morphling_replicate': {'duration'},
+                  'morphling_morph_agi': {'mana_cost', 'morph_cooldown'}, 'morphling_morph_str': {'mana_cost', 'morph_cooldown'}}
 
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}, 'dazzle_shallow_grave':{'AbilityDuration'}, 'dazzle_poison_touch': {'AbilityDuration'},
@@ -74,7 +76,8 @@ ignore_all_normal = ['ID', 'AbilityCastPoint', 'AbilityManaCost', 'AbilityCooldo
 
 dont_parse = ['Version', 'ability_base', 'default_attack', 'invoker_invoke', 'invoker_empty1', 'invoker_empty2', 'ancient_apparition_ice_blast_release',
               'meepo_divided_we_stand', 'weaver_geminate_attack', 'lone_druid_true_form_druid', 'lone_druid_spirit_bear_return', 'pugna_decrepify', 'shadow_shaman_voodoo',
-              'rubick_telekinesis_land', 'tinker_rearm', 'bane_nightmare_end', 'wisp_tether_break', 'wisp_spirits_in', 'wisp_spirits_out', 'wisp_empty1', 'wisp_empty2', 'wisp_relocate']
+              'rubick_telekinesis_land', 'tinker_rearm', 'bane_nightmare_end', 'wisp_tether_break', 'wisp_spirits_in', 'wisp_spirits_out', 'wisp_empty1', 'wisp_empty2', 'wisp_relocate',
+              'morphling_morph_replicate']
 
 override_instead = ['abaddon_frostmourne', 'pudge_rot', 'alchemist_unstable_concoction'
                     'alchemist_unstable_concoction_throw', 'drow_ranger_frost_arrows', 'axe_counter_helix',
@@ -83,7 +86,7 @@ override_instead = ['abaddon_frostmourne', 'pudge_rot', 'alchemist_unstable_conc
                     'invoker_alacrity', 'invoker_chaos_meteor', 'invoker_sun_strike', 'invoker_forge_spirit', 'forged_spirit_melting_strike',
                     'invoker_ice_wall', 'invoker_deafening_blast', 'ancient_apparition_ice_blast', 'lycan_summon_wolves',
                     'lone_druid_true_form_battle_cry', 'lone_druid_spirit_bear_entangle', 'lone_druid_spirit_bear_demolish', 'wisp_spirits',
-                    'wisp_tether', 'luna_lucent_beam', 'lina_fiery_soul']
+                    'wisp_tether', 'luna_lucent_beam', 'lina_fiery_soul', 'morphling_replicate']
         #, 'invoker_exort', 'invoker_wex', 'invoker_quas'
 
 item_fixed_value = {'item_heart': {'health_regen_rate':'1'}}

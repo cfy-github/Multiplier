@@ -5668,7 +5668,7 @@
 			"02"
 			{
 				"var_type" "FIELD_INTEGER"
-				"width" "400"
+				"width" "200"
 			}
 		}
 	}
@@ -5755,7 +5755,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"mana_cost" "60 60 60 60"
+				"mana_cost" "30 30 30 30"
 			}
 			"02"
 			{
@@ -5765,7 +5765,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"morph_cooldown" "2.0 1 0.66 0.4"
+				"morph_cooldown" "1.0 0.5 0.33 0.2"
 			}
 			"04"
 			{
@@ -5785,7 +5785,7 @@
 			"01"
 			{
 				"var_type" "FIELD_INTEGER"
-				"mana_cost" "60 60 60 60"
+				"mana_cost" "30 30 30 30"
 			}
 			"02"
 			{
@@ -5795,7 +5795,7 @@
 			"03"
 			{
 				"var_type" "FIELD_FLOAT"
-				"morph_cooldown" "2.0 1 0.66 0.4"
+				"morph_cooldown" "1.0 0.5 0.33 0.2"
 			}
 			"04"
 			{
@@ -5821,7 +5821,7 @@
 			"01"
 			{
 				"var_type" "FIELD_FLOAT"
-				"duration" "60.0 90.0 120.0"
+				"duration" "30.0 45.0 60.0"
 			}
 			"02"
 			{
@@ -5831,7 +5831,7 @@
 			"03"
 			{
 				"var_type" "FIELD_INTEGER"
-				"illusion_incoming_dmg_pct_tooltip" "200 200 200"
+				"illusion_incoming_dmg_pct_tooltip" "100 100 100"
 			}
 			"04"
 			{
@@ -5844,15 +5844,6 @@
 				"tooltip_cast_range" "1400 2200 3000"
 			}
 		}
-	}
-	"morphling_morph_replicate"
-	{
-		"BaseClass" "morphling_morph_replicate"
-		"ID" "5058"
-		"AbilityType" "DOTA_ABILITY_TYPE_ULTIMATE"
-		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"AbilityManaCost" "150 150 150"
-		"AbilityCastPoint" "0.25"
 	}
 	"nevermore_shadowraze1"
 	{
