@@ -204,7 +204,14 @@ function MultiplierGameMode:CaptureGameMode()
     Log('Beginning Think' ) 
     GameMode:SetContextThink("BarebonesThink", Dynamic_Wrap( MultiplierGameMode, 'Think' ), 0.1 )
 	
-	
+    MultiplierGameMode:CreateTimer("safe", {
+      useGameTime = true,
+      endTime = GameRules:GetGameTime() + 30,
+      callback = function(mode, args)
+        GameRules:SendCustomMessage("<font color='#70EA72'>This game is safe to leave with no penalty.</font>", 0, 0)
+        return GameRules:GetGameTime() + 30
+      end
+    }
   end 
 end
 
