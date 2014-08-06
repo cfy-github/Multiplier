@@ -4,7 +4,7 @@ from lib import update_addons
 import os
 
 
-force_divide = ['min_blink_range', 'base_attack_time', 'transformation_time', 'attack_interval', 'structure_damage_mod']
+force_divide = ['min_blink_range', 'base_attack_time', 'transformation_time', 'attack_interval', 'structure_damage_mod', 'quill_release_threshold', 'formation_time']
 
 ignore_all_special = ['crit_chance', 'bonus_evasion', 'dodge_chance_pct', 'miss_chance', 'dodge_chance',
                     'illusion_damage_out_pct', 'illusion_damage_in_pct', 'incoming_damage', 'illusion_outgoing_damage',
@@ -18,15 +18,20 @@ ignore_all_special = ['crit_chance', 'bonus_evasion', 'dodge_chance_pct', 'miss_
                       'fail_stun_duration', 'min_stun', 'max_stun', 'stun_delay', 'hero_stun_duration', 'creep_stun_duration', 'initial_stun_duration', 'sleep_duration',
                       'non_hero_stun_duration', 'magic_missile_stun', 'cast_animation', 'stun_radius', 'lift_duration', 'silence_duration', 'knockback_duration', 'fade_time',
                       'shock_radius', 'pre_flight_time', 'fiend_grip_tick_interval', 'fiend_grip_duration', 'fiend_grip_duration_scepter', 'damage_modifier', 'damage_modifier_tooltip',
-                      'illusion_incoming_dmg_pct_tooltip', 'duration', 'duration_scepter', 'bash_chance', 'bonus_range', 'bonus_range_scepter', 'bonus_cleave_damage_scepter',
-                      'trance_duration', 'blind_duration', 'blind_pct', 'whirl_duration', 'projectile_duration']
+                      'illusion_incoming_dmg_pct_tooltip', 'duration', 'tooltip_duration', 'duration_scepter', 'bash_chance', 'bonus_range', 'bonus_range_scepter', 'bonus_cleave_damage_scepter',
+                      'trance_duration', 'blind_duration', 'blind_pct', 'whirl_duration', 'projectile_duration', 'slow_duration', 'pause_duration', 'purge_frequency', 'strike_interval',
+                      'strike_interval_scepter', 'blast_dot_duration', 'tooltip_slow_duration', 'last_proc', 'crush_radius', 'crush_extra_slow_duration', 'charge_restore_time',
+                      'echo_slam_damage_range', 'echo_slam_echo_search_range', 'echo_slam_echo_range', 'blade_dance_crit_chance', 'blade_fury_radius', 'blade_fury_damage_tick',
+                      'healing_ward_aura_radius', 'omni_slash_radius', 'omni_slash_bounce_tick', 'illusion_duration', 'tooltip_attack_range', 'multicast_delay', 'scepter_mana',
+                      'multicast_2_times', 'multicast_3_times', 'multicast_4_times', 'fireblast_mana_cost', 'fireblast_cooldown', 'ignite_aoe', 'bloodlust_cooldown',
+                      'multicast_2_times_tooltip', 'multicast_3_times_tooltip', 'multicast_4_times_tooltip', 'outgoing_damage', 'incoming_damage', 'invuln_duration', 'outgoing_damage_tooltip']
 
 ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'chance_pct', 'duration'},
                   'shadow_shaman_mass_serpent_ward': {'duration'}, 'faceless_void_chronosphere': {'duration', 'duration_scepter'},
                   'enigma_malefice': {'stun_duration'}, 'enigma_black_hole': {'duration'}, 'enigma_malefice': {'stun_duration'},
                   'enchantress_natures_attendants': {'radius','heal_interval'}, 'ember_spirit_sleight_of_fist': {'creep_damage_penalty'},
                   'ember_spirit_flame_guard': {'radius'}, 'ember_spirit_fire_remnant': {'charge_restore_time', 'radius'},
-                  'ember_spirit_activate_fire_remnant': {'charge_restore_time', 'radius'}, 'earthshaker_fissure': {'fissure_range', 'fissure_duration', 'fissure_radius'},
+                  'ember_spirit_activate_fire_remnant': {'charge_restore_time', 'radius'}, 'earthshaker_fissure': {'fissure_range', 'fissure_duration', 'fissure_radius', 'stun_duration'},
                   'crystal_maiden_freezing_field': {'explosion_interval', 'radius', 'explosion_radius', 'explosion_min_dist', 'explosion_max_dist'},
                   'rattletrap_power_cogs': {'radius', 'spacing', 'duration'}, 'rattletrap_battery_assault': {'interval', 'radius', 'duration'},
                   'dark_seer_ion_shell': {'radius', 'duration'}, 'necrolyte_heartstopper_aura': {'aura_radius'}, 'axe_battle_hunger': {'duration'},
@@ -66,33 +71,48 @@ ignore_special = {'pudge_meat_hook':{'hook_width'}, 'faceless_void_time_lock':{'
                   'morphling_morph_agi': {'mana_cost', 'morph_cooldown'}, 'morphling_morph_str': {'mana_cost', 'morph_cooldown'},
                   'omniknight_guardian_angel': {'duration', 'duration_scepter'}, 'omniknight_degen_aura': {'radius'}, 'omniknight_repel': {'duration'},
                   'omniknight_purification': {'radius'}, 'clinkz_death_pact': {'damage_gain_pct', 'duration'}, 'clinkz_wind_walk': {'duration"'},
-                  'clinkz_strafe': {'duration'}, 'troll_warlord_whirling_axes_melee': {'max_range', 'hit_radius'},
+                  'clinkz_strafe': {'duration'}, 'troll_warlord_whirling_axes_melee': {'max_range', 'hit_radius'}, 'warlock_upheaval': {'aoe', 'duration'},
                   'troll_warlord_whirling_axes_ranged': {'axe_width', 'axe_range', 'axe_slow_duration'}, 'troll_warlord_berserkers_rage': {'bash_duration', 'base_attack_time'},
-                  'tiny_avalanche': {'radius', 'num_ticks'}, 'tiny_toss': {'duration', 'grab_radius', 'radius'}}
+                  'tiny_avalanche': {'radius', 'num_ticks'}, 'tiny_toss': {'duration', 'grab_radius', 'radius'}, 'spectre_dispersion': {'damage_reflection_pct', 'min_radius'},
+                  'shredder_reactive_armor': {'stack_limit', 'stack_duration'}, 'shredder_whirling_death': {'whirling_radius', 'duration'},
+                  'earthshaker_aftershock': {'aftershock_range', 'tooltip_duration'}, 'razor_plasma_field': {'radius'},
+                  'razor_static_link': {'drain_duration', 'drain_range', 'radius', 'speed', 'vision_duration'}, 'razor_eye_of_the_storm': {'radius', 'duration', 'strike_interval'},
+                  'skeleton_king_reincarnation': {'reincarnate_time'}, 'slardar_bash': {'chance', 'duration', 'duration_creep'}, 'warlock_fatal_bonds': {'duration'},
+                  'earth_spirit_geomagnetic_grip': {'radius', 'speed'}, 'bristleback_viscous_nasal_goo': {'goo_duration', 'base_move_slow', 'move_slow_per_stack'},
+                  'bristleback_quill_spray': {'quill_stack_duration', 'radius'}, 'bristleback_bristleback': {'side_angle', 'back_angle', 'back_damage_reduction', 'side_damage_reduction'},
+                  'bristleback_warpath': {'stack_duration'}, 'terrorblade_metamorphosis': {'base_attack_time'}, 'treant_natures_guise': {'radius', 'grace_time'},
+                  'treant_overgrowth': {'radius'}, 'treant_living_armor': {'damage_count'}, 'undying_decay': {'radius', 'decay_duration'},
+                  'undying_soul_rip': {'radius'}, 'undying_tombstone': {'duration', 'radius', 'zombie_interval'}, 'undying_tombstone_zombie_aura': {'radius', 'zombie_interval'},
+                  'undying_tombstone_zombie_deathstrike': {'duration'}, 'undying_flesh_golem': {'duration', 'radius'}, 'disruptor_thunder_strike': {'radius', 'strike_interval', 'duration'},
+                  'disruptor_glimpse': {'backtrack_time'}, 'disruptor_kinetic_field': {'radius', 'duration'}, 'disruptor_static_storm': {'radius', 'duration', 'duration_scepter'},
+                  'nyx_assassin_impale': {'width', 'duration'}, 'nyx_assassin_vendetta': {'duration'}, 'naga_siren_ensnare': {'duration'},
+                  'naga_siren_rip_tide': {'radius'}, 'naga_siren_song_of_the_siren': {'duration', 'animation_rate'}}
 
 
 ignore_normal = {'enchantress_impetus': {'AbilityCastRange'}, 'dazzle_shallow_grave':{'AbilityDuration'}, 'dazzle_poison_touch': {'AbilityDuration'},
                  'death_prophet_exorcism': {'AbilityDuration'}, 'leshrac_diabolic_edict': {'AbilityDuration'}, 'leshrac_split_earth': {'AbilityDuration'},
                  'ursa_overpower': {'AbilityDuration'}, 'gyrocopter_flak_cannon': {'AbilityDuration'}, 'wisp_tether': {'AbilityCastRange'},
-                 'lion_mana_drain': {'AbilityCastRange', 'AbilityChannelTime'}}
+                 'lion_mana_drain': {'AbilityCastRange', 'AbilityChannelTime'}, 'shredder_whirling_death': {'AbilityCastRange'},
+                 'razor_static_link': {'AbilityCastRange'}}
 
 ignore_all_normal = ['ID', 'AbilityCastPoint', 'AbilityManaCost', 'AbilityCooldown', 'AbilityModifierSupportValue', 'MaxLevel', 'RequiredLevel', 'LevelsBetweenUpgrades',
-                     'DisplayAdditionalHeroes']
+                     'DisplayAdditionalHeroes', 'AbilityDuration']
 
 
 dont_parse = ['Version', 'ability_base', 'default_attack', 'invoker_invoke', 'invoker_empty1', 'invoker_empty2', 'ancient_apparition_ice_blast_release',
               'meepo_divided_we_stand', 'weaver_geminate_attack', 'lone_druid_true_form_druid', 'lone_druid_spirit_bear_return', 'pugna_decrepify', 'shadow_shaman_voodoo',
               'rubick_telekinesis_land', 'tinker_rearm', 'bane_nightmare_end', 'wisp_tether_break', 'wisp_spirits_in', 'wisp_spirits_out', 'wisp_empty1', 'wisp_empty2', 'wisp_relocate',
-              'morphling_morph_replicate']
+              'morphling_morph_replicate', 'terrorblade_sunder', 'naga_siren_song_of_the_siren_cancel']
 
-override_instead = ['abaddon_frostmourne', 'pudge_rot', 'alchemist_unstable_concoction'
+override_instead = ['abaddon_frostmourne', 'pudge_rot', 'alchemist_unstable_concoction',
                     'alchemist_unstable_concoction_throw', 'drow_ranger_frost_arrows', 'axe_counter_helix',
                     'beastmaster_call_of_the_wild', 'beastmaster_call_of_the_wild_boar', 'ember_spirit_fire_remnant',
                     'ember_spirit_activate_fire_remnant', 'invoker_cold_snap', 'invoker_ghost_walk', 'invoker_tornado', 'invoker_emp',
                     'invoker_alacrity', 'invoker_chaos_meteor', 'invoker_sun_strike', 'invoker_forge_spirit', 'forged_spirit_melting_strike',
                     'invoker_ice_wall', 'invoker_deafening_blast', 'ancient_apparition_ice_blast', 'lycan_summon_wolves',
                     'lone_druid_true_form_battle_cry', 'lone_druid_spirit_bear_entangle', 'lone_druid_spirit_bear_demolish', 'wisp_spirits',
-                    'wisp_tether', 'luna_lucent_beam', 'lina_fiery_soul', 'morphling_replicate']
+                    'wisp_tether', 'luna_lucent_beam', 'lina_fiery_soul', 'morphling_replicate', 'earth_spirit_stone_caller',
+                    'naga_siren_song_of_the_siren']
         #, 'invoker_exort', 'invoker_wex', 'invoker_quas'
 
 item_fixed_value = {'item_heart': {'health_regen_rate':'1'}}
