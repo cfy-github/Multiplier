@@ -112,7 +112,7 @@ override_instead = ['abaddon_frostmourne', 'pudge_rot', 'alchemist_unstable_conc
                     'invoker_ice_wall', 'invoker_deafening_blast', 'ancient_apparition_ice_blast', 'lycan_summon_wolves',
                     'lone_druid_true_form_battle_cry', 'lone_druid_spirit_bear_entangle', 'lone_druid_spirit_bear_demolish', 'wisp_spirits',
                     'wisp_tether', 'luna_lucent_beam', 'lina_fiery_soul', 'morphling_replicate', 'earth_spirit_stone_caller',
-                    'naga_siren_song_of_the_siren']
+                    'naga_siren_song_of_the_siren', 'ogre_magi_multicast']
         #, 'invoker_exort', 'invoker_wex', 'invoker_quas'
 
 item_fixed_value = {'item_heart': {'health_regen_rate':'1'}}
