@@ -1,4 +1,4 @@
-USE_LOBBY=false
+USE_LOBBY=true
 THINK_TIME = 0.1
 ADDON_NAME="CUSTOM SPELL POWER"
 
@@ -116,8 +116,8 @@ function MultiplierGameMode:InitGameMode()
   
   
 
-  Convars:RegisterCommand( "command_example", Dynamic_Wrap(MultiplierGameMode, 'ExampleConsoleCommand'), "A console command example", 0 )
-  Convars:RegisterCommand( "fake_connect", Dynamic_Wrap(MultiplierGameMode, 'RegisterFakes'), "Connects and assigns fake Players.", 0 )
+  --Convars:RegisterCommand( "command_example", Dynamic_Wrap(MultiplierGameMode, 'ExampleConsoleCommand'), "A console command example", 0 )
+  --Convars:RegisterCommand( "fake_connect", Dynamic_Wrap(MultiplierGameMode, 'RegisterFakes'), "Connects and assigns fake Players.", 0 )
   
 
   -- Change random seed
