@@ -11,6 +11,9 @@ local VOTE_TIME = 0
 
 local EASY_MODE = 0
 local ALL_RANDOM = 0
+local SAME_HERO = 0
+
+local SAME_HERO_HOST_HERO = nil
 
 local currentStage = STAGE_VOTING
 local allowed_factors = {2, 3, 5, 10}
@@ -53,6 +56,7 @@ local XP_PER_LEVEL_TABLE = {
 local COLOR_BLUE2 = '#4B69FF'
 local COLOR_RED2 = '#EB4B4B'
 local COLOR_GREEN2 = '#ADE55C'
+local COLOR_ORANGE2 = '#FFA500'
 
 local factor = 2
 local default_factor = 2
@@ -113,31 +117,8 @@ function MultiplierGameMode:InitGameMode()
   
 
   Convars:RegisterCommand( "command_example", Dynamic_Wrap(MultiplierGameMode, 'ExampleConsoleCommand'), "A console command example", 0 )
+  Convars:RegisterCommand( "fake_connect", Dynamic_Wrap(MultiplierGameMode, 'RegisterFakes'), "Connects and assigns fake Players.", 0 )
   
-  -- Fill server with fake clients
-  Convars:RegisterCommand('fake', function()
-    -- Check if the server ran it
-    if not Convars:GetCommandClient() or DEBUG then
-      -- Create fake Players
-      SendToServerConsole('dota_create_fake_clients')
-        
-      self:CreateTimer('assign_fakes', {
-        endTime = Time(),
-        callback = function(multiplier, args)
-          for i=0, 9 do
-            -- Check if this player is a fake one
-            if PlayerResource:IsFakeClient(i) then
-              -- Grab player instance
-              local ply = PlayerResource:GetPlayer(i)
-              -- Make sure we actually found a player instance
-              if ply then
-                CreateHeroForPlayer('npc_dota_hero_axe', ply)
-              end
-            end
-          end
-        end})
-    end
-  end, 'Connects and assigns fake Players.', 0)
 
   -- Change random seed
   local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '0','')
@@ -178,6 +159,34 @@ function MultiplierGameMode:InitGameMode()
  
 end
 
+
+function MultiplierGameMode:RegisterFakes()
+  print( '******* Example Console Command ***************' )
+  local cmdPlayer = Convars:GetCommandClient()
+  if cmdPlayer then
+    local playerID = cmdPlayer:GetPlayerID()
+    if playerID ~= nil and playerID ~= -1 then
+		--if not Convars:GetCommandClient() or DEBUG then
+		-- Create fake Players
+		SendToServerConsole('dota_create_fake_clients')      
+		for i=0, 9 do
+			-- Check if this player is a fake one
+			if PlayerResource:IsFakeClient(i) then
+				-- Grab player instance
+				local ply = PlayerResource:GetPlayer(i)
+				-- Make sure we actually found a player instance
+				if ply then
+					CreateHeroForPlayer('npc_dota_hero_axe', ply)
+				end
+			end
+		end
+       
+    end
+  end
+
+  print( '*********************************************' )
+end
+
 function MultiplierGameMode:CaptureGameMode()
   if GameMode == nil then
     -- Set GameMode parameters
@@ -203,6 +212,8 @@ function MultiplierGameMode:CaptureGameMode()
 
     Log('Beginning Think' ) 
     GameMode:SetContextThink("BarebonesThink", Dynamic_Wrap( MultiplierGameMode, 'Think' ), 0.1 )
+	
+	
   end 
 end
 
@@ -404,12 +415,59 @@ function MultiplierGameMode:OnLevelUp( keys )
 end
 
 
+ListenToGameEvent('dota_player_used_ability', function(keys)
+    local ply = EntIndexToHScript(keys.player)
+    if ply then
+        local hero = ply:GetAssignedHero()
+        if hero then
+            -- Check if they have riki ult
+            if hero:HasAbility('riki_permanent_invisibility_lod') then
+                local iab = hero:FindAbilityByName('riki_permanent_invisibility_lod')
+                if iab and iab:GetLevel() > 0 then
+                    -- Remove modifier if they have it
+                    if hero:HasModifier('modifier_riki_permanent_invisibility') then
+                        hero:RemoveModifierByName('modifier_riki_permanent_invisibility')
+                    end
+
+                    -- Workout how long the cooldown will last
+                    local cd = 4-iab:GetLevel()
+
+                    -- Start the cooldown
+                    iab:StartCooldown(cd)
+
+                    -- Apply invis again
+                    hero:AddNewModifier(hero, iab, 'modifier_riki_permanent_invisibility', {
+                        fade_time = cd,
+                        fade_delay = 0
+                    })
+                end
+            end
+		end
+	end
+end, nil)
+
+
+
+function MultiplyBaseStats(hero)
+	local div = 2
+	if factor == 10 then div = 4 end
+	hero:SetBaseMoveSpeed(hero:GetBaseMoveSpeed()+(20*factor))
+	hero:SetBaseStrength((hero:GetBaseStrength() * factor) / div)
+	hero:SetBaseAgility((hero:GetBaseAgility() * factor) / div)
+end
+
+
 -- Stick skills into slots
 local handled = {}
+local shCount = 1;
 --local playFactor = {}
 ListenToGameEvent('npc_spawned', function(keys)
     -- Grab the unit that spawned
     local spawnedUnit = EntIndexToHScript(keys.entindex)
+	local div = 2
+	if factor == 10 then div = 5 end
+	if factor == 5 then div = 3 end
+	
 	if string.find(spawnedUnit:GetUnitName(), "roshan") then
 		spawnedUnit:SetBaseDamageMin((spawnedUnit:GetBaseDamageMin() * factor) * 4)
 		spawnedUnit:SetBaseDamageMax((spawnedUnit:GetBaseDamageMax() * factor) * 4)
@@ -419,22 +477,22 @@ ListenToGameEvent('npc_spawned', function(keys)
 	end
 	if string.find(spawnedUnit:GetUnitName(), "creep") or string.find(spawnedUnit:GetUnitName(), "neutral") then
 		if EASY_MODE == 1 then
-			spawnedUnit:SetBaseDamageMin((spawnedUnit:GetBaseDamageMin() * factor) / 2)
-			spawnedUnit:SetBaseDamageMax((spawnedUnit:GetBaseDamageMax() * factor) / 2)
-			spawnedUnit:SetMaxHealth((spawnedUnit:GetMaxHealth() * factor) / 2)
-			spawnedUnit:SetHealth((spawnedUnit:GetHealth() * factor) / 2)
-			spawnedUnit:SetPhysicalArmorBaseValue((spawnedUnit:GetPhysicalArmorBaseValue() * factor) / 2)	
+			spawnedUnit:SetBaseDamageMin((spawnedUnit:GetBaseDamageMin() * factor) / div)
+			spawnedUnit:SetBaseDamageMax((spawnedUnit:GetBaseDamageMax() * factor) / div)
+			spawnedUnit:SetMaxHealth((spawnedUnit:GetMaxHealth() * factor) / div)
+			spawnedUnit:SetHealth((spawnedUnit:GetHealth() * factor) / div)
+			spawnedUnit:SetPhysicalArmorBaseValue((spawnedUnit:GetPhysicalArmorBaseValue() * factor) / div)	
 			spawnedUnit:SetMaximumGoldBounty(spawnedUnit:GetGoldBounty() * 2)	
 			spawnedUnit:SetMinimumGoldBounty(spawnedUnit:GetGoldBounty() * 2)
 			spawnedUnit:SetDeathXP(spawnedUnit:GetDeathXP() * 2)			
 			--Log("Maximum Gold: " .. spawnedUnit:GetGoldBounty())
 			
 		else
-			spawnedUnit:SetBaseDamageMin(spawnedUnit:GetBaseDamageMin() * factor)
-			spawnedUnit:SetBaseDamageMax(spawnedUnit:GetBaseDamageMax() * factor)
-			spawnedUnit:SetMaxHealth(spawnedUnit:GetMaxHealth() * factor)
-			spawnedUnit:SetHealth(spawnedUnit:GetHealth() * factor)
-			spawnedUnit:SetPhysicalArmorBaseValue(spawnedUnit:GetPhysicalArmorBaseValue() * factor)	
+			spawnedUnit:SetBaseDamageMin((spawnedUnit:GetBaseDamageMin() * factor) / 2)
+			spawnedUnit:SetBaseDamageMax((spawnedUnit:GetBaseDamageMax() * factor) / 2)
+			spawnedUnit:SetMaxHealth((spawnedUnit:GetMaxHealth() * factor) / 2)
+			spawnedUnit:SetHealth((spawnedUnit:GetHealth() * factor) / 2)
+			spawnedUnit:SetPhysicalArmorBaseValue((spawnedUnit:GetPhysicalArmorBaseValue() * factor) / 2)
 		end
 	end
 	--Log("Unit Name: " .. spawnedUnit:GetUnitName())
@@ -459,10 +517,54 @@ ListenToGameEvent('npc_spawned', function(keys)
 		--PrintTable(SkillManager)
 		--PrintTable(getmetatable(SkillManager))
 		--playFactor[playerID] = factor
-		SkillManager:ApplyMultiplier(spawnedUnit, factor)
 		
-		spawnedUnit:SetBaseMoveSpeed(spawnedUnit:GetBaseMoveSpeed()+(10*factor))
-		spawnedUnit:CalculateStatBonus()
+		-- Same Hero based on host hero
+		if playerID == 0 and SAME_HERO == 1 then
+			local hostHeroName = nil
+			if ALL_RANDOM == 1 and SAME_HERO_HOST_HERO ~= nil then
+				hostHeroName = SAME_HERO_HOST_HERO
+			else
+				hostHeroName = PlayerResource:GetSelectedHeroName(0)
+			end
+			Log("Host Hero Name" .. hostHeroName)
+			MultiplierGameMode:CreateTimer('samehero_'..playerID, {
+				endTime = Time(),
+				callback = function(multiplier, args)
+					-- Grab player instance
+					local plyd = PlayerResource:GetPlayer(shCount)
+					local selectedHero = nil
+					-- Make sure we actually found a player instance
+					if plyd then
+						Log("Selecting the same hero: " .. shCount)
+						local testhero = plyd:GetAssignedHero()
+						if testhero == null then
+							selectedHero = CreateHeroForPlayer(hostHeroName, plyd)
+							selectedHero:SetGold(1000, false)
+						else
+							selectedHero = PlayerResource:ReplaceHeroWith(plyd:GetPlayerID(), hostHeroName, 1000, 0)
+						end
+						SkillManager:ApplyMultiplier(selectedHero, factor)
+						MultiplyBaseStats(selectedHero)
+					end		
+					if shCount < 9 then
+						Log("shCount < 9 = " .. shCount)
+						shCount = shCount + 1
+						return Time() + 0.3
+					else
+						Log("shCount < 9 = " .. shCount)
+						return
+					end
+				end
+			})
+			spawnedUnit:SetGold(1000, false)
+			SendToServerConsole('sv_cheats 1')
+			SendToServerConsole('dota_dev forcegamestart')
+			SendToServerConsole('sv_cheats 0')
+		end
+		
+		SkillManager:ApplyMultiplier(spawnedUnit, factor)
+		MultiplyBaseStats(spawnedUnit)
+		--spawnedUnit:CalculateStatBonus()
 		--spawnedUnit:ModifyMoveSpeed(spawnedUnit:GetBaseMoveSpeed()+(10*factor))
 		--spawnedUnit:SetBaseIntellect(100)
 		--spawnedUnit:ModifyAgility(50)
@@ -484,21 +586,24 @@ end, nil)
 function MultiplierGameMode:MultiplyTowers(factor)
 	-- improve towers
 	local tower = Entities:FindByClassname( nil, "npc_dota_tower" )
+	local div = 2
+	if factor == 10 then div = 5 end
+	if factor == 5 then div = 3 end
     while tower do
 		local thisTower = tower
 		tower = Entities:FindByClassname( tower, "npc_dota_tower" )
 		if EASY_MODE == 1 then
+			thisTower:SetBaseDamageMin((thisTower:GetBaseDamageMin() * factor) / div)
+			thisTower:SetBaseDamageMax((thisTower:GetBaseDamageMax() * factor) / div)
+			thisTower:SetMaxHealth((thisTower:GetMaxHealth() * factor) / div)
+			thisTower:SetHealth((thisTower:GetHealth() * factor) / div)
+			thisTower:SetPhysicalArmorBaseValue((thisTower:GetPhysicalArmorBaseValue() * factor) / div)
+		else
 			thisTower:SetBaseDamageMin((thisTower:GetBaseDamageMin() * factor) / 2)
 			thisTower:SetBaseDamageMax((thisTower:GetBaseDamageMax() * factor) / 2)
 			thisTower:SetMaxHealth((thisTower:GetMaxHealth() * factor) / 2)
 			thisTower:SetHealth((thisTower:GetHealth() * factor) / 2)
 			thisTower:SetPhysicalArmorBaseValue((thisTower:GetPhysicalArmorBaseValue() * factor) / 2)
-		else
-			thisTower:SetBaseDamageMin(thisTower:GetBaseDamageMin() * factor)
-			thisTower:SetBaseDamageMax(thisTower:GetBaseDamageMax() * factor)
-			thisTower:SetMaxHealth(thisTower:GetMaxHealth() * factor)
-			thisTower:SetHealth(thisTower:GetHealth() * factor)
-			thisTower:SetPhysicalArmorBaseValue(thisTower:GetPhysicalArmorBaseValue() * factor)
 		end
     end
 	
@@ -517,13 +622,13 @@ function MultiplierGameMode:MultiplyTowers(factor)
 		local thisRax = rax
 		rax = Entities:FindByClassname( rax, "npc_dota_barracks" )
 		if EASY_MODE == 1 then
-			thisRax:SetMaxHealth(thisRax:GetMaxHealth() * factor)
-			thisRax:SetHealth(thisRax:GetHealth() * factor)
-			thisRax:SetPhysicalArmorBaseValue((thisRax:GetPhysicalArmorBaseValue() * factor) / 2)
+			thisRax:SetMaxHealth((thisRax:GetMaxHealth() * factor) / div)
+			thisRax:SetHealth((thisRax:GetHealth() * factor) / div)
+			thisRax:SetPhysicalArmorBaseValue((thisRax:GetPhysicalArmorBaseValue() * factor) / div)
 		else
-			thisRax:SetMaxHealth(thisRax:GetMaxHealth() * factor)
-			thisRax:SetHealth(thisRax:GetHealth() * factor)
-			thisRax:SetPhysicalArmorBaseValue(thisRax:GetPhysicalArmorBaseValue() * factor)
+			thisRax:SetMaxHealth((thisRax:GetMaxHealth() * factor) / 2)
+			thisRax:SetHealth((thisRax:GetHealth() * factor) / 2)
+			thisRax:SetPhysicalArmorBaseValue((thisRax:GetPhysicalArmorBaseValue() * factor) / 2)
 		end
 	end
 	
@@ -622,30 +727,49 @@ function MultiplierGameMode:PlayerSay(keys)
 				--if fac == '2' or fac == '3' or fac == '5' or fac == '10' then
 					if string.find(text, "em") then EASY_MODE = 1 end
 					if string.find(text, "ar") then ALL_RANDOM = 1 end		
-					local GM = ""
-					if EASY_MODE == 1 and ALL_RANDOM == 1 then
-						GM = 'Easy / Random'
-					elseif EASY_MODE == 1 and ALL_RANDOM == 0 then
-						GM = 'Easy Mode'
-					elseif EASY_MODE == 0 and ALL_RANDOM == 1 then
-						GM = 'All Random'
-					else
-						GM = 'Normal'
+					if string.find(text, "sh") then SAME_HERO = 1 end		
+					local GM = nil
+					if EASY_MODE == 1 then
+						if GM ~= nil then GM = GM .. ' / ' else GM = '' end
+						GM = GM .. 'Easy'
 					end
+					if ALL_RANDOM == 1 then
+						if GM ~= nil then GM = GM .. ' / ' else GM = '' end
+						GM = GM .. 'Random'
+					end
+					if SAME_HERO == 1 then
+						if GM ~= nil then GM = GM .. ' / ' else GM = '' end
+						GM = GM .. 'Same Hero'
+					end
+					if GM == nil then GM = 'Normal' end
+					
 					factor = fac
-					if ALL_RANDOM == 1 then		
-						for i=0, 9 do
-							-- Grab player instance
-							local plyd = PlayerResource:GetPlayer(i)
-							-- Make sure we actually found a player instance
+					if ALL_RANDOM == 1 then
+						if SAME_HERO == 1 then
+							local plyd = PlayerResource:GetPlayer(0)
 							if plyd then
-								Log("creating hero: " .. i)
-								local testhero = plyd:GetAssignedHero()
-								if testhero == null then
-									plyd = CreateHeroForPlayer(getRandomHeroName(), plyd)
-									plyd:SetGold(1000, false)
-								else
-									PlayerResource:ReplaceHeroWith(plyd:GetPlayerID(), getRandomHeroName(), 1000, 0)
+									local testhero = plyd:GetAssignedHero()
+									SAME_HERO_HOST_HERO = getRandomHeroName()
+									if testhero == null then
+										plyd = CreateHeroForPlayer(SAME_HERO_HOST_HERO, plyd)
+										plyd:SetGold(1000, false)
+									else
+										PlayerResource:ReplaceHeroWith(plyd:GetPlayerID(), SAME_HERO_HOST_HERO, 1000, 0)
+									end
+								end
+						else
+							for i=0, 9 do
+								-- Grab player instance
+								local plyd = PlayerResource:GetPlayer(i)
+								-- Make sure we actually found a player instance
+								if plyd then
+									local testhero = plyd:GetAssignedHero()
+									if testhero == null then
+										plyd = CreateHeroForPlayer(getRandomHeroName(), plyd)
+										plyd:SetGold(1000, false)
+									else
+										PlayerResource:ReplaceHeroWith(plyd:GetPlayerID(), getRandomHeroName(), 1000, 0)
+									end
 								end
 							end
 						end
@@ -656,6 +780,10 @@ function MultiplierGameMode:PlayerSay(keys)
 
 					local txt = '<font color="'..COLOR_RED2..'">Game Mode: </font> <font color="'..COLOR_BLUE2..'">' .. GM .. ' x'..factor..'</font> '
 					Say(nil, txt, false)
+					if SAME_HERO == 1 then
+						local txt2 = '<font color="'..COLOR_ORANGE2..'">Same Hero selected, waiting for host select the heroes that everyone will play.</font>'
+						Say(nil, txt2, false)
+					end
 					self:ShowCenterMessage(GM ..' x' .. factor , 10)
 					voted = true
 					MultiplierGameMode:ReplaceAllSkills()
@@ -806,14 +934,6 @@ function MultiplierGameMode:LoopOverPlayers(callback)
 end
 
 
-function MultiplierGameMode:LoopOverPlayersNoHero(callback)
-  for k, v in pairs(self.vPlayers) do
-      -- Run the callback
-      if callback(v, v.hero:GetPlayerID()) then
-        break
-      end
-  end
-end
 
 --[[function MultiplierGameMode:ShopReplacement( keys )
   Log('ShopReplacement' )

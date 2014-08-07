@@ -261,10 +261,11 @@ function skillManager:ApplyMultiplier(hero, factor)
 				table.insert(newSkills, v)
 				Log('ignore ' .. v)
 			end
-
+		fixModifiers(hero, v)
         end
     end
 	currentSkillList[hero] = newSkills
+	hero:RemoveModifierByName('modifier_riki_permanent_invisibility')
 end
 
 -- Define the export
